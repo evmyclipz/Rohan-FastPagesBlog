@@ -13,7 +13,7 @@
   
     
         ,"post1": {
-            "title": "Title",
+            "title": "Fastpages Notebook Blog My Java Post",
             "content": "String msg = &quot;Hello World&quot;; System.out.println(msg); . Hello World .",
             "url": "https://evmyclipz.github.io/sample1_blog/2022/08/21/JavaSample.html",
             "relUrl": "/2022/08/21/JavaSample.html",
@@ -24,7 +24,7 @@
   
     
         ,"post2": {
-            "title": "Title",
+            "title": "Fastpages Notebook Blog My Python Post",
             "content": "print(&quot;HELLO WORLD&quot;) . HELLO WORLD .",
             "url": "https://evmyclipz.github.io/sample1_blog/2022/08/20/_PythonSample.html",
             "relUrl": "/2022/08/20/_PythonSample.html",
