@@ -1,12 +1,12 @@
 ---
 toc: true
 layout: post
-description: My First Markdown.
+description: My Markdown Sample.
 categories: [markdown]
-title: Rohan Markdown Post
+title: My Markdown Post
 ---
+# My Markdown Post
 
-#MY MARKDOWN SAMPLE
-*Hello<>
-*Bye<>
-*Morning<>
+##LISTS
+- HELLO
+- BYE
