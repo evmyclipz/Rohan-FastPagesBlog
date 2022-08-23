@@ -2,21 +2,21 @@
   
     
         "post0": {
-            "title": "My Markdown Post",
-            "content": "My Markdown Post . ##LISTS . HELLO | BYE | .",
-            "url": "https://evmyclipz.github.io/sample1_blog/markdown/2022/08/21/my-markdown-post.html",
-            "relUrl": "/markdown/2022/08/21/my-markdown-post.html",
-            "date": " • Aug 21, 2022"
+            "title": "Fastpages Notebook Blog My Python Post",
+            "content": "print(&quot;HELLO WORLD&quot;) . HELLO WORLD .",
+            "url": "https://evmyclipz.github.io/sample1_blog/2022/08/22/_PythonSample.html",
+            "relUrl": "/2022/08/22/_PythonSample.html",
+            "date": " • Aug 22, 2022"
         }
         
     
   
     
         ,"post1": {
-            "title": "Fastpages Notebook Blog My Python Post",
-            "content": "print(&quot;HELLO WORLD&quot;) . HELLO WORLD .",
-            "url": "https://evmyclipz.github.io/sample1_blog/2022/08/21/_PythonSample.html",
-            "relUrl": "/2022/08/21/_PythonSample.html",
+            "title": "My Markdown Post",
+            "content": "My Markdown Post . ##LISTS . HELLO | BYE | .",
+            "url": "https://evmyclipz.github.io/sample1_blog/markdown/2022/08/21/my-markdown-post.html",
+            "relUrl": "/markdown/2022/08/21/my-markdown-post.html",
             "date": " • Aug 21, 2022"
         }
         
