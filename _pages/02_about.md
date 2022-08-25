@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-![](images/dragon.png)
+![](images/Dragon.png)
 
 # Little about me:
 1. Senior at High school
