@@ -14,7 +14,7 @@
     
         ,"post1": {
             "title": "Notes 8/24",
-            "content": "Notes(Week 1): *Can put work docs and google docs(docx) in fastapges blog *Go to code.org to elarn more about java *{site base url}-to make images appear on pages *Key &amp; value: Eg, title(key): Rohan Malipeddi Sample Blog(value) *config.yml is used by Fastpages change fastpage title *in pages, one can put numbers on the left hand side to make them show in order. * . Things to still learn: *Learn what is liquid code *Learn how to make your home page dark theme *Learn how to change the your blog symbol * .",
+            "content": "Notes(Week 1): . Can put work docs and google docs(docx) in fastapges blog | Go to code.org to elarn more about java | {site base url}-to make images appear on pages | Key &amp; value: Eg, title(key): Rohan Malipeddi Sample Blog(value) | config.yml is used by Fastpages change fastpage title | in pages, one can put numbers on the left hand side to make them show in order. | Things to still learn: . Learn what is liquid code | Learn how to make your home page dark theme | Learn how to change the your blog symbol. | |",
             "url": "https://evmyclipz.github.io/sample1_blog/markdown/2022/08/24/Fastpagestour.html",
             "relUrl": "/markdown/2022/08/24/Fastpagestour.html",
             "date": " • Aug 24, 2022"
@@ -86,7 +86,7 @@
   
       ,"page3": {
           "title": "Notes",
-          "content": "Notes for CSA . Vocab: . sequence: Severeal line of code | Key &amp; Value : Eg. title: Home of the nighthawks. | Primitives : Regular data types like int, boolean, double, etc.. that are not objects. | Non-primitive : Eg, strigns, arrays | Wrapper classes : | Notes: . Data Types are primitive and non-primitive | Everything except primitives are OOP | Primitive datatypes are boolean(True or False), char, byte(8bits=1 byte) | Wrapper classes are wrapper for primitive Data types. For eg, Integers is wrapper class for byte,short,int,long. | |",
+          "content": "Notes for CSA . Vocab: . sequence: Severeal line of code | Key &amp; Value : Eg. title: Home of the nighthawks. | Primitives : Regular data types like int, boolean, double, etc.. that are not objects. | Non-primitive : Eg, strigns, arrays | Wrapper classes : | Notes: . Data Types are primitive and non-primitive | Everything except primitives are OOP | Primitive datatypes are boolean(True or False), char, byte(8bits=1 byte) | Wrapper classes are wrapper for primitive Data types. For eg, Integers is wrapper class for byte,short,int,long. | Bash: . |",
           "url": "https://evmyclipz.github.io/sample1_blog/notes/",
           "relUrl": "/notes/",
           "date": ""
