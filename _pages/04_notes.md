@@ -18,4 +18,6 @@ Notes for CSA
 2. Everything except primitives are OOP
 3. Primitive datatypes are boolean(True or False), char, byte(8bits=1 byte)
 4. Wrapper classes are wrapper for primitive Data types. For eg, Integers is wrapper class for byte,short,int,long.
-5. 
+
+# Bash:
+1. 
