@@ -164,27 +164,33 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DefinePrimitives</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="c1">//This demonstrates the average of three different primitive data types</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DefineNewprg</span><span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">x</span><span class="o">=</span> <span class="mi">990</span><span class="p">;</span>
-        <span class="kt">float</span> <span class="n">y</span><span class="o">=</span> <span class="mf">39.89f</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">990</span><span class="p">;</span>
+        <span class="kt">float</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">36.98f</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">w</span> <span class="o">=</span> <span class="mf">556.090930</span><span class="p">;</span>
         <span class="kt">double</span> <span class="n">z</span><span class="p">;</span>
-        <span class="kt">boolean</span> <span class="n">flag</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">avg</span><span class="p">,</span> <span class="n">navg</span><span class="p">;</span>
+        <span class="c1">//To control output</span>
+        <span class="kt">boolean</span> <span class="n">displayavg</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
-        <span class="n">z</span><span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
 
-        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;The Sum of &quot;</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="s">&quot; and &quot;</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="s">&quot; is &quot;</span><span class="o">+</span><span class="n">z</span><span class="p">;</span>
-         
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+        <span class="c1">//To display result in human language</span>
+        <span class="n">avg</span> <span class="o">=</span> <span class="s">&quot;The average of some three numbers is &quot;</span><span class="o">+</span><span class="n">z</span><span class="p">;</span>
+        <span class="n">navg</span> <span class="o">=</span> <span class="s">&quot;Average cannot be computed&quot;</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">displayavg</span><span class="p">)</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">avg</span><span class="p">);</span>
+        <span class="k">else</span> 
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">navg</span><span class="p">);</span>
 
-        <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;Flag with value &quot;</span><span class="o">+</span><span class="n">flag</span><span class="o">+</span><span class="s">&quot; is of type boolean Primitive data type&quot;</span><span class="p">;</span>
-
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-        
     <span class="p">}</span>
+   
+    
 <span class="p">}</span>
 
-<span class="n">DefinePrimitives</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+<span class="n">DefineNewprg</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -197,8 +203,130 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The Sum of 990 and 39.89 is 1029.8900146484375
-Flag with value true is of type boolean Primitive data type
+<pre>The average of some three numbers is 527.6903034895832</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">//This demonstrates the average of three different primitive data types</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DefineNewprg</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">990</span><span class="p">;</span>
+        <span class="kt">float</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">36.98f</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">w</span> <span class="o">=</span> <span class="mf">556.090930</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">z</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">avg</span><span class="p">,</span> <span class="n">navg</span><span class="p">;</span>
+        <span class="c1">//To control output</span>
+        <span class="kt">boolean</span> <span class="n">displayavg</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+        <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+
+        <span class="c1">//To display result in human language</span>
+        <span class="n">avg</span> <span class="o">=</span> <span class="s">&quot;The average of some three numbers is &quot;</span><span class="o">+</span><span class="n">z</span><span class="p">;</span>
+        <span class="n">navg</span> <span class="o">=</span> <span class="s">&quot;Average cannot be computed&quot;</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">displayavg</span><span class="p">)</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">avg</span><span class="p">);</span>
+        <span class="k">else</span> 
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">navg</span><span class="p">);</span>
+
+    <span class="p">}</span>
+   
+    
+<span class="p">}</span>
+
+<span class="n">DefineNewprg</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Average cannot be computed</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Conversion</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Scanner</span> <span class="n">input</span><span class="p">,</span><span class="n">input2</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">beh</span><span class="o">=</span><span class="s">&quot;Celsius&lt;-&gt;Farenheit conversion&quot;</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">celsius</span><span class="p">,</span> <span class="n">faren</span><span class="p">,</span> <span class="n">celsius2</span><span class="p">,</span> <span class="n">faren2</span><span class="p">;</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">beh</span><span class="p">);</span>
+        
+
+        
+        <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter celsius:&quot;</span><span class="p">);</span>
+        <span class="n">celsius</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextFloat</span><span class="p">();</span>
+        <span class="n">faren</span> <span class="o">=</span><span class="p">(</span><span class="n">celsius</span> <span class="o">*</span> <span class="mf">1.8</span><span class="p">)</span> <span class="o">+</span><span class="mi">32</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">celsius</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;In Farenheit:&quot;</span><span class="o">+</span><span class="n">faren</span><span class="p">);</span>
+
+        <span class="n">input2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter farenheit:&quot;</span><span class="p">);</span>
+        <span class="n">faren2</span> <span class="o">=</span> <span class="n">input2</span><span class="p">.</span><span class="na">nextFloat</span><span class="p">();</span>
+        <span class="n">celsius2</span> <span class="o">=</span><span class="p">(</span><span class="n">faren2</span><span class="o">-</span><span class="mi">32</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="o">/</span><span class="mi">9</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">faren2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;In Celsius:&quot;</span><span class="o">+</span><span class="n">celsius2</span><span class="p">);</span>
+        
+        
+        
+
+
+
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Conversion</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Celsius&lt;-&gt;Farenheit conversion
+Enter celsius:21.0
+In Farenheit:69.80000000000001
+Enter farenheit:90.0
+In Celsius:32.22222222222222
 </pre>
 </div>
 </div>
