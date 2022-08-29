@@ -4,7 +4,8 @@ title: About Me
 permalink: /about/
 ---
 
-![](images/Dragon.png)
+![]({{ site.baseurl }}/images/Dragon.png)
+
 
 # Little about me:
 1. Senior at High school
