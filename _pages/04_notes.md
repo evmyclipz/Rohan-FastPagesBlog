@@ -47,3 +47,17 @@ The main difference between primitive and non-primitive data types are:
 * The size of a primitive type depends on the data type, while non-primitive types have all the same size.
 * Examples of non-primitive types are Strings, Arrays, Classes, Interface, etc. You will learn more about these in a later chapter.
 
+# Frontend Development
+
+Front-end web development is the development of the graphical user interface of a website, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that website.
+
+* Config.yaml can be used to create there user interfaces.
+* CSS style layout is provided by using Themes provided through GH Pages. Each page we make we assume the defined theme and insert our HTML fragments, local page style, and local page JavaScript.
+* Fastpages defaults to the minima theme. Review the the README.md for style or layout customizations.
+* Jekyll is in charge of deployment of the pages(fastpages is deployed using Jekyll).
+* Liquid is a language and an example of this is in tags.html of APCSA repo.
+* Challenge: Use liquid to build the APCSA schedule homepage(it is originally built using html).
+* Learn liquid
+* HTML generation is done through liquid(a template language like Jinja2 or thymleaf).
+* Javascript can also be used to build user interfaces(it was used to build calculator, Binary, graphs, snake game.)
+* Make a game, create cos and sin in calculator 
