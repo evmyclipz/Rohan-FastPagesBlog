@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -337,6 +337,26 @@ In Celsius:32.22222222222222
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="My-First-object-oriented-programm">My First object oriented programm<a class="anchor-link" href="#My-First-object-oriented-programm"> </a></h1><p>This program prompts the user for the first, second, third and fourth number in a matrix, which are taken as input and show output through by assigning the numbers from left to right and top to bottom. Then, once 4 number are given, it prompts them for another 4 for the second matrix and adds them to produce output.</p>
+<p>Objects Used</p>
+<ul>
+<li>Scanner object is imported to obtain inputs.</li>
+<li>Under Matrix2by2, there are 2 other objects which function to store the matrix.</li>
+</ul>
+<p>College board topics/Member</p>
+<ul>
+<li>A 2D array was created to store values of the matrix</li>
+</ul>
+<p>Methods</p>
+<ul>
+<li>SetData, print, display, add</li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -346,7 +366,7 @@ In Celsius:32.22222222222222
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
 
- <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Matrix2by2</span> <span class="p">{</span>
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Matrix2by2</span> <span class="p">{</span> <span class="c1">// A class is defined here</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">arr</span><span class="o">[][]</span><span class="p">;</span>
     
     <span class="kd">public</span> <span class="nf">Matrix2by2</span><span class="p">()</span>
@@ -354,7 +374,7 @@ In Celsius:32.22222222222222
         <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
     <span class="p">}</span>
       
-    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setData</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">,</span><span class="kt">int</span> <span class="n">c</span><span class="p">,</span><span class="kt">int</span> <span class="n">d</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setData</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">,</span><span class="kt">int</span> <span class="n">c</span><span class="p">,</span><span class="kt">int</span> <span class="n">d</span><span class="p">)</span> <span class="p">{</span> 
         <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]=</span><span class="n">a</span><span class="p">;</span>
         <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]=</span><span class="n">b</span><span class="p">;</span>
         <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]=</span><span class="n">c</span><span class="p">;</span>
@@ -365,23 +385,24 @@ In Celsius:32.22222222222222
     
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">Scanner</span> <span class="n">ms</span><span class="o">=</span><span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">;</span>
 
         <span class="kt">boolean</span> <span class="n">quit</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
         <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">quit</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">try</span> <span class="p">{</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter first number of the first matrix&quot;</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter first number of the first matrix&quot;</span><span class="p">);</span>
                 <span class="n">a</span> <span class="o">=</span> <span class="n">ms</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter second number of the first matrix&quot;</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter second number of the first matrix&quot;</span><span class="p">);</span>
                 <span class="n">b</span> <span class="o">=</span> <span class="n">ms</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter third number of the first matrix&quot;</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter third number of the first matrix&quot;</span><span class="p">);</span>
                 <span class="n">c</span> <span class="o">=</span> <span class="n">ms</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter fourth number of the first matrix&quot;</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter fourth number of the first matrix&quot;</span><span class="p">);</span>
                 <span class="n">d</span> <span class="o">=</span> <span class="n">ms</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
                 <span class="k">this</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
                 <span class="n">quit</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
             <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">ms</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span> <span class="n">e</span> <span class="o">+</span><span class="s">&quot;Not a number: try again&quot;</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="n">e</span> <span class="o">+</span><span class="s">&quot;Not a number: try again&quot;</span><span class="p">);</span>
             <span class="p">}</span>
             <span class="p">}</span>
         
@@ -390,17 +411,18 @@ In Celsius:32.22222222222222
     <span class="p">}</span>
 
     <span class="kd">private</span> <span class="kt">void</span> <span class="nf">display</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;|&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]+</span><span class="s">&quot;|&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; -- -- &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; - - &quot;</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;|&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]+</span><span class="s">&quot;|&quot;</span><span class="p">);</span>
-      
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">a1</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]=</span><span class="n">a1</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]=</span><span class="n">a1</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]=</span><span class="n">a1</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]=</span><span class="n">a1</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]+=</span><span class="n">a1</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]+=</span><span class="n">a1</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]+=</span><span class="n">a1</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]+=</span><span class="n">a1</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
 
         <span class="n">display</span><span class="p">();</span>
     <span class="p">}</span>
@@ -409,14 +431,18 @@ In Celsius:32.22222222222222
         <span class="n">Matrix2by2</span> <span class="n">matrixOp1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Matrix2by2</span><span class="p">();</span>
         <span class="n">Matrix2by2</span> <span class="n">matrixOp2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Matrix2by2</span><span class="p">();</span>
         
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter 1st matrix.&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter 1st matrix.&quot;</span><span class="p">);</span>
         <span class="n">matrixOp1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
 
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter 2nd matrix&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter 2nd matrix&quot;</span><span class="p">);</span>
         <span class="n">matrixOp2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The output of matrix addition is &quot;</span><span class="p">);</span>
         <span class="n">matrixOp1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">matrixOp2</span><span class="p">.</span><span class="na">arr</span><span class="p">);</span>
        
+        <span class="p">}</span>
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">new</span> <span class="n">Matrix2by2</span><span class="p">();</span>
         <span class="p">}</span>
     
 
@@ -425,6 +451,50 @@ In Celsius:32.22222222222222
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Enter 1st matrix.
+Enter first number of the first matrix
+java.util.InputMismatchExceptionNot a number: try again
+Enter first number of the first matrix
+Enter second number of the first matrix
+java.util.InputMismatchExceptionNot a number: try again
+Enter first number of the first matrix
+Enter second number of the first matrix
+Enter third number of the first matrix
+Enter fourth number of the first matrix
+
+|6 7|
+ - - 
+|8 5|
+
+Enter 2nd matrix
+Enter first number of the first matrix
+Enter second number of the first matrix
+Enter third number of the first matrix
+Enter fourth number of the first matrix
+
+|0 0|
+ - - 
+|0 0|
+
+The output of matrix addition is 
+
+|6 7|
+ - - 
+|8 5|
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
