@@ -61,3 +61,9 @@ Front-end web development is the development of the graphical user interface of 
 * HTML generation is done through liquid(a template language like Jinja2 or thymleaf).
 * Javascript can also be used to build user interfaces(it was used to build calculator, Binary, graphs, snake game.)
 * Make a game, create cos and sin in calculator 
+
+# Tips
+
+* Create a about me page to build resumes or get ideas to create a resume.
+* update blog regularly.
+* Create a menu
