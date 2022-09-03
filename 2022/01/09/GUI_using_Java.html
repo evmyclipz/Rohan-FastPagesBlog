@@ -177,8 +177,8 @@ window.onload = wrap_img;
         <span class="n">menubar</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">menu</span><span class="p">);</span>
         <span class="n">menubar</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">menu1</span><span class="p">);</span>
         <span class="n">frame</span><span class="p">.</span><span class="na">setJMenuBar</span><span class="p">(</span><span class="n">menubar</span><span class="p">);</span>
-        <span class="n">frame</span><span class="p">.</span><span class="na">setLayout</span><span class="p">(</span><span class="k">new</span> <span class="n">BorderLayout</span><span class="p">());</span>
-        <span class="n">frame</span><span class="p">.</span><span class="na">setLayout</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">30</span><span class="p">);</span>
+        <span class="c1">//frame.setLayout(new BorderLayout().NORTH);</span>
+        <span class="c1">//frame.setLayout(50,30);</span>
         <span class="c1">//frame.add(message,BorderLayout.EAST);</span>
         <span class="c1">//frame.add(numVal,BorderLayout,WEST);</span>
 
@@ -196,6 +196,14 @@ window.onload = wrap_img;
     <span class="kt">double</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
     <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">NUM1</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span>
         <span class="n">value</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">sin</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">())));</span>
+        <span class="n">numVal</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">NUM1</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">cos</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">())));</span>
+        <span class="n">numVal</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">NUM1</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">tan</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">())));</span>
         <span class="n">numVal</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
     <span class="p">}</span>
     
@@ -219,7 +227,19 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_text output_error">
-<pre></pre>
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">java.lang.NoClassDefFoundError: Could not initialize class java.awt.GraphicsEnvironment$LocalGE</span>
+<span class="ansi-red-intense-fg ansi-bold">	at java.desktop/java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment(GraphicsEnvironment.java:129)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at java.desktop/java.awt.Window.initGC(Window.java:487)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at java.desktop/java.awt.Window.init(Window.java:507)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at java.desktop/java.awt.Window.&lt;init&gt;(Window.java:549)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at java.desktop/java.awt.Frame.&lt;init&gt;(Frame.java:423)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at java.desktop/java.awt.Frame.&lt;init&gt;(Frame.java:388)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at java.desktop/javax.swing.JFrame.&lt;init&gt;(JFrame.java:180)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at NamarRep.&lt;init&gt;(#16:1)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at NamarRep.main(#16:1)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at .(#18:1)</span></pre>
 </div>
 </div>
 
