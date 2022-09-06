@@ -151,6 +151,7 @@ window.onload = wrap_img;
     <span class="kd">private</span> <span class="n">JMenu</span> <span class="n">menu</span><span class="p">;</span>
     <span class="kd">private</span> <span class="n">JMenu</span> <span class="n">menu1</span><span class="p">;</span><span class="c1">//New menu</span>
     <span class="kd">private</span> <span class="n">JLabel</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JLabel</span><span class="p">(</span><span class="s">&quot;Enter Decimal Number:&quot;</span><span class="p">);</span>
+    <span class="kd">private</span> <span class="n">JLaberl</span> <span class="n">outputMsg</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JLabel</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span> 
     <span class="kd">private</span> <span class="n">JTextField</span> <span class="n">numVal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JTextField</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
     <span class="kd">private</span> <span class="n">JButton</span> <span class="n">clearButton</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JButton</span><span class="p">(</span><span class="s">&quot;Clear&quot;</span><span class="p">);</span>
     <span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="n">NUM</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">// 1D Array of Menu Choices</span>
@@ -198,6 +199,7 @@ window.onload = wrap_img;
         <span class="n">frame</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
         <span class="n">frame</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">numVal</span><span class="p">);</span>
         <span class="n">frame</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">clearButton</span><span class="p">);</span><span class="c1">//adds clear button</span>
+        <span class="n">frame</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">outputMsg</span><span class="p">);</span>
 
         <span class="n">frame</span><span class="p">.</span><span class="na">setDefaultCloseOperation</span><span class="p">(</span><span class="n">JFrame</span><span class="p">.</span><span class="na">EXIT_ON_CLOSE</span><span class="p">);</span>
         
@@ -217,18 +219,22 @@ window.onload = wrap_img;
 
     <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">NUM1</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span>
         <span class="n">value</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">sin</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">())));</span>
+        <span class="n">outputMsg</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Output: Sine(&quot;</span><span class="o">+</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;)=&quot;</span><span class="o">+</span><span class="n">value</span><span class="p">);</span>
         <span class="n">numVal</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
     <span class="p">}</span>
     <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">NUM1</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span>
         <span class="n">value</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">cos</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">())));</span>
+        <span class="n">outputMsg</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Output: Cosine(&quot;</span><span class="o">+</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;)=&quot;</span><span class="o">+</span><span class="n">value</span><span class="p">);</span>
         <span class="n">numVal</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
     <span class="p">}</span>
     <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">NUM1</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span>
         <span class="n">value</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">tan</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">())));</span>
+        <span class="n">outputMsg</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Output: Tangent(&quot;</span><span class="o">+</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;)=&quot;</span><span class="o">+</span><span class="n">value</span><span class="p">);</span>
         <span class="n">numVal</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
     <span class="p">}</span>
     <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">NUM</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span> <span class="c1">//use of if and else to provide direction of action</span>
         <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">());</span> <span class="c1">//Use fo wrapper class interger to convert from string to interger</span>
+        <span class="n">String</span> <span class="n">in</span> <span class="o">=</span> <span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">();</span>
 
         <span class="n">out</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">a</span><span class="p">;</span> <span class="c1">//</span>
@@ -257,13 +263,16 @@ window.onload = wrap_img;
             <span class="k">else</span>
             	<span class="n">out</span><span class="o">+=</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="c1">//appends to string</span>
             
+            
+            
         <span class="p">}</span>
         <span class="c1">//most important line of code, hardest to use</span>
         <span class="n">numVal</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;0x&quot;</span><span class="o">+</span><span class="n">reverseString</span><span class="p">(</span><span class="n">out</span><span class="p">));</span><span class="c1">//use of method which reverses the string because if you go through normal division, the remainder are not in correct order of a hex structure.</span>
-        
+        <span class="n">outputMsg</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Output: Hex(&quot;</span><span class="o">+</span><span class="n">in</span><span class="o">+</span><span class="s">&quot;)=&quot;</span><span class="o">+</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">());</span>
     <span class="p">}</span>
     <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">NUM</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span> <span class="c1">//use of if and else to provide direction of action</span>
         <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">());</span>
+        <span class="n">String</span> <span class="n">in</span> <span class="o">=</span> <span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">();</span>
         <span class="kt">int</span> <span class="n">a</span><span class="p">;</span> <span class="c1">//always decleared to avoid mixing with other values</span>
         <span class="n">out</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span> <span class="c1">//always decleared to avoid mixing with other values</span>
         <span class="k">for</span><span class="p">(;</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//decimal to binary</span>
@@ -271,9 +280,11 @@ window.onload = wrap_img;
             <span class="n">out</span><span class="o">+=</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
         <span class="p">}</span>
         <span class="n">numVal</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">reverseString</span><span class="p">(</span><span class="n">out</span><span class="p">));</span> <span class="c1">//again use of </span>
+        <span class="n">outputMsg</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Output: Binary(&quot;</span><span class="o">+</span><span class="n">in</span><span class="o">+</span><span class="s">&quot;)=&quot;</span><span class="o">+</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">());</span>
     <span class="p">}</span>
     <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">NUM</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span> 
         <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">());</span>
+        <span class="n">String</span> <span class="n">in</span> <span class="o">=</span> <span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">();</span>
         <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
         <span class="n">out</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
         <span class="k">for</span><span class="p">(;</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//decimal to octal</span>
@@ -281,14 +292,16 @@ window.onload = wrap_img;
         	<span class="n">out</span><span class="o">+=</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
         <span class="p">}</span>
         <span class="n">numVal</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">reverseString</span><span class="p">(</span><span class="n">out</span><span class="p">));</span>
+        <span class="n">outputMsg</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Output: Octal(&quot;</span><span class="o">+</span><span class="n">in</span><span class="o">+</span><span class="s">&quot;)=&quot;</span><span class="o">+</span><span class="n">numVal</span><span class="p">.</span><span class="na">getText</span><span class="p">());</span>
     <span class="p">}</span>
     <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;Clear&quot;</span><span class="p">))</span> <span class="c1">//to clear input </span>
     <span class="p">{</span>
     	<span class="n">numVal</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+        <span class="n">outputMsg</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 
 <span class="p">}</span>
-    <span class="c1">// reverses th input string</span>
+    <span class="c1">// reverses the input string</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="nf">reverseString</span><span class="p">(</span><span class="n">String</span> <span class="n">out</span><span class="p">)</span> 
     <span class="p">{</span>
     	<span class="kt">char</span><span class="o">[]</span> <span class="n">ch</span> <span class="o">=</span> <span class="n">out</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">();</span>
