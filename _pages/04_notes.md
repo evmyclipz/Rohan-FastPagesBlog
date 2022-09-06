@@ -9,7 +9,10 @@ Notes for CSA(Unit 1)
 # Vocab:
 1. sequence: Severeal line of code
 2. Key & Value: Eg. title: Home of the nighthawks.
-3. Wrapper Class: 
+3. Wrapper Class: wraps around to create an object and contains primitive data types.
+4. Method Signature: Has a class name and parameters.
+5. Constructer: constructs an object using sub-class name to perform super-class actions.
+6. Inheritance: creating new class from existing class.
 
 # Data types are divided into two groups:
 
