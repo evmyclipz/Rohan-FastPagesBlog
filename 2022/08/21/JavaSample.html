@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -339,7 +339,7 @@ In Celsius:32.22222222222222
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="My-First-object-oriented-programm">My First object oriented programm<a class="anchor-link" href="#My-First-object-oriented-programm"> </a></h1><p>This program prompts the user for the first, second, third and fourth number in a matrix, which are taken as input and show output through by assigning the numbers from left to right and top to bottom. Then, once 4 number are given, it prompts them for another 4 for the second matrix and adds them to produce output.</p>
+<h1 id="My-First-object-oriented-programm(Console-based)">My First object oriented programm(Console based)<a class="anchor-link" href="#My-First-object-oriented-programm(Console-based)"> </a></h1><p>This program prompts the user for the first, second, third and fourth number in a matrix, which are taken as input and show output through by assigning the numbers from left to right and top to bottom. Then, once 4 number are given, it prompts them for another 4 for the second matrix and adds them to produce output.</p>
 <p>Objects Used</p>
 <ul>
 <li>Scanner object is imported to obtain inputs.</li>
@@ -352,6 +352,24 @@ In Celsius:32.22222222222222
 <p>Methods</p>
 <ul>
 <li>SetData, print, display, add</li>
+</ul>
+<h1 id="Difference-between-console-and-GUI">Difference between console and GUI<a class="anchor-link" href="#Difference-between-console-and-GUI"> </a></h1><p>Console:</p>
+<ul>
+<li>No animations</li>
+<li>Very plain and monotonic</li>
+<li>Only take in input and give output back.</li>
+<li>Monotomous-can only do one thing at a time.</li>
+<li>Example: Windows Command promt, powershell terminal.</li>
+</ul>
+<p>GUI:</p>
+<ul>
+<li>Can contain a lot of animations with colorful buttons, organized format for easy-use.</li>
+<li>Can do loads of different operations like playing videos, transitions, etc..</li>
+<li>Can take input from sources other than keyboard.</li>
+<li>Multitasking capabilities.</li>
+<li>More user interactive and more accessible.</li>
+<li>Very graphic</li>
+<li>Example: Any modern website, apple iphone introductions on apple home page.</li>
 </ul>
 
 </div>
@@ -377,6 +395,7 @@ In Celsius:32.22222222222222
         <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span><span class="c1">//array defined here</span>
     <span class="p">}</span>
 
+    <span class="c1">//New obejct with different parameters which constructs my own array</span>
     <span class="kd">public</span> <span class="nf">Matrix2by2</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">,</span><span class="kt">int</span> <span class="n">c</span><span class="p">,</span><span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span><span class="c1">//array defined here</span>
@@ -386,7 +405,7 @@ In Celsius:32.22222222222222
     <span class="p">}</span>
 
         
-    <span class="c1">//private declaration because the variables need to be accessed throughout the program.</span>
+    <span class="c1">//public declaration because the variables need to be accessed throughout the program.</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setData</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">,</span><span class="kt">int</span> <span class="n">c</span><span class="p">,</span><span class="kt">int</span> <span class="n">d</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//Method Setdata which assigns input to arr[][]</span>
         <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]=</span><span class="n">a</span><span class="p">;</span>
         <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]=</span><span class="n">b</span><span class="p">;</span>
@@ -396,6 +415,7 @@ In Celsius:32.22222222222222
         
     <span class="p">}</span>
     
+    <span class="c1">//public declaration because our main programm uses this method</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span> <span class="c1">//Method print to prompt used to take input </span>
         <span class="kd">final</span> <span class="n">Scanner</span> <span class="n">ms</span><span class="o">=</span><span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="c1">//use of object scanner to p[rompt for input</span>
         <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">;</span>
@@ -444,6 +464,7 @@ In Celsius:32.22222222222222
         <span class="n">display</span><span class="p">(</span><span class="n">a2</span><span class="p">);</span>
     <span class="p">}</span>
 
+    <span class="c1">//Another example of mutating data which multiplies two array</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">multiply</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">a1</span><span class="p">)</span> <span class="p">{</span> 
         <span class="kt">int</span> <span class="n">a2</span><span class="o">[][]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
         <span class="n">a2</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]=</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]*</span><span class="n">a1</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]*</span><span class="n">a1</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
@@ -474,10 +495,14 @@ In Celsius:32.22222222222222
         <span class="c1">//Line below uses the values in the first matrix and mutate them by using the values of the second </span>
         <span class="n">matrixOp1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">matrixOp2</span><span class="p">.</span><span class="na">arr</span><span class="p">);</span><span class="c1">//object calling a method</span>
         <span class="c1">//putting matrixOp2.arr into the brackets to let add function take the values of the second matrix. </span>
+        
+        
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The output of matrix multiplication is &quot;</span><span class="p">);</span>
-        <span class="n">matrixOp1</span><span class="p">.</span><span class="na">multiply</span><span class="p">(</span><span class="n">matrixOp2</span><span class="p">.</span><span class="na">arr</span><span class="p">);</span>
+        <span class="n">matrixOp1</span><span class="p">.</span><span class="na">multiply</span><span class="p">(</span><span class="n">matrixOp2</span><span class="p">.</span><span class="na">arr</span><span class="p">);</span><span class="c1">//use of multiplication method</span>
+        
+        
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The output of matrix with own matrix multiplication is &quot;</span><span class="p">);</span>
-        <span class="n">matrixOp1</span><span class="p">.</span><span class="na">multiply</span><span class="p">(</span><span class="n">matrixOp3</span><span class="p">.</span><span class="na">arr</span><span class="p">);</span>
+        <span class="n">matrixOp1</span><span class="p">.</span><span class="na">multiply</span><span class="p">(</span><span class="n">matrixOp3</span><span class="p">.</span><span class="na">arr</span><span class="p">);</span><span class="c1">//use of multiplication method</span>
         <span class="p">}</span>
         
 
