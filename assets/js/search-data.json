@@ -36,7 +36,7 @@
     
         ,"post3": {
             "title": "Lesson on Boolean expressions",
-            "content": "Covers: . If-else, if-elseif-else. | Simple Code using Boolean expressions. | chains of if-elseif-elseif-elseif-elseif-else. | Switches and exampe on Switches. | De Morgan&#39;s Law description and program example. | . .",
+            "content": "Covers: . If-else, if-elseif-else. | Simple Code using Boolean expressions. | chains of if-elseif-elseif-elseif-elseif-else. | Switches and exampe on Switches. | De Morgan&#39;s Law description and program example. | . 2 W&#39;s and 1 How of boolean expressions: . What?-if and else are conditional statements which execute upon fulfillment. | Why?-To give computer intelligence by teaching it decision making skills. | How?- In java, we write the if statement and then in parenthesis write a condition | . boolean x = true ; if(x) { System.out.println(&quot;The world is flat&quot;); } else { System.out.println(&quot;The world is a sphere&quot;); } boolean x = !true ; if(x) { System.out.println(&quot;The world is flat&quot;); } else { System.out.println(&quot;The world is a sphere&quot;); } . The world is flat The world is a sphere .",
             "url": "https://evmyclipz.github.io/sample1_blog/2022/09/07/Boolean-Expressions.html",
             "relUrl": "/2022/09/07/Boolean-Expressions.html",
             "date": " • Sep 7, 2022"
