@@ -70,3 +70,5 @@ Front-end web development is the development of the graphical user interface of 
 * Create a about me page to build resumes or get ideas to create a resume.
 * update blog regularly.
 * Create a menu
+* Use the Docker to update the changes repidly.
+
