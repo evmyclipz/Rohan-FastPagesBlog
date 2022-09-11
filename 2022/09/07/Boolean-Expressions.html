@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -128,8 +128,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Covers:">Covers:<a class="anchor-link" href="#Covers:"> </a></h1><ul>
-<li>If-else, if-elseif-else.</li>
-<li>Simple Code using Boolean expressions.</li>
+<li>If-else and Simple Code using Boolean expressions.</li>
 <li>chains of if-elseif-elseif-elseif-elseif-else.</li>
 <li>Switches and exampe on Switches.</li>
 <li>De Morgan's Law description and program example.</li>
@@ -156,14 +155,15 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kt">boolean</span> <span class="n">x</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">;</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kt">boolean</span> <span class="n">x</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">;</span><span class="c1">//make the condition true to print if statement</span>
 <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The world is flat&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The world is a sphere&quot;</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="kt">boolean</span> <span class="n">x</span> <span class="o">=</span> <span class="o">!</span><span class="kc">true</span> <span class="p">;</span>
+<span class="c1">//(!) operator to make it false</span>
+<span class="kt">boolean</span> <span class="n">x</span> <span class="o">=</span> <span class="o">!</span><span class="kc">true</span> <span class="p">;</span><span class="c1">//make it false to print the else statement</span>
 <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The world is flat&quot;</span><span class="p">);</span>
 <span class="p">}</span>
@@ -194,6 +194,177 @@ The world is a sphere
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Chain-of-choices">Chain of choices<a class="anchor-link" href="#Chain-of-choices"> </a></h1><ul>
+<li>Creation of a if-elseif-else chain lets you give the computer more than 2 choices to pick from, but remember only one can execute at a time.</li>
+<li>Switch is another version of if-elseif-else chain that does the same function as described above.<ul>
+<li>But, if one does not break out of switch, it will run all the cases.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Grade</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">g</span><span class="p">;</span>
+        <span class="n">Scanner</span> <span class="n">k</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Print your grade in CSA&quot;</span><span class="p">);</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">k</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+        <span class="c1">//this is the start of the chain</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">g</span><span class="o">&gt;</span><span class="mi">90</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//the computer will pick its choice depending on user input. But only one choice.</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You got A!!!!&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">g</span><span class="o">&gt;</span><span class="mi">80</span><span class="o">&amp;&amp;</span><span class="n">g</span><span class="o">&lt;</span><span class="mi">90</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//checks if input is between 80 and 90</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You got B(its okay)&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">g</span><span class="o">&gt;</span><span class="mi">70</span><span class="o">&amp;&amp;</span><span class="n">g</span><span class="o">&lt;</span><span class="mi">80</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//checks if input is between 70 and 80</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You got C(Its not okay)&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">g</span><span class="o">&gt;</span><span class="mi">60</span><span class="o">&amp;&amp;</span><span class="n">g</span><span class="o">&lt;</span><span class="mi">70</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//checks if input is between 60 and 70</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You got D(OH MY GOD)&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span> <span class="c1">//checks if input is below 60</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You FAIL!!!!!!!!!!!!!!!!!&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Grade</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Print your grade in CSA
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">java.util.InputMismatchException: For input string: &#34;2222222222&#34;</span>
+<span class="ansi-red-intense-fg ansi-bold">	at java.base/java.util.Scanner.nextInt(Scanner.java:2264)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at java.base/java.util.Scanner.nextInt(Scanner.java:2212)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at Grade.main(#16:1)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at .(#21:1)</span></pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Grade</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">g</span><span class="p">,</span><span class="n">i</span><span class="p">;</span>
+        <span class="n">Scanner</span> <span class="n">k</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">k</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">g</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//the computer will pick its choice depending on user input. But only one choice.</span>
+            <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">g</span><span class="o">&gt;=</span><span class="mi">80</span><span class="o">&amp;&amp;</span><span class="n">g</span><span class="o">&lt;</span><span class="mi">90</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//checks if input is between 80 and 90 and gives case number</span>
+            <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">g</span><span class="o">&gt;=</span><span class="mi">70</span><span class="o">&amp;&amp;</span><span class="n">g</span><span class="o">&lt;</span><span class="mi">80</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//checks if input is between 70 and 80 and gives case number</span>
+            <span class="n">i</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">g</span><span class="o">&gt;=</span><span class="mi">60</span><span class="o">&amp;&amp;</span><span class="n">g</span><span class="o">&lt;</span><span class="mi">70</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//checks if input is between 60 and 70 and gives case number</span>
+            <span class="n">i</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>  <span class="c1">//checks if input is below 60 and gives case number</span>
+            <span class="n">i</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// based on i value, one of the cases will run</span>
+        <span class="k">switch</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span> 
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You got A!!!!&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You got B(its okay)&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You got C(Its not okay&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You got D(OH MY GOD&quot;</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">default</span><span class="p">:</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You got F!!!!!!!!!!!!!!!&quot;</span><span class="p">);</span>    
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Grade</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>You got A!!!!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="De-Morgan's-Law">De Morgan's Law<a class="anchor-link" href="#De-Morgan's-Law"> </a></h1><p>Description: relates conjunction and disjunction by negating them</p>
+<p>Vocab to understand:</p>
+<ol>
+<li>U=Union/conjunction.</li>
+<li>^= intersection/disjunction</li>
+<li>(condition)'= opposite of condition</li>
+</ol>
+
+</div>
+</div>
+</div>
 </div>
 
 
