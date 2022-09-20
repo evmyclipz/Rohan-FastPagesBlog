@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      7 min read
     
 </span></p>
 
@@ -367,17 +367,14 @@ No more monkeys jumping on the bed
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.lang.math</span><span class="p">;</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nf">Game</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">Level</span> <span class="n">levelOne</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">Level</span> <span class="n">levelTwo</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">Level</span> <span class="n">levelThree</span><span class="p">;</span>
-    <span class="cm">/** Postcondition: All instance variables have been initialized. */</span>
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Level</span>
-    <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.lang.Math</span><span class="p">;</span>
+<span class="kd">class</span> <span class="nc">Level</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
     <span class="cm">/** Returns true if the player reached the goal on this level and returns false otherwise */</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">goalReached</span><span class="p">(){</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">goalReached</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mf">0.5</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>    
         <span class="p">}</span> 
         <span class="k">else</span> <span class="p">{</span>
@@ -385,18 +382,40 @@ No more monkeys jumping on the bed
         <span class="p">}</span><span class="cm">/* implementation not shown */</span> 
     <span class="p">}</span>
     <span class="cm">/** Returns the number of points (a positive integer) recorded for this level */</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPoints</span><span class="p">(){</span> 
-        <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="c1">// There may be instance variables, constructors, and methods that are not shown.</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPoints</span><span class="p">()</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="n">score</span><span class="p">;</span>
     <span class="p">}</span> 
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPoints</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Game</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">Level</span> <span class="n">levelOne</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">Level</span> <span class="n">levelTwo</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">Level</span> <span class="n">levelThree</span><span class="p">;</span>
+    <span class="cm">/** Postcondition: All instance variables have been initialized. */</span>
+
     <span class="kd">public</span> <span class="nf">Game</span><span class="p">()</span>
-    <span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+    <span class="p">{</span>
+        <span class="n">levelOne</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Level</span><span class="p">();</span>
+        <span class="n">levelTwo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Level</span><span class="p">();</span>
+        <span class="n">levelThree</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Level</span><span class="p">();</span>
+        <span class="n">levelOne</span><span class="p">.</span><span class="na">setPoints</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+        <span class="n">levelTwo</span><span class="p">.</span><span class="na">setPoints</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+        <span class="n">levelThree</span><span class="p">.</span><span class="na">setPoints</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+    <span class="p">}</span>
     <span class="cm">/** Returns true if this game is a bonus game and returns false otherwise */</span>
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBonus</span><span class="p">()</span>
-    <span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">b</span><span class="p">;</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="o">&gt;=</span><span class="mf">0.5</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     <span class="cm">/** Simulates the play of this Game (consisting of three levels) and updates all relevant</span>
 <span class="cm">    * game data</span>
 <span class="cm">    */</span>
@@ -404,54 +423,63 @@ No more monkeys jumping on the bed
     <span class="p">{</span> <span class="cm">/* implementation not shown */</span> <span class="p">}</span>
     <span class="cm">/** Returns the score earned in the most recently played game, as described in part (a) */</span>
 
-    <span class="c1">//public int getScore()</span>
-    <span class="c1">//{ /* to be implemented in part (a) */ }</span>
-    <span class="cm">/** Simulates the play of num games and returns the highest score earned, as</span>
-<span class="cm">    * described in part (b)</span>
-<span class="cm">    * Precondition: num &gt; 0</span>
-<span class="cm">    */</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">playManyTimes</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
-    <span class="p">{</span> <span class="cm">/* to be implemented in part (b) */</span> <span class="p">}</span>
+    <span class="c1">//public int playManyTimes(int num)</span>
+    <span class="c1">//{ /* to be implemented in part (b) */ }</span>
     <span class="c1">// There may be instance variables, constructors, and methods that are not shown.</span>
-    <span class="p">}</span>
+    
+    <span class="c1">//Simulates the play of num games and returns the highest score earned</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getScore</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">if</span> <span class="n">levelOne</span><span class="p">.</span><span class="na">goalReached</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">score</span> <span class="o">+=</span> <span class="n">levelOne</span><span class="p">.</span><span class="na">getpoints</span><span class="p">();</span>
-    <span class="p">}</span> 
-    <span class="k">else</span> <span class="p">{</span>
-        <span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="n">levelTwo</span><span class="p">.</span><span class="na">goalReached</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">score</span> <span class="o">+=</span> <span class="n">levelTwo</span><span class="p">.</span><span class="na">getpoints</span><span class="p">();</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="p">{</span>
-        <span class="n">score</span> <span class="o">=</span> <span class="n">score</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="n">levelThree</span><span class="p">.</span><span class="na">goalReached</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">score</span> <span class="o">+=</span> <span class="n">levelThree</span><span class="p">.</span><span class="na">goalReached</span><span class="p">();</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="p">{</span>
-        <span class="n">score</span> <span class="o">=</span> <span class="n">score</span><span class="p">;</span>
-    <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">levelOne</span><span class="p">.</span><span class="na">goalReached</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">+=</span> <span class="n">levelOne</span><span class="p">.</span><span class="na">getPoints</span><span class="p">();</span> 
+        <span class="p">}</span> 
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">score</span><span class="p">;</span>
+        <span class="p">}</span>   
+        <span class="k">if</span> <span class="p">(</span><span class="n">levelTwo</span><span class="p">.</span><span class="na">goalReached</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">+=</span> <span class="n">levelTwo</span><span class="p">.</span><span class="na">getPoints</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">score</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">levelThree</span><span class="p">.</span><span class="na">goalReached</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">+=</span> <span class="n">levelThree</span><span class="p">.</span><span class="na">getPoints</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">score</span><span class="p">;</span>
+        <span class="p">}</span>
 
-    <span class="k">if</span> <span class="n">Game</span><span class="p">.</span><span class="na">isBonus</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">isBonus</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">score</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">srand</span><span class="p">(</span> <span class="n">time</span><span class="p">(</span><span class="n">NULL</span> <span class="p">)</span> <span class="p">);</span>
-        <span class="n">unsigned</span> <span class="kt">int</span> <span class="n">seed</span><span class="p">;</span> <span class="c1">// set by srand</span>
-        <span class="n">unsigned</span> <span class="kt">int</span> <span class="nf">rand</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">seed</span> <span class="o">=</span> <span class="n">seed</span> <span class="o">*</span> <span class="n">number</span> <span class="o">+</span> <span class="n">offset</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">seed</span><span class="p">;</span>
-        <span class="p">}</span>
+        <span class="n">Game</span> <span class="n">np</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Game</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Score returned &quot;</span><span class="o">+</span><span class="n">np</span><span class="p">.</span><span class="na">getScore</span><span class="p">());</span>
     <span class="p">}</span>
+    
 
 
 <span class="p">}</span>
+<span class="n">Game</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Score returned 300
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -471,16 +499,118 @@ No more monkeys jumping on the bed
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Random</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">srand</span><span class="p">(</span> <span class="n">time</span><span class="p">(</span><span class="n">NULL</span> <span class="p">)</span> <span class="p">);</span>
-        <span class="n">unsigned</span> <span class="kt">int</span> <span class="n">seed</span><span class="p">;</span> <span class="c1">// set by srand</span>
-        <span class="n">unsigned</span> <span class="kt">int</span> <span class="nf">rand</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">seed</span> <span class="o">=</span> <span class="n">seed</span> <span class="o">*</span> <span class="n">number</span> <span class="o">+</span> <span class="n">offset</span><span class="p">;</span>
-        <span class="c1">//return seed;</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;seed&quot;</span><span class="p">)</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.lang.Math</span><span class="p">;</span>
+<span class="kd">class</span> <span class="nc">Level</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
+    <span class="cm">/** Returns true if the player reached the goal on this level and returns false otherwise */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">goalReached</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mf">0.5</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>    
+        <span class="p">}</span> 
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span><span class="cm">/* implementation not shown */</span> 
+    <span class="p">}</span>
+    <span class="cm">/** Returns the number of points (a positive integer) recorded for this level */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPoints</span><span class="p">()</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="n">score</span><span class="p">;</span>
+    <span class="p">}</span> 
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPoints</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Game</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">Level</span> <span class="n">levelOne</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">Level</span> <span class="n">levelTwo</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">Level</span> <span class="n">levelThree</span><span class="p">;</span>
+    <span class="cm">/** Postcondition: All instance variables have been initialized. */</span>
+
+    <span class="kd">public</span> <span class="nf">Game</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">levelOne</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Level</span><span class="p">();</span>
+        <span class="n">levelTwo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Level</span><span class="p">();</span>
+        <span class="n">levelThree</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Level</span><span class="p">();</span>
+        <span class="n">levelOne</span><span class="p">.</span><span class="na">setPoints</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+        <span class="n">levelTwo</span><span class="p">.</span><span class="na">setPoints</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+        <span class="n">levelThree</span><span class="p">.</span><span class="na">setPoints</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="cm">/** Returns true if this game is a bonus game and returns false otherwise */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBonus</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">b</span><span class="p">;</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="o">&gt;=</span><span class="mf">0.5</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="cm">/** Simulates the play of this Game (consisting of three levels) and updates all relevant</span>
+<span class="cm">    * game data</span>
+<span class="cm">    */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">play</span><span class="p">(</span><span class="kt">int</span> <span class="n">z</span><span class="p">)</span>
+    <span class="p">{</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The max score earned &quot;</span><span class="o">+</span><span class="n">playManyTimes</span><span class="p">(</span><span class="n">z</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="cm">/** Returns the score earned in the most recently played game, as described in part (a) */</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">playManyTimes</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">=</span><span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">num</span><span class="o">]</span><span class="p">;</span> 
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">num</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">getScore</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">num</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">max</span><span class="o">&lt;</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">max</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">max</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// There may be instance variables, constructors, and methods that are not shown.</span>
+    
+    <span class="c1">//Simulates the play of num games and returns the highest score earned</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getScore</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">levelOne</span><span class="p">.</span><span class="na">goalReached</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">+=</span> <span class="n">levelOne</span><span class="p">.</span><span class="na">getPoints</span><span class="p">();</span> 
+        <span class="p">}</span> 
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">score</span><span class="p">;</span>
+        <span class="p">}</span>   
+        <span class="k">if</span> <span class="p">(</span><span class="n">levelTwo</span><span class="p">.</span><span class="na">goalReached</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">+=</span> <span class="n">levelTwo</span><span class="p">.</span><span class="na">getPoints</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">score</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">levelThree</span><span class="p">.</span><span class="na">goalReached</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">+=</span> <span class="n">levelThree</span><span class="p">.</span><span class="na">getPoints</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">score</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">isBonus</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">score</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Game</span> <span class="n">np</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Game</span><span class="p">();</span>
+        <span class="c1">//System.out.println(&quot;Score returned &quot;+np.getScore());</span>
+        <span class="n">np</span><span class="p">.</span><span class="na">play</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+
+
+<span class="p">}</span>
+<span class="n">Game</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -492,19 +622,9 @@ No more monkeys jumping on the bed
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">Incomplete input:</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">public class Random {</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public static void main(String[] args) {</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        srand( time(NULL ) );</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        unsigned int seed; // set by srand</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        unsigned int rand() {</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        seed = seed * number + offset;</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        //return seed;</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(&#34;seed&#34;)</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">}</span></pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The max score earned 1800
+</pre>
 </div>
 </div>
 
