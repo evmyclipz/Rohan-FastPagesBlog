@@ -208,7 +208,10 @@ window.onload = wrap_img;
 
             <span class="c1">//this print statement shows current count of Monkeys</span>
             <span class="c1">//  concatenation (+) of the loop variable and string to form a countdown message</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">&quot; little monkeys jumping on the bed...&quot;</span><span class="p">);</span>
+
+            
 
             <span class="c1">//how many separate parts are there in a monkey monkey?</span>
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">monkeyCount</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">//cycles through &quot;cells&quot; of 2d array</span>
@@ -230,10 +233,13 @@ window.onload = wrap_img;
 
             <span class="c1">//countdown for poem, decrementing monkeyCount variable by 1</span>
             <span class="n">monkeyCount</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;One fell off and bumped his head.&quot;</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Mama called the Doctor and the Doctor said,&quot;</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;No more monkeys jumping on the bed!&quot;</span><span class="p">);</span>
         <span class="p">}</span>
 
         <span class="c1">//out of all the loops, prints finishing messages</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;No more monkeys jumping on the bed&quot;</span><span class="p">);</span>
+        <span class="c1">//System.out.println(&quot;No more monkeys jumping on the bed&quot;);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;0000000000000000000000000000000000&quot;</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;             THE END              &quot;</span><span class="p">);</span>
     <span class="p">}</span>
@@ -261,6 +267,7 @@ window.onload = wrap_img;
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 Monkey Jumpers Poem in Java Loopy
+
 5 little monkeys jumping on the bed...
 ʕง ͠° ͟ل͜ ͡°)ʔ  
   \_⏄_/   
@@ -287,6 +294,10 @@ Monkey Jumpers Poem in Java Loopy
   ==4==   
   _/ \_  
 
+One fell off and bumped his head.
+Mama called the Doctor and the Doctor said,
+No more monkeys jumping on the bed!
+
 4 little monkeys jumping on the bed...
 ʕง ͠° ͟ل͜ ͡°)ʔ  
   \_⏄_/   
@@ -308,6 +319,10 @@ Monkey Jumpers Poem in Java Loopy
   ==3==   
   _/ \_   
 
+One fell off and bumped his head.
+Mama called the Doctor and the Doctor said,
+No more monkeys jumping on the bed!
+
 3 little monkeys jumping on the bed...
 ʕง ͠° ͟ل͜ ͡°)ʔ  
   \_⏄_/   
@@ -324,6 +339,10 @@ Monkey Jumpers Poem in Java Loopy
   &lt;-2-&gt;   
   〈  〉  
 
+One fell off and bumped his head.
+Mama called the Doctor and the Doctor said,
+No more monkeys jumping on the bed!
+
 2 little monkeys jumping on the bed...
 ʕง ͠° ͟ل͜ ͡°)ʔ  
   \_⏄_/   
@@ -335,13 +354,19 @@ Monkey Jumpers Poem in Java Loopy
   ++1++   
    ⌋ ⌊    
 
+One fell off and bumped his head.
+Mama called the Doctor and the Doctor said,
+No more monkeys jumping on the bed!
+
 1 little monkeys jumping on the bed...
 ʕง ͠° ͟ل͜ ͡°)ʔ  
   \_⏄_/   
   --0--    
   ⎛   ⎞    
 
-No more monkeys jumping on the bed
+One fell off and bumped his head.
+Mama called the Doctor and the Doctor said,
+No more monkeys jumping on the bed!
 0000000000000000000000000000000000
              THE END              
 </pre>
