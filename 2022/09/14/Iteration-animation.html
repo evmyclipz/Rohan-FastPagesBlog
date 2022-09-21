@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      12 min read
     
 </span></p>
 
@@ -569,6 +569,211 @@ Rohan shot 0 arrows to get 0-th target
 Mama said use less arrows...
 0000000000000000000000000000000000
              THE END              
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Another-Example-for-2-D-array">Another Example for 2-D array<a class="anchor-link" href="#Another-Example-for-2-D-array"> </a></h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">//importing scanner </span>
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Matrix2by2</span> <span class="p">{</span> <span class="c1">// A class is defined here</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">arr</span><span class="o">[][]</span><span class="p">;</span><span class="c1">//array declared here</span>
+    
+    <span class="c1">//instance of a class or an object </span>
+    <span class="c1">//use of constructer to create objects which take control of events and actions</span>
+    <span class="kd">public</span> <span class="nf">Matrix2by2</span><span class="p">()</span> 
+    <span class="p">{</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span><span class="c1">//array defined here</span>
+    <span class="p">}</span>
+
+    <span class="c1">//New obejct with different parameters which constructs my own array</span>
+    <span class="kd">public</span> <span class="nf">Matrix2by2</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">,</span><span class="kt">int</span> <span class="n">c</span><span class="p">,</span><span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span><span class="c1">//array defined here</span>
+        <span class="n">setData</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+
+        <span class="n">display</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+    <span class="p">}</span>
+
+        
+    <span class="c1">//public declaration because the variables need to be accessed throughout the program.</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setData</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">,</span><span class="kt">int</span> <span class="n">c</span><span class="p">,</span><span class="kt">int</span> <span class="n">d</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//Method Setdata which assigns input to arr[][]</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]=</span><span class="n">a</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]=</span><span class="n">b</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]=</span><span class="n">c</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]=</span><span class="n">d</span><span class="p">;</span>
+        
+        
+    <span class="p">}</span>
+    
+    <span class="c1">//public declaration because our main programm uses this method</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span> <span class="c1">//Method print to prompt used to take input </span>
+        <span class="kd">final</span> <span class="n">Scanner</span> <span class="n">ms</span><span class="o">=</span><span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="c1">//use of object scanner to p[rompt for input</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">;</span>
+
+        <span class="kt">boolean</span> <span class="n">quit</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">quit</span><span class="p">)</span> <span class="p">{</span> 
+            <span class="k">try</span> <span class="p">{</span> <span class="c1">//safety feature to only take in number</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter first number of the first matrix&quot;</span><span class="p">);</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">ms</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter second number of the first matrix&quot;</span><span class="p">);</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="n">ms</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter third number of the first matrix&quot;</span><span class="p">);</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">ms</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter fourth number of the first matrix&quot;</span><span class="p">);</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="n">ms</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+                <span class="k">this</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+                <span class="n">display</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+                <span class="n">quit</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">ms</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="n">e</span> <span class="o">+</span><span class="s">&quot;Not a number: try again&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="p">}</span>
+        
+        <span class="n">ms</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="c1">//Another safety feature</span>
+        
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">display</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//Method to print out the output in format.</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;|&quot;</span><span class="o">+</span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]+</span><span class="s">&quot;|&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; - - &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;|&quot;</span><span class="o">+</span><span class="n">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="n">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]+</span><span class="s">&quot;|&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">//Mutating input data to produce new output data.</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">a1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//Method to add two arrays</span>
+        <span class="kt">int</span> <span class="n">a2</span><span class="o">[][]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">a2</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]=</span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]+</span><span class="n">a1</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">a2</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]=</span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]+</span><span class="n">a1</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">a2</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]=</span><span class="n">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]+</span><span class="n">a1</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">a2</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]=</span><span class="n">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]+</span><span class="n">a1</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+
+        
+        <span class="n">display</span><span class="p">(</span><span class="n">a2</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">//Another example of mutating data which multiplies two array</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">multiply</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">a1</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="kt">int</span> <span class="n">a2</span><span class="o">[][]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">a2</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]=</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]*</span><span class="n">a1</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]*</span><span class="n">a1</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+        <span class="n">a2</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]=</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]*</span><span class="n">a1</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]*</span><span class="n">a1</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+        <span class="n">a2</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]=</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]*</span><span class="n">a1</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]*</span><span class="n">a1</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+        <span class="n">a2</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]=</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]*</span><span class="n">a1</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]*</span><span class="n">a1</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+
+
+        <span class="n">display</span><span class="p">(</span><span class="n">a2</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//Main program </span>
+        <span class="n">Matrix2by2</span> <span class="n">matrixOp1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Matrix2by2</span><span class="p">();</span><span class="c1">//creating objects using Matrix2by2 constructer. Object#1</span>
+        <span class="n">Matrix2by2</span> <span class="n">matrixOp2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Matrix2by2</span><span class="p">();</span><span class="c1">//object#1</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Matrix with my own data&quot;</span><span class="p">);</span>
+        <span class="n">Matrix2by2</span> <span class="n">matrixOp3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Matrix2by2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span> <span class="c1">//Object with own data</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter 1st matrix.&quot;</span><span class="p">);</span>
+        <span class="n">matrixOp1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Enter 2nd matrix&quot;</span><span class="p">);</span>
+        <span class="n">matrixOp2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+             
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The output of matrix addition is &quot;</span><span class="p">);</span>
+        <span class="c1">//Line below uses the values in the first matrix and mutate them by using the values of the second </span>
+        <span class="n">matrixOp1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">matrixOp2</span><span class="p">.</span><span class="na">arr</span><span class="p">);</span><span class="c1">//object calling a method</span>
+        <span class="c1">//putting matrixOp2.arr into the brackets to let add function take the values of the second matrix. </span>
+        
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The output of matrix multiplication is &quot;</span><span class="p">);</span>
+        <span class="n">matrixOp1</span><span class="p">.</span><span class="na">multiply</span><span class="p">(</span><span class="n">matrixOp2</span><span class="p">.</span><span class="na">arr</span><span class="p">);</span><span class="c1">//use of multiplication method</span>
+        
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The output of matrix with own matrix multiplication is &quot;</span><span class="p">);</span>
+        <span class="n">matrixOp1</span><span class="p">.</span><span class="na">multiply</span><span class="p">(</span><span class="n">matrixOp3</span><span class="p">.</span><span class="na">arr</span><span class="p">);</span><span class="c1">//use of multiplication method</span>
+        <span class="p">}</span>
+        
+
+<span class="p">}</span>
+<span class="n">Matrix2by2</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Matrix with my own data
+
+|2 3|
+ - - 
+|4 5|
+
+Enter 1st matrix.
+Enter first number of the first matrix
+Enter second number of the first matrix
+Enter third number of the first matrix
+Enter fourth number of the first matrix
+
+|5 8|
+ - - 
+|7 0|
+
+Enter 2nd matrix
+Enter first number of the first matrix
+Enter second number of the first matrix
+Enter third number of the first matrix
+Enter fourth number of the first matrix
+
+|45 888|
+ - - 
+|54 0|
+
+The output of matrix addition is 
+
+|50 896|
+ - - 
+|61 0|
+
+The output of matrix multiplication is 
+
+|657 4440|
+ - - 
+|315 6216|
+
+The output of matrix with own matrix multiplication is 
+
+|42 55|
+ - - 
+|14 21|
+
 </pre>
 </div>
 </div>
