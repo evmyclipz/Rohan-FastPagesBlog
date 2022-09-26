@@ -172,15 +172,28 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 
 
+<style> 
+input[type=button]{
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 2px 1px;
+  cursor: pointer;
+}
+</style>
+
+
 
 <h2>
 <a class="anchor" href="#number-system-calculator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Number System Calculator</h2>
 
 <form>
-  <label for="fhex">HEX </label><input type="text" id="fhex" name="fhex" value="103A"><br>
-  <label for="fdec">DEC </label><input type="text" id="fdec" name="fdec" value="23244"><br>
-  <label for="foct">OCT </label><input type="text" id="foct" name="foct" value="0125"><br>
-  <label for="fbinary">BIN  </label><input type="text" id="fbinary" name="fbinary" value="010110110100"><br>
+  <input type="button" value=" HEX "><input type="text" id="fhex" name="fhex" value="103A"><br>
+  <input type="button" value=" DEC "><input type="text" id="fdec" name="fdec" value="23244"><br>
+  <input type="button" value=" OCT "><input type="text" id="foct" name="foct" value="0125"><br>
+  <input type="button" value=" BIN   "><input type="text" id="fbinary" name="fbinary" value="010110110100"><br>
   <input type="button" value="A"><input type="button" value="B">
   <input type="button" value="C"><input type="button" value="D">
   <input type="button" value="E"><input type="button" value="F"><br>
@@ -405,7 +418,7 @@ window.onload = wrap_img;
 <h2>
 <a class="anchor" href="#enter-employee-details" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enter Employee Details</h2>
 
-<form name="frm1" onsubmit="return validateForm()" method="post">
+<form name="frm1">
   <label for="name">Employee name:</label><br>
   <input type="text" id="name" name="name" value="David"><br>
   <label for="staffid">Staff ID:</label><br>
@@ -422,8 +435,10 @@ window.onload = wrap_img;
 <input type="reset">
 </form>
 
+<button onclick="validateForm() ">Try it</button>
+
 <script>
-function generateTable() 
+function validateForm() 
 {
 
   const rc = document.forms["frm1"];
@@ -477,6 +492,9 @@ function generateTable()
         cell3.appendChild(cellText3);
 
         newrow.appendChild(cell);
+        newrow.appendChild(cell1);
+        newrow.appendChild(cell2);
+        newrow.appendChild(cell3);
 
         // add the row to the end of the table body
         tblBody.appendChild(newrow);
