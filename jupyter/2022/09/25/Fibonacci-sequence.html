@@ -151,6 +151,13 @@ window.onload = wrap_img;
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fibo</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">ar</span><span class="o">[</span><span class="mi">0</span><span class="o">]=</span><span class="mi">0</span><span class="p">;</span>
         <span class="n">ar</span><span class="o">[</span><span class="mi">1</span><span class="o">]=</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">ar</span><span class="o">[</span><span class="mi">0</span><span class="o">]=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">ar</span><span class="o">[</span><span class="mi">0</span><span class="o">]=</span><span class="mi">0</span><span class="p">;</span>
+            <span class="n">ar</span><span class="o">[</span><span class="mi">1</span><span class="o">]=</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">ar</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">ar</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]+</span><span class="n">ar</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
         <span class="p">}</span>
@@ -161,15 +168,23 @@ window.onload = wrap_img;
         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">ar</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span><span class="s">" "</span><span class="p">);</span>
         <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
     <span class="p">}</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
         <span class="n">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enter number of terms"</span><span class="p">);</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-        <span class="n">Fibonacchi</span> <span class="n">f</span><span class="o">=</span> <span class="k">new</span> <span class="n">Fibonacchi</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-        <span class="n">f</span><span class="p">.</span><span class="na">fibo</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Standard Sequence"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enter number of terms that is greater than 2 "</span><span class="p">);</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Booboo, you entered a wrong number. Please try again later"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Standard Sequence"</span><span class="p">);</span>
+            <span class="n">Fibonacchi</span> <span class="n">f</span><span class="o">=</span> <span class="k">new</span> <span class="n">Fibonacchi</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">f</span><span class="p">.</span><span class="na">fibo</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
         
 
     <span class="p">}</span>
@@ -187,8 +202,18 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Enter number of terms
-0 1 1 2 3 5 Standard Sequence
+<pre>Enter number of terms that is greater than 2 
+Standard Sequence
+0 
+0 1 
+0 1 1 
+0 1 1 2 
+0 1 1 2 3 
+0 1 1 2 3 5 
+0 1 1 2 3 5 8 
+0 1 1 2 3 5 8 13 
+0 1 1 2 3 5 8 13 21 
+0 1 1 2 3 5 8 13 21 34 
 </pre>
 </div>
 </div>
