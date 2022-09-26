@@ -216,12 +216,12 @@ window.onload = wrap_img;
   <span class="p">}</span>
   
   <span class="c1">// define a setter for role in Employee data</span>
-  <span class="nx">Employee</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setLevel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">level</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">Employee</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setLevel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">level</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">level</span> <span class="o">=</span> <span class="nx">level</span><span class="p">;</span>
   <span class="p">}</span>
   
   <span class="c1">// define a JSON conversion "method" associated with Employee</span>
-  <span class="nx">Employee</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toJSON</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">Employee</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toJSON</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">Name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">Staff_ID</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">staffID</span><span class="p">,</span> <span class="nx">Designation</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">desgn</span><span class="p">,</span> <span class="nx">Level</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">level</span><span class="p">};</span>
     <span class="kr">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>  <span class="c1">// json/string is useful when passing data on internet</span>
     <span class="k">return</span> <span class="nx">json</span><span class="p">;</span>
