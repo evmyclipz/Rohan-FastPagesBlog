@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Javascript post | Rohan Malipeddi Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Javascript post" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://evmyclipz.github.io/sample1_blog/jupyter/2022/09/25/Javascript.html" />
+<meta property="og:url" content="https://evmyclipz.github.io/sample1_blog/jupyter/2022/09/25/Javascript.html" />
+<meta property="og:site_name" content="Rohan Malipeddi Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-25T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Javascript post" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-25T00:00:00-05:00","datePublished":"2022-09-25T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Javascript post","mainEntityOfPage":{"@type":"WebPage","@id":"https://evmyclipz.github.io/sample1_blog/jupyter/2022/09/25/Javascript.html"},"url":"https://evmyclipz.github.io/sample1_blog/jupyter/2022/09/25/Javascript.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/sample1_blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://evmyclipz.github.io/sample1_blog/feed.xml" title="Rohan Malipeddi Blog" /><link rel="shortcut icon" type="image/x-icon" href="/sample1_blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/sample1_blog/">Rohan Malipeddi Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/sample1_blog/about/">About Me</a><a class="page-link" href="/sample1_blog/search/">Search</a><a class="page-link" href="/sample1_blog/notes/">Notes</a><a class="page-link" href="/sample1_blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Javascript post</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-25T00:00:00-05:00" itemprop="datePublished">
+        Sep 25, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/sample1_blog/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/evmyclipz/sample1_blog/tree/master/_notebooks/2022-09-25-Javascript.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/sample1_blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/evmyclipz/sample1_blog/master?filepath=_notebooks%2F2022-09-25-Javascript.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/sample1_blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/evmyclipz/sample1_blog/blob/master/_notebooks/2022-09-25-Javascript.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/sample1_blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fevmyclipz%2Fsample1_blog%2Fblob%2Fmaster%2F_notebooks%2F2022-09-25-Javascript.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/sample1_blog/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#number-system-calculator">Number System Calculator</a></li>
+<li class="toc-entry toc-h2"><a href="#enter-employee-details">Enter Employee Details</a></li>
+</ul><body>
+<!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-09-25-Javascript.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello World"</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello World
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+
+<!--style> 
+input[type=button]{
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 2px 1px;
+  cursor: pointer;
+}
+</style-->
+
+
+
+<h2>
+<a class="anchor" href="#number-system-calculator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Number System Calculator</h2>
+
+<form>
+  <input type="button" value=" HEX "><input type="text" id="fhex" name="fhex" value="5ACC"><br>
+  <input type="button" value=" DEC "><input type="text" id="fdec" name="fdec" value="23244"><br>
+  <input type="button" value=" OCT "><input type="text" id="foct" name="foct" value="055314"><br>
+  <input type="button" value=" BIN   "><input type="text" id="fbinary" name="fbinary" value="101101011001100"><br>
+  <input type="button" value="A"><input type="button" value="B">
+  <input type="button" value="C"><input type="button" value="D">
+  <input type="button" value="E"><input type="button" value="F"><br>
+  <input type="button" value="7"><input type="button" value="8">
+  <input type="button" value="9"><input type="button" value="C">
+  <input type="button" value="AC"><br>
+  <input type="button" value="4"><input type="button" value="5">
+  <input type="button" value="6"><input type="button" value="*">
+  <input type="button" value="/"><br>
+  <input type="button" value="1"><input type="button" value="2">
+  <input type="button" value="3"><input type="button" value="0">
+  <input type="button" value="+"><input type="button" value="-"><br>
+
+</form> 
+
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="c1">// define a function to hold data for a Employee</span>
+<span class="kd">function</span> <span class="nx">Employee</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">staffID</span><span class="p">,</span> <span class="nx">desgn</span><span class="p">)</span> <span class="p">{</span>   
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>  <span class="c1">//following are common variables within a class</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">staffID</span> <span class="o">=</span> <span class="nx">staffID</span><span class="p">;</span>   <span class="c1">//what is it doing? THey initialize the variables, meaning they give it a value</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">desgn</span> <span class="o">=</span> <span class="nx">desgn</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">level</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="c1">// define a setter for role in Employee data</span>
+<span class="nx">Employee</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setLevel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">level</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">level</span> <span class="o">=</span> <span class="nx">level</span><span class="p">;</span>  <span class="c1">//this. sets the value of level</span>
+  <span class="p">}</span>
+  
+  <span class="c1">// define a JSON conversion "method" associated with Employee</span>
+<span class="nx">Employee</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toJSON</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">//JSON performes like a dictionary in Python, each of the data passed is in a name value pair.</span>
+    <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">Name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">Staff_ID</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">staffID</span><span class="p">,</span> <span class="nx">Designation</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">desgn</span><span class="p">,</span> <span class="nx">Level</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">level</span><span class="p">};</span>  <span class="c1">//const means that the variable defined will not change in value</span>
+    <span class="kr">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>  <span class="c1">// json/string is useful when passing data on internet</span>
+    <span class="k">return</span> <span class="nx">json</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// make a new employee and assign to variable company</span>
+<span class="kd">var</span> <span class="nx">company</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="s2">"Rohan Pharma"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">,</span> <span class="s2">"CEO"</span><span class="p">);</span>  <span class="c1">// object type is easy to work with in JavaScript</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[Function]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">function</span> <span class="nx">logItType</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">output</span><span class="p">,</span> <span class="s2">";"</span><span class="p">,</span> <span class="nx">output</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Looking at dynamic nature of types in JavaScript"</span><span class="p">)</span>
+<span class="nx">logItType</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">);</span> <span class="c1">// String</span>
+<span class="nx">logItType</span><span class="p">(</span><span class="mf">2020</span><span class="p">);</span>    <span class="c1">// Number</span>
+<span class="nx">logItType</span><span class="p">([</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">]);</span>  <span class="c1">// Object is generic for this Array, which similar to Python List</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Looking at dynamic nature of types in JavaScript
+string ; hello
+number ; 2020
+object ; [ 1, 2, 3 ]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="c1">//Define Employees</span>
+<span class="kd">var</span> <span class="nx">employees</span> <span class="o">=</span> <span class="p">[</span> 
+  <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="s2">"Mohan"</span><span class="p">,</span> <span class="s2">"M1-203"</span><span class="p">,</span> <span class="s2">"Manager"</span><span class="p">),</span>
+  <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="s2">"David"</span><span class="p">,</span> <span class="s2">"A2-301"</span><span class="p">,</span> <span class="s2">"Scientist Gr.4"</span><span class="p">),</span>
+  <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="s2">"Prashant"</span><span class="p">,</span> <span class="s2">"A2-201"</span><span class="p">,</span> <span class="s2">"Scientist Gr.2"</span><span class="p">),</span>
+  <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"A3-101"</span><span class="p">,</span> <span class="s2">"Scientist Gr.3"</span><span class="p">),</span>
+  <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="s2">"Eric"</span><span class="p">,</span> <span class="s2">"B-101"</span><span class="p">,</span> <span class="s2">"Sr.Tech"</span><span class="p">),</span>
+  <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="s2">"John"</span><span class="p">,</span> <span class="s2">"A-1"</span><span class="p">,</span> <span class="s2">"Jr.Tech"</span><span class="p">)</span>
+<span class="p">];</span>
+
+<span class="c1">// define a company and build employees objects and json</span>
+<span class="kd">function</span> <span class="nx">Industry</span><span class="p">(</span><span class="nx">company</span><span class="p">,</span> <span class="nx">employees</span><span class="p">){</span> <span class="c1">// 1 company, many workers</span>
+  <span class="c1">// start industry with company</span>
+  <span class="nx">company</span><span class="p">.</span><span class="nx">setLevel</span><span class="p">(</span><span class="s2">"Head"</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">company</span> <span class="o">=</span> <span class="nx">company</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">industry</span> <span class="o">=</span> <span class="p">[</span><span class="nx">company</span><span class="p">];</span>  <span class="c1">//array creationg</span>
+  <span class="c1">// add each employee to company</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">employees</span> <span class="o">=</span> <span class="nx">employees</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">employees</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">worker</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nx">worker</span><span class="p">.</span><span class="nx">setLevel</span><span class="p">(</span><span class="s2">"Worker"</span><span class="p">);</span> <span class="k">this</span><span class="p">.</span><span class="nx">industry</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">worker</span><span class="p">);</span> <span class="p">});</span>  <span class="c1">//performs like a for loop which which pases each worker into industry after assigning level</span>
+  <span class="c1">// build json/string format of industry</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">=</span> <span class="p">[];</span>  <span class="c1">//json array</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">industry</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">employee</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">employee</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">()));</span>  <span class="c1">//collection of strings being inputed into json array</span>
+<span class="p">}</span>
+
+<span class="c1">// make a myindustry from formerly defined company and employees</span>
+<span class="nx">myIndustry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Industry</span><span class="p">(</span><span class="nx">company</span><span class="p">,</span> <span class="nx">employees</span><span class="p">);</span>
+
+<span class="nx">logItType</span><span class="p">(</span><span class="nx">myIndustry</span><span class="p">.</span><span class="nx">industry</span><span class="p">[</span><span class="mf">4</span><span class="p">]);</span>
+<span class="nx">logItType</span><span class="p">(</span><span class="nx">myIndustry</span><span class="p">.</span><span class="nx">json</span><span class="p">[</span><span class="mf">4</span><span class="p">]);</span>
+<span class="nx">logItType</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">myIndustry</span><span class="p">.</span><span class="nx">json</span><span class="p">[</span><span class="mf">4</span><span class="p">]));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>object ; Employee {
+  name: 'Alice',
+  staffID: 'A3-101',
+  desgn: 'Scientist Gr.3',
+  level: 'Worker' }
+string ; {"Name":"Alice","Staff_ID":"A3-101","Designation":"Scientist Gr.3","Level":"Worker"}
+object ; { Name: 'Alice',
+  Staff_ID: 'A3-101',
+  Designation: 'Scientist Gr.3',
+  Level: 'Worker' }
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+
+
+
+
+
+<h2>
+<a class="anchor" href="#enter-employee-details" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enter Employee Details</h2>
+
+<form name="frm1">
+  <label for="name">Employee name:</label><br>
+  <input type="text" id="name" name="name" value="David"><br>
+  <label for="staffid">Staff ID:</label><br>
+  <input type="text" id="staffid" name="staffid" value="A2-301"><br>
+  <label for="desgn">Designation:</label><br>
+  <input type="text" id="desgn" name="desgn" value="Scientist Gr.4"><br>
+  <label for="level">Level:</label><br>
+  <select id="level" name="level">
+  <option value="worker">Worker</option>
+  <option value="head">Head</option>
+</select><br>
+<br>
+<input type="submit" value="Submit">
+<input type="reset">
+</form>
+
+<button onclick="validateForm() ">Try it</button>
+
+<script>
+function validateForm() 
+{
+
+  const rc = document.forms["frm1"];
+    // creates a <table> element and a <tbody> element
+    const tbl = document.getElement("table");
+    const tblBody = document.getElement("tbody");
+    const tbl = document.createElement("table");
+    const tblBody = document.createElement("tbody");
+
+    // creating all cells
+   // for (let i = 0; i < 2; i++) {
+      // creates a table row
+      const r1 = document.createElement("tr"); //row
+      const ch = document.createElement("th"); //heading
+      const mark = document.createElement("mark");
+      const ct = document.createTextNode("Name");
+      ch.appendChild(mark);
+      ch.appendChild(ct);
+      r1.appendChild(ch);
+      const ch1 = document.createElement("th");
+      const ct1 = document.createTextNode("Staff ID");
+      ch1.appendChild(mark);
+      ch1.appendChild(ct1);
+      r1.appendChild(ch1);
+      const ch2 = document.createElement("th");
+      const ct2 = document.createTextNode("Designation");
+      ch2.appendChild(mark);
+      ch2.appendChild(ct2);
+      r1.appendChild(ch2);
+      const ch3 = document.createElement("th");
+      const ct3 = document.createTextNode("Level");
+      ch3.appendChild(mark);
+      ch3.appendChild(ct3);
+      r1.appendChild(ch3);
+      tblBody.appendChild(r1);
+
+        // Create a <td> element and a text node, make the text
+        // node the contents of the <td>, and put the <td> at
+        // the end of the table row
+        const newrow = document.createElement("tr");
+        const cell = document.createElement("td"); ///data
+        const cellText = document.createTextNode(rc.elements[0].value);
+        cell.appendChild(cellText);
+        const cell1 = document.createElement("td");
+        const cellText1 = document.createTextNode(rc.elements[1].value);
+        cell1.appendChild(cellText1);
+        const cell2 = document.createElement("td");
+        const cellText2 = document.createTextNode(rc.elements[2].value);
+        cell2.appendChild(cellText2);
+        const cell3 = document.createElement("td");
+        const cellText3 = document.createTextNode(rc.elements[3].value);
+        cell3.appendChild(cellText3);
+
+        newrow.appendChild(cell);
+        newrow.appendChild(cell1);
+        newrow.appendChild(cell2);
+        newrow.appendChild(cell3);
+
+        // add the row to the end of the table body
+        tblBody.appendChild(newrow);
+
+    // put the <tbody> in the <table>
+    tbl.appendChild(tblBody);
+    // appends <table> into <body>
+    document.body.appendChild(tbl);
+    // sets the border attribute of tbl to '2'
+    tbl.setAttribute("border", "2");
+
+}
+</script>
+
+<p>Also note that the default width of text input fields is 20 characters.</p>
+
+
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="c1">// define an HTML conversion "method" associated with Classroom</span>
+<span class="nx">Industry</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_toHtml</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// HTML Style is build using inline structure</span>
+    <span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="p">(</span>
+      <span class="s2">"display:inline-block;"</span> <span class="o">+</span>
+      <span class="s2">"border: 2px solid grey;"</span> <span class="o">+</span>
+      <span class="s2">"box-shadow: 0.8em 0.4em 0.4em grey;"</span>
+    <span class="p">);</span>
+  
+    <span class="c1">// HTML Body of Table is build as a series of concatenations (+=)</span>
+    <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+    <span class="c1">// Heading for Array Columns</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span> <span class="c1">//concatonating row</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Name"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>  <span class="c1">//concatonating heding with name of employer </span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Staff ID"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Designation"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Level"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;/tr&gt;"</span><span class="p">;</span>
+    <span class="c1">// Data of Array, iterate through each row of compsci.classroom </span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">row</span> <span class="k">in</span> <span class="nx">myIndustry</span><span class="p">.</span><span class="nx">industry</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// tr for each row, a new line</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
+      <span class="c1">// td for each column of data</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">myIndustry</span><span class="p">.</span><span class="nx">industry</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">myIndustry</span><span class="p">.</span><span class="nx">industry</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">staffID</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">myIndustry</span><span class="p">.</span><span class="nx">industry</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">desgn</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">myIndustry</span><span class="p">.</span><span class="nx">industry</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">level</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+    <span class="c1">// tr to end line</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
+  <span class="p">}</span>
+
+   <span class="c1">// Build and HTML fragment of div, table, table body</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="s2">"&lt;div style='"</span> <span class="o">+</span> <span class="nx">style</span> <span class="o">+</span> <span class="s2">"'&gt;"</span> <span class="o">+</span>
+      <span class="s2">"&lt;table&gt;"</span> <span class="o">+</span>
+        <span class="nx">body</span> <span class="o">+</span>
+      <span class="s2">"&lt;/table&gt;"</span> <span class="o">+</span>
+    <span class="s2">"&lt;/div&gt;"</span>
+  <span class="p">);</span>
+
+<span class="p">};</span>
+
+<span class="c1">// IJavaScript HTML processor receive parameter of defined HTML fragment</span>
+<span class="nx">$$</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">myIndustry</span><span class="p">.</span><span class="nx">_toHtml</span><span class="p">());</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div style="display:inline-block;border: 2px solid grey;box-shadow: 0.8em 0.4em 0.4em grey;"><table>
+<tr>
+<th><mark>Name</mark></th>
+<th><mark>Staff ID</mark></th>
+<th><mark>Designation</mark></th>
+<th><mark>Level</mark></th>
+</tr>
+<tr>
+<td>Rohan Pharma</td>
+<td>1</td>
+<td>CEO</td>
+<td>Head</td>
+</tr>
+<tr></tr>
+<tr>
+<td>Mohan</td>
+<td>M1-203</td>
+<td>Manager</td>
+<td>Worker</td>
+</tr>
+<tr></tr>
+<tr>
+<td>David</td>
+<td>A2-301</td>
+<td>Scientist Gr.4</td>
+<td>Worker</td>
+</tr>
+<tr></tr>
+<tr>
+<td>Prashant</td>
+<td>A2-201</td>
+<td>Scientist Gr.2</td>
+<td>Worker</td>
+</tr>
+<tr></tr>
+<tr>
+<td>Alice</td>
+<td>A3-101</td>
+<td>Scientist Gr.3</td>
+<td>Worker</td>
+</tr>
+<tr></tr>
+<tr>
+<td>Eric</td>
+<td>B-101</td>
+<td>Sr.Tech</td>
+<td>Worker</td>
+</tr>
+<tr></tr>
+<tr>
+<td>John</td>
+<td>A-1</td>
+<td>Jr.Tech</td>
+<td>Worker</td>
+</tr>
+<tr>&lt;/table&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+    
+
+&lt;/div&gt;
+ 
+
+</tr>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="evmyclipz/sample1_blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/sample1_blog/jupyter/2022/09/25/Javascript.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/sample1_blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/sample1_blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/sample1_blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/sample1_blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/sample1_blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
