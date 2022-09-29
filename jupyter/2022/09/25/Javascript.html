@@ -376,7 +376,8 @@ object ; { Name: 'Alice',
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
 
@@ -405,13 +406,6 @@ object ; { Name: 'Alice',
 </form>
 
 <button onclick="validateForm() ">Try it</button>
-<table>
-<tbody>
-<tr>
-<th><mark>"Name"</mark></th>
-<th><mark>"Staff ID"</mark></th>
-<th><mark>"Designation"</mark></th>
-<th><mark>"Level"</mark></th>
 
 <script>
 function validateForm() 
@@ -419,9 +413,9 @@ function validateForm()
 
   const rc = document.forms["frm1"];
     // creates a <table> element and a <tbody> element
-    const tbl = document.getElement("table");
-    const tblBody = document.getElement("tbody");
-  /*
+    const tbl = document.createElement("table");
+    const tblBody = document.createElement("tbody");
+
     // creating all cells
    // for (let i = 0; i < 2; i++) {
       // creates a table row
@@ -447,7 +441,7 @@ function validateForm()
       ch3.appendChild(mark);
       ch3.appendChild(ct3);
       r1.appendChild(ch3);
-      tblBody.appendChild(r1);*/
+      tblBody.appendChild(r1);
 
         // Create a <td> element and a text node, make the text
         // node the contents of the <td>, and put the <td> at
@@ -477,20 +471,20 @@ function validateForm()
     // put the <tbody> in the <table>
     tbl.appendChild(tblBody);
     // appends <table> into <body>
-   // document.body.appendChild(tbl);
+    document.body.appendChild(tbl);
     // sets the border attribute of tbl to '2'
-    //tbl.setAttribute("border", "2");
+    tbl.setAttribute("border", "2");
 
 }
 </script>
 
 <p>Also note that the default width of text input fields is 20 characters.</p>
 
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -551,15 +545,8 @@ function validateForm()
 </div>
     
 
-&lt;/div&gt;
- 
+</div>
 
-</tr>
-</tbody>
-</table>
-</div>
-</div></div>
-</div>
 
 </body>
   </div><!-- from https://github.com/utterance/utterances -->
