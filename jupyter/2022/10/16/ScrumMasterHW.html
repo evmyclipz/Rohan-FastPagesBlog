@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -131,6 +131,22 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Implementation">Implementation </a></li>
 <li class="toc-entry toc-h3"><a href="#Integration-and-testing">Integration and testing </a></li>
 <li class="toc-entry toc-h3"><a href="#Maintenance">Maintenance </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#DevOps-Resposibilities">DevOps Resposibilities </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Identify-authoring-tools-(IDE’s,-Docker,-GitHub)-used">Identify authoring tools (IDE’s, Docker, GitHub) used </a></li>
+<li class="toc-entry toc-h4"><a href="#Describe-and/or-show-visuals-of-interactions-and-integration-of-programming-languages,-protocols,-and-data-within-project.-For-instance,-deployed-systems-of-Docker-Images,-Nginx,-DNS-hosting-the-application.">Describe and/or show visuals of interactions and integration of programming languages, protocols, and data within project. For instance, deployed systems of Docker Images, Nginx, DNS hosting the application. </a></li>
+<li class="toc-entry toc-h4"><a href="#Describe-and/or-illustrate-key-Web-Applications,-APIs,-and-dependency-systems-that-will-be-required-to-complete-this-system-(Diagram).">Describe and/or illustrate key Web Applications, APIs, and dependency systems that will be required to complete this system (Diagram). </a></li>
+<li class="toc-entry toc-h4"><a href="#Describe-GitHub-branch-management-and-sociology-used-to-ensure-ability-to-perform-continuous-builds-and-integrations.">Describe GitHub branch management and sociology used to ensure ability to perform continuous builds and integrations. </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#GitHub-projects">GitHub projects </a></li>
+<li class="toc-entry toc-h5"><a href="#Branching-Strategies">Branching Strategies </a></li>
+<li class="toc-entry toc-h5"><a href="#Deployment-processes-and-automation">Deployment processes and automation </a></li>
+<li class="toc-entry toc-h5"><a href="#Describe-how-to-validate-and-test-the-complete-system">Describe how to validate and test the complete system </a></li>
+<li class="toc-entry toc-h5"><a href="#My-suggestion-is-this-person-helps-with-Backend-development">My suggestion is this person helps with Backend development </a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul><!--
@@ -190,6 +206,57 @@ window.onload = wrap_img;
 <li>These errors will be resolved by following the scrum process again before deploying a newer version.</li>
 </ul>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="DevOps-Resposibilities">
+<a class="anchor" href="#DevOps-Resposibilities" aria-hidden="true"><span class="octicon octicon-link"></span></a>DevOps Resposibilities<a class="anchor-link" href="#DevOps-Resposibilities"> </a>
+</h1>
+<h4 id="Identify-authoring-tools-(IDE’s,-Docker,-GitHub)-used">
+<a class="anchor" href="#Identify-authoring-tools-(IDE%E2%80%99s,-Docker,-GitHub)-used" aria-hidden="true"><span class="octicon octicon-link"></span></a>Identify authoring tools (IDE’s, Docker, GitHub) used<a class="anchor-link" href="#Identify-authoring-tools-(IDE%E2%80%99s,-Docker,-GitHub)-used"> </a>
+</h4>
+<ul>
+<li>IDE: Our integrated development environement(IDE) is the visual code which has our group repositary on it. </li>
+<li>Docker is used to builds and runs our website. </li>
+<li>Use of git pull to update our project with the latest changes.</li>
+</ul>
+<h4 id="Describe-and/or-show-visuals-of-interactions-and-integration-of-programming-languages,-protocols,-and-data-within-project.-For-instance,-deployed-systems-of-Docker-Images,-Nginx,-DNS-hosting-the-application.">
+<a class="anchor" href="#Describe-and/or-show-visuals-of-interactions-and-integration-of-programming-languages,-protocols,-and-data-within-project.-For-instance,-deployed-systems-of-Docker-Images,-Nginx,-DNS-hosting-the-application." aria-hidden="true"><span class="octicon octicon-link"></span></a>Describe and/or show visuals of interactions and integration of programming languages, protocols, and data within project. For instance, deployed systems of Docker Images, Nginx, DNS hosting the application.<a class="anchor-link" href="#Describe-and/or-show-visuals-of-interactions-and-integration-of-programming-languages,-protocols,-and-data-within-project.-For-instance,-deployed-systems-of-Docker-Images,-Nginx,-DNS-hosting-the-application."> </a>
+</h4>
+<ul>
+<li>Docker image: u can turn docker images into a container, after turning into container, u can use to recreate volumes again, so basically images provides the base and volume stores files that have been changes and container are running programs.</li>
+<li>Use of nginx rohan file and in there u edit stuff in an important folder called sites-available where you set rules for ports, the rules tells nginx if it sees incoming traffic that matches the rule then the localhost with user-defined port will be the response of the request from the traffic. </li>
+<li>I put the the public IP of ths ncs instance on cloudfare which talks to the AWS which talks to domain. </li>
+</ul>
+<h4 id="Describe-and/or-illustrate-key-Web-Applications,-APIs,-and-dependency-systems-that-will-be-required-to-complete-this-system-(Diagram).">
+<a class="anchor" href="#Describe-and/or-illustrate-key-Web-Applications,-APIs,-and-dependency-systems-that-will-be-required-to-complete-this-system-(Diagram)." aria-hidden="true"><span class="octicon octicon-link"></span></a>Describe and/or illustrate key Web Applications, APIs, and dependency systems that will be required to complete this system (Diagram).<a class="anchor-link" href="#Describe-and/or-illustrate-key-Web-Applications,-APIs,-and-dependency-systems-that-will-be-required-to-complete-this-system-(Diagram)."> </a>
+</h4>
+<ul>
+<li>API is where the user requests something and the website returns the output.</li>
+<li>API is basically something serving something, like a waiters/waitress in a restaurant.</li>
+<li>Dependency systems are usually third party systems(eg.maven is a dependency which runs the ./mvnw spring-boot:run command, external api). </li>
+</ul>
+<h4 id="Describe-GitHub-branch-management-and-sociology-used-to-ensure-ability-to-perform-continuous-builds-and-integrations.">
+<a class="anchor" href="#Describe-GitHub-branch-management-and-sociology-used-to-ensure-ability-to-perform-continuous-builds-and-integrations." aria-hidden="true"><span class="octicon octicon-link"></span></a>Describe GitHub branch management and sociology used to ensure ability to perform continuous builds and integrations.<a class="anchor-link" href="#Describe-GitHub-branch-management-and-sociology-used-to-ensure-ability-to-perform-continuous-builds-and-integrations."> </a>
+</h4>
+<h5 id="GitHub-projects">
+<a class="anchor" href="#GitHub-projects" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitHub projects<a class="anchor-link" href="#GitHub-projects"> </a>
+</h5>
+<h5 id="Branching-Strategies">
+<a class="anchor" href="#Branching-Strategies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Branching Strategies<a class="anchor-link" href="#Branching-Strategies"> </a>
+</h5>
+<h5 id="Deployment-processes-and-automation">
+<a class="anchor" href="#Deployment-processes-and-automation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployment processes and automation<a class="anchor-link" href="#Deployment-processes-and-automation"> </a>
+</h5>
+<h5 id="Describe-how-to-validate-and-test-the-complete-system">
+<a class="anchor" href="#Describe-how-to-validate-and-test-the-complete-system" aria-hidden="true"><span class="octicon octicon-link"></span></a>Describe how to validate and test the complete system<a class="anchor-link" href="#Describe-how-to-validate-and-test-the-complete-system"> </a>
+</h5>
+<h5 id="My-suggestion-is-this-person-helps-with-Backend-development">
+<a class="anchor" href="#My-suggestion-is-this-person-helps-with-Backend-development" aria-hidden="true"><span class="octicon octicon-link"></span></a>My suggestion is this person helps with Backend development<a class="anchor-link" href="#My-suggestion-is-this-person-helps-with-Backend-development"> </a>
+</h5>
 </div>
 </div>
 </div>
