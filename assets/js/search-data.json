@@ -385,7 +385,6 @@
   
 
   
-  
 
   
   
@@ -400,7 +399,10 @@
   
 
   
-      ,"page11": {
+  
+
+  
+      ,"page12": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://evmyclipz.github.io/sample1_blog/robots.txt",
