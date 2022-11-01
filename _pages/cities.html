@@ -1,12 +1,12 @@
 ---
 layout: categories
 permalink: /categories/
-title: Tags
+title: Cities
 search_exclude: true
 ---
 
 <head>
-  <title>AirBnb (Get Languages) </title>
+  <title>Workouts </title>
   <style>
     table, td {
       border: 1px solid black;
@@ -18,14 +18,15 @@ search_exclude: true
 <th layout:fragment="body" th:remove="tag">
   <!-- Start of body content specific to page -->
   <div class="px-4 py-5 my-5">
-    <h3 class="display-5 fw-bold">AirBnb (Get Languages)</h3>
+    <h3 class="display-5 fw-bold">Workouts</h3>
     
     <div>
 <table>
   <thead>
     <tr>
-      <th><mark>Code</mark></th>
-      <th><mark>Language</mark></th>
+      <th><mark>ID</mark></th>
+      <th><mark>Workout</mark></th>
+      <th><mark>Time period or reps</mark></th>
       <!--th><mark>Region</mark></th>
       <th><mark>Region Code</mark></th>
       <th><mark>Region Code</mark></th-->
@@ -43,51 +44,44 @@ search_exclude: true
 <script>
   function validateURL()
   {
+    const url = `${window.location.origin}/api/v1/fitnessApp`;
 
-  // prepare fetch options
-  //const url = `${window.location.protocol}://${window.location.hostname}/coins`;
-  const url = `${window.location.origin}/coins`;
- // alert(url);
+    const resultContainer  = document.getElementById("refid");
 
-  // prepare HTML result container for new output
-  const resultContainer  = document.getElementById("refid");
-  
-  fetch(url)
-  .then(res => res.json())
-  .then((out) => {
-   alert("Waiting for data..........");
+    fetch(url)
+    .then(res => res.json())
+    .then((data) => {
+    alert("Fetching data..........");
 
-  for (const rs of out.data)
-  {
-    //alert(rs.city);
+    for (const rs of data)
+    {
+        alert(rs.city);
 
-      const tr = document.createElement("tr");
-      // td for each column
-      const n1 = document.createElement("td");
-      const n2 = document.createElement("td");
-     // const n3 = document.createElement("td");
-     // const n4 = document.createElement("td");
-      //const n5 = document.createElement("td");
-      n1.innerHTML = rs.id;
-      n2.innerHTML = rs.title;
-    //  n3.innerHTML = rs.region;
-    //  n4.innerHTML = rs.regionCode;
-      //n5.innerHTML = out.data.regionCode;
-          
-      tr.appendChild(n1);
-      tr.appendChild(n2);
-    //  tr.appendChild(n3);
-    //  tr.appendChild(n4);
+        const tr = document.createElement("tr");
+        const n1 = document.createElement("td");
+        const n2 = document.createElement("td");
+         const n3 = document.createElement("td");
+         const n4 = document.createElement("td");
+        const n5 = document.createElement("td");
+        n1.innerHTML = rs.exerciseName;
+        n2.innerHTML = rs.timePeriod;
+          n3.innerHTML = rs.region;
+         n4.innerHTML = rs.regionCode;
+        n5.innerHTML = out.data.regionCode;
+            
+        tr.appendChild(n1);
+        tr.appendChild(n2);
+          tr.appendChild(n3);
+          tr.appendChild(n4);
 
-      //tr.appendChild(n5);
-      // add HTML to container
-      resultContainer.appendChild(tr);
-  }
+        tr.appendChild(n5);
+        resultContainer.appendChild(tr);
+    }
 
-  })
-.catch(err => { throw err });
+    })
+    .catch(err => { throw err });
 
-  }
+}
 </script>
 
 </div>
