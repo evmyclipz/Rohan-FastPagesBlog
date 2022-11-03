@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Fetch of Backend Fitness",
-            "content": "&quot;ID No.&quot; &quot;User Name&quot; &quot;Height&quot; &quot;Weight&quot; &quot;Free Time&quot; . . &quot;ID No.&quot; &quot;Exercise Name&quot; &quot;Time Period or Reps&quot; .",
+            "content": "&quot;ID No.&quot; &quot;Exercise Name&quot; &quot;Time Period or Reps&quot; . . &quot;ID No.&quot; &quot;User Name&quot; &quot;Height&quot; &quot;Weight&quot; &quot;Free Time&quot; .",
             "url": "https://evmyclipz.github.io/sample1_blog/api",
             "relUrl": "/api",
             "date": " • Nov 2, 2022"
