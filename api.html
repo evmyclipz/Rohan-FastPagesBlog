@@ -70,7 +70,7 @@ window.onload = wrap_img;
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <p>&lt;!DOCTYPE html&gt;</p>
-<html>
+<html xmlns:th="https://www.thymeleaf.org">
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
@@ -275,8 +275,11 @@ window.onload = wrap_img;
                 <div style="height: 15%; width: 100%; display: flex; justify-content: center; align-items: center;">
                     <h1 style="color: white;">Plan. Execute. Maintain.</h1>
                 </div>
+                <div>
+                    <h3 style="display: inline; font-size: 28px;color: white;" th:text="${message}">Message</h3>
+                </div>
                 <div class="fitness-plan-container">
-                    <form id="fitness-form" onsubmit="submitFormData()">
+                    <form id="fitness-form" action="signup" method="post">
                         <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; margin-top: 10px;">
                             <label for="name">Enter your name:</label>
                             <input type="text" name="name" id="name" class="fitness-form-input" required="" />
@@ -284,9 +287,9 @@ window.onload = wrap_img;
                         <h3 style="text-align: center;">Enter your height</h3>
                         <div style="width: 100%; display: flex; flex-direction: row; justify-content: center;">
                             <label for="height-1">Feet:</label>
-                            <input type="number" name="height-1" id="height-1" class="fitness-form-input" required="" />
+                            <input type="number" name="height1" id="height-1" class="fitness-form-input" required="" />
                             <label for="height-2" style="margin-left: 10px;">Inches:</label>
-                            <input type="number" name="height-2" id="height-2" class="fitness-form-input" required="" />
+                            <input type="number" name="height2" id="height-2" class="fitness-form-input" required="" />
                         </div>
                         <br />
                         <div style="width: 100%; display: flex; flex-direction: row; justify-content: center;">
@@ -295,34 +298,34 @@ window.onload = wrap_img;
                         </div>
                         <br />
                         <label for="free-time" style="display: block; text-align: center;">Enter the amount of free time you have every day in minutes:</label>
-                        <input type="number" name="free-time" id="free-time" class="fitness-form-input" style="display: block; margin: auto; margin-top: 5px;" required="" />
+                        <input type="number" name="freetime" id="free-time" class="fitness-form-input" style="display: block; margin: auto; margin-top: 5px;" required="" />
                         <br />
-                        <input type="submit" class="fitness-button-1" value="Submit" />
+                        <button type="submit">Submit</button>
                     </form>
-                    <div class="personal-information-container" id="personal-information-container">
-                        <h2 style="font-family: 'Bebas Neue', cursive; color: black; text-align: center;">Your Personal Information</h2>
-                        <h3 style="display: inline; font-size: 28px;">Name:</h3>
-                        <h3 style="display: inline; font-size: 28px; margin-left: 5px;" id="name-display"></h3>
-                        <br />
-                        <br />
-                        <h3 style="display: inline; font-size: 28px;">Height:</h3>
-                        <h3 style="display: inline; font-size: 28px; margin-left: 5px;" id="height-display"></h3>
-                        <br />
-                        <br />
-                        <h3 style="display: inline; font-size: 28px;">Weight:</h3>
-                        <h3 style="display: inline; font-size: 28px; margin-left: 5px;" id="weight-display"></h3>
-                        <br />
-                        <br />
-                        <h3 style="display: inline; font-size: 28px;">Minutes of Free Time Each Day:</h3>
-                        <h3 style="display: inline; font-size: 28px; margin-left: 5px;" id="free-time-display"></h3>
-                        <br />
-                        <button class="edit-button" id="edit-button">Edit Personal Information</button>
-                    </div>
+                    <!--div class = "personal-information-container" id = "personal-information-container">
+                        <h2 style = "font-family: 'Bebas Neue', cursive; color: black; text-align: center;">Your Personal Information</h2>
+                        <h3 style = "display: inline; font-size: 28px;">Name:</h3>
+                        <h3 style = "display: inline; font-size: 28px; margin-left: 5px;" id = "name-display"></h3>
+                        <br>
+                        <br>
+                        <h3 style = "display: inline; font-size: 28px;">Height:</h3>
+                        <h3 style = "display: inline; font-size: 28px; margin-left: 5px;" id = "height-display"></h3>
+                        <br>
+                        <br>
+                        <h3 style = "display: inline; font-size: 28px;">Weight:</h3>
+                        <h3 style = "display: inline; font-size: 28px; margin-left: 5px;" id = "weight-display"></h3>
+                        <br>
+                        <br>
+                        <h3 style = "display: inline; font-size: 28px;">Minutes of Free Time Each Day:</h3>
+                        <h3 style = "display: inline; font-size: 28px; margin-left: 5px;" id = "free-time-display"></h3>
+                        <br>
+                        <button class = "edit-button" id = "edit-button">Edit Personal Information</button>
+                    </div-->
                 </div>
-                <div class="fitness-plan-container" style="margin-top: 150px;">
-                    <h2 style="color: black; text-align: center;">Your Current Plan</h2>
-                    <div class="current-plan-heading">
-                        <h3 id="current-plan"></h3>
+                <!--div class = "fitness-plan-container" style = "margin-top: 150px;">
+                    <h2 style = "color: black; text-align: center;">Your Current Plan</h2>
+                    <div class = "current-plan-heading">
+                        <h3 id = "current-plan"></h3>
                     </div>
                     <table>
                         <thead>
@@ -334,10 +337,10 @@ window.onload = wrap_img;
                         </thead>
                         <tbody id="refid"></tbody>
                     </table>
-                </div>
+                </div-->
             </div>
         </div>
-        <script>
+        <!--script>
             /* Local storage used to display personal information collected from the initial survey */
             if (localStorage.getItem("finishedQuiz") == "True") {
                 $("#fitness-form").hide();
@@ -379,10 +382,10 @@ window.onload = wrap_img;
                 $("#fitness-form").show();
                 $("#personal-information-container").hide();
                 $("#name").val(quizDataRetrieve2.name);
-                $("#height-1").val(quizDataRetrieve2.height.slice(0, 1));
-                $("#height-2").val(quizDataRetrieve2.height.slice(3, 4));
+                $("#height1").val(quizDataRetrieve2.height.slice(0, 1));
+                $("#height2").val(quizDataRetrieve2.height.slice(3, 4));
                 $("#weight").val(quizDataRetrieve2.weight);
-                $("#free-time").val(quizDataRetrieve2.freeTime);
+                $("#freetime").val(quizDataRetrieve2.freeTime);
 
             }
 
@@ -430,7 +433,7 @@ window.onload = wrap_img;
 
                     })
                     .catch(err => { throw err });
-        </script>
+        </script-->
     </body>
 </html>
 
