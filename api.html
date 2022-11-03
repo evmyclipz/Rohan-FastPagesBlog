@@ -448,45 +448,44 @@ window.onload = wrap_img;
               <th>"Free Time"</th>
           </tr>
         </thead>
-        <tbody id="ref_id"></tbody>
-    </table>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt;
-  {
-                //const url = "https://fitness.nighthawkcoders.tk/api/v1/users";
-                const url = "http://localhost:8080/api/v1/users";
-                const resultContainer  = document.getElementById("ref_id");
-                fetch(url)
-                .then(res =&gt; res.json())
-                .then((data) =&gt; {
-                alert("Fetching data..........");
-                for (const rs of data)
-                {
-                    const tr = document.createElement("tr");
-                    const n1 = document.createElement("td");
-                    const n2 = document.createElement("td");    
-                    const n3 = document.createElement("td");
-                    const n4 = document.createElement("td");    
-                    const n5 = document.createElement("td");
-                    n1.innerHTML = rs.id;
-                    n2.innerHTML = rs.name;
-                    n3.innerHTML = rs.height1+"'"+rs.height2+"/"";
-                    n4.innerHTML = rs.weight;
-                    n5.innerHTML = rs.freetime;
-                    tr.appendChild(n1);
-                    tr.appendChild(n2);
-                    tr.appendChild(n3);
-                    tr.appendChild(n4);
-                    tr.appendChild(n5);
-                    // add HTML to container
-                    resultContainer.appendChild(tr);
-                   // alert(rs.name);
+        <tbody id="ref_id">
+    <script>
+      {
+                    //const url = "https://fitness.nighthawkcoders.tk/api/v1/users";
+                    const url = "http://localhost:8080/api/v1/users";
+                    const resultContainer  = document.getElementById("ref_id");
+                    fetch(url)
+                    .then(res => res.json())
+                    .then((data) => {
+                    alert("Fetching data..........");
+                    for (const rs of data)
+                    {
+                        const tr = document.createElement("tr");
+                        const n1 = document.createElement("td");
+                        const n2 = document.createElement("td");    
+                        const n3 = document.createElement("td");
+                        const n4 = document.createElement("td");    
+                        const n5 = document.createElement("td");
+                        n1.innerHTML = rs.id;
+                        n2.innerHTML = rs.name;
+                        n3.innerHTML = rs.height1+"'"+rs.height2+"\"";
+                        n4.innerHTML = rs.weight;
+                        n5.innerHTML = rs.freetime;
+                        tr.appendChild(n1);
+                        tr.appendChild(n2);
+                        tr.appendChild(n3);
+                        tr.appendChild(n4);
+                        tr.appendChild(n5);
+                        // add HTML to container
+                        resultContainer.appendChild(tr);
+                       // alert(rs.name);
+                    }
+                    })
+                    .catch(err => { throw err });
                 }
-                })
-                .catch(err =&gt; { throw err });
-            }
-&lt;/script&gt;
-</code></pre></div></div>
-
+    </script>
+</tbody>
+</table>
 <p><br />
 <br /></p>
 <table>
@@ -497,38 +496,38 @@ window.onload = wrap_img;
               <th>"Time Period or Reps"</th>
           </tr>
         </thead>
-        <tbody id="refid"></tbody>
-    </table>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt;
-  {
-                //const url = "https://fitness.nighthawkcoders.tk/api/v1/fitnessApp";
-                const url = "http://localhost:8080/api/v1/fitnessApp";
-                const resultContainer1  = document.getElementById("refid");
-                fetch(url)
-                .then(res =&gt; res.json())
-                .then((data) =&gt; {
-                alert("Fetching data..........");
-                for (const rs of data)
-                {
-                    const tr1 = document.createElement("tr");
-                    const n11 = document.createElement("td");
-                    const n21 = document.createElement("td");    
-                    const n31 = document.createElement("td");
-                    n11.innerHTML = rs.id;
-                    n21.innerHTML = rs.exerciseName;
-                    n31.innerHTML = rs.timePeriod;
-                    tr1.appendChild(n11);
-                    tr1.appendChild(n21);
-                    tr1.appendChild(n31);
-                    // add HTML to container
-                    resultContainer1.appendChild(tr1);
-                   // alert(rs.exerciseName);
+        <tbody id="refid">
+    <script>
+      {
+                    //const url = "https://fitness.nighthawkcoders.tk/api/v1/fitnessApp";
+                    const url = "http://localhost:8080/api/v1/fitnessApp";
+                    const resultContainer1  = document.getElementById("refid");
+                    fetch(url)
+                    .then(res => res.json())
+                    .then((data) => {
+                    alert("Fetching data..........");
+                    for (const rs of data)
+                    {
+                        const tr1 = document.createElement("tr");
+                        const n11 = document.createElement("td");
+                        const n21 = document.createElement("td");    
+                        const n31 = document.createElement("td");
+                        n11.innerHTML = rs.id;
+                        n21.innerHTML = rs.exerciseName;
+                        n31.innerHTML = rs.timePeriod;
+                        tr1.appendChild(n11);
+                        tr1.appendChild(n21);
+                        tr1.appendChild(n31);
+                        // add HTML to container
+                        resultContainer1.appendChild(tr1);
+                       // alert(rs.exerciseName);
+                    }
+                    })
+                    .catch(err => { throw err });
                 }
-                })
-                .catch(err =&gt; { throw err });
-            }
-&lt;/script&gt;
-</code></pre></div></div>
+    </script>
+    </tbody>
+    </table>
 
       </div>
     </main><footer class="site-footer h-card">
