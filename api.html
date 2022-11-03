@@ -80,15 +80,34 @@ window.onload = wrap_img;
           </tr>
         </thead>
         <tbody id="refid">
-    <script>
-      {
+        <script>    
                    const resultContainer1  = document.getElementById("refid");
-                    const url = "https://fitness.nighthawkcoders.tk/api/v1/fitnessApp";
+                    const url = "https://fitness.nighthawkcoders.tk/api/v1/fitnessApp/";
                     //const url = "http://localhost:8080/api/v1/fitnessApp";
-                    fetch(url)
-                    .then(res => res.json())
-                    .then((data) => {
-                    alert("Fetching data..........");
+                    // prepare fetch GET options
+                  const options = {
+                  method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                  mode: 'cors', // no-cors, *cors, same-origin
+                  cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                  credentials: 'same-origin', // include, same-origin, omit
+                  headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                  },
+                };
+                // prepare fetch PUT options, clones with JS Spread Operator (...)
+                const put_options = {...options, method: 'PUT'}; // clones and replaces method
+                // fetch the API
+                fetch(url, options)
+                  // response is a RESTful "promise" on any successful fetch
+                  .then(response => {
+                    // check for response errors
+                    if (response.status !== 200) {
+                        error('GET API response failure: ' + response.status);
+                        return;
+                    }
+                    response.json().then(data => {
+                    console.log(data);
                     for (const rs of data)
                     {
                         const tr1 = document.createElement("tr");
@@ -105,9 +124,12 @@ window.onload = wrap_img;
                         resultContainer1.appendChild(tr1);
                        // alert(rs.exerciseName);
                     }
-                    })
-                    .catch(err => { throw err });
-                }
+      })
+  })
+  // catch fetch errors (ie Nginx ACCESS to server blocked)
+  .catch(err => {
+    error(err + " " + url);
+  });
   </script>
   </tbody>
   </table>
