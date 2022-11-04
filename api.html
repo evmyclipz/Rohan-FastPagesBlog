@@ -81,9 +81,10 @@ window.onload = wrap_img;
         </thead>
         <tbody id="refid"></tbody>
         </table>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;script&gt;    
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;script&gt;
+    {    
                const resultContainer1  = document.getElementById("refid");
-                const url = "https://fitness.nighthawkcoders.tk/api/v1/fitnessApp/";
+                const url = "https://fitness.nighthawkcoders.tk/api/v1/fitnessApp";
                 //const url = "http://localhost:8080/api/v1/fitnessApp";
                 // prepare fetch GET options
               const options = {
@@ -126,7 +127,7 @@ window.onload = wrap_img;
                    // alert(rs.exerciseName);
                 }
   })   })   // catch fetch errors (ie Nginx ACCESS to server blocked)   .catch(err =&gt; {
-error(err + " " + url);   });   &lt;/script&gt; &lt;br&gt; &lt;br&gt;
+error(err + " " + url);   });   }   &lt;/script&gt; &lt;br&gt; &lt;br&gt;
 </code></pre></div></div>
 <table>
         <thead>
