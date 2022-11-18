@@ -83,14 +83,15 @@ window.onload = wrap_img;
   <li>The method mentioned above uses the first day of any year and day in the given year to compute weekday of the given date. Uses 2 other methods which is the prupose of a method and control structure</li>
 </ul>
 
-<p>```js
-public static int dayOfWeek(int month, int day, int year) { 
-    // to be implemented in part (b)
-    int x = firstDayOfYear(year);
-    int y = dayOfYear(month, day, year) - 1;
-    int sum = x + y;</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kr">public</span> <span class="kd">static</span> <span class="nx">int</span> <span class="nx">dayOfWeek</span><span class="p">(</span><span class="nx">int</span> <span class="nx">month</span><span class="p">,</span> <span class="nx">int</span> <span class="nx">day</span><span class="p">,</span> <span class="nx">int</span> <span class="nx">year</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="c1">// to be implemented in part (b)</span>
+    <span class="nx">int</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">firstDayOfYear</span><span class="p">(</span><span class="nx">year</span><span class="p">);</span>
+    <span class="nx">int</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">dayOfYear</span><span class="p">(</span><span class="nx">month</span><span class="p">,</span> <span class="nx">day</span><span class="p">,</span> <span class="nx">year</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">int</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>return (sum % 7); }```
+    <span class="k">return</span> <span class="p">(</span><span class="nx">sum</span> <span class="o">%</span> <span class="mi">7</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
   </div>
