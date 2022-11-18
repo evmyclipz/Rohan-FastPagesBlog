@@ -83,13 +83,14 @@ window.onload = wrap_img;
   <li>The method mentioned above uses the first day of any year and day in the given year to compute weekday of the given date. Uses 2 other methods which is the prupose of a method and control structure</li>
 </ul>
 
-<p>```public static int dayOfWeek(int month, int day, int year) { 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public static int dayOfWeek(int month, int day, int year) { 
     // to be implemented in part (b)
     int x = firstDayOfYear(year);
     int y = dayOfYear(month, day, year) - 1;
-    int sum = x + y;</p>
+    int sum = x + y;
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>return (sum % 7); } ```
+    return (sum % 7);
+}
 </code></pre></div></div>
 
   </div>
