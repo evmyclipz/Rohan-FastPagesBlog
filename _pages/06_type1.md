@@ -10,6 +10,7 @@ permalink: /type1/
 * The method mentioned above uses the first day of any year and day in the given year to compute weekday of the given date. Uses 2 other methods which is the prupose of a method and control structure
 
 ```js
+
 public static int dayOfWeek(int month, int day, int year) { 
     // to be implemented in part (b)
     int x = firstDayOfYear(year);
@@ -17,4 +18,5 @@ public static int dayOfWeek(int month, int day, int year) {
     int sum = x + y;
 
     return (sum % 7);
-}```
+}
+```
