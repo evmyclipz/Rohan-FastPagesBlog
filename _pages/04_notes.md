@@ -10,9 +10,11 @@ Notes for CSA(Unit 1)
 1. sequence: Severeal line of code
 2. Key & Value: Eg. title: Home of the nighthawks.
 3. Wrapper Class: wraps around to create an object and contains primitive data types.
-4. Method Signature: Has a class name and parameters.
-5. Constructer: constructs an object using sub-class name to perform super-class actions.
-6. Inheritance: creating new class from existing class.
+4. Constructer: constructs an object using sub-class name to perform super-class actions.
+5. Constructor Signature: Has a class name and parameters.
+6. Attributes : Members of class are also called attributes of class.
+7. Method : Has a name and parameters, either accesses members or manipulates them.
+8. Inheritance: creating new class from existing class.
 
 # Data types are divided into two groups:
 
