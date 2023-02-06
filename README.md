@@ -11,4 +11,5 @@ https://evmyclipz.github.io/sample1_blog/
 
 _powered by [fastpages](https://github.com/fastai/fastpages)_
 
-I am trying in APCSA 
+* Profecient in Java
+* Currently learning Rust
