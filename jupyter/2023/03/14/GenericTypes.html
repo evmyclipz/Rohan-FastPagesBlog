@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      9 min read
     
 </span></p>
 
@@ -132,6 +132,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h5"><a href="#Using-the-String-class">Using the String class </a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h3"><a href="#CheckPoint-#1">CheckPoint #1 </a></li>
 <li class="toc-entry toc-h3"><a href="#Abstract-class">Abstract class </a></li>
 <li class="toc-entry toc-h3"><a href="#Instance-of-the-LinkedList-Class:-Concrete-class">Instance of the LinkedList Class: Concrete class </a></li>
 <li class="toc-entry toc-h3"><a href="#implementation-of-the-linkedlist-in-stackh3in-this-implementation-stack-class-uses-the-linkedlist-interface-to-provide-basic-stack-operations-such-as-push-pop-peek-isempty-and-size-the-linkedlist-interface-methods-add-remove-get-and-indexof-are-not-implemented-as-they-are-not-needed-for-this-implementation-of-a-stackpdivdivdiv------------public-class-stackt-implements-linkedlistt-----private-linkedlistt-top-----constructor----public-stack---------thistop--null---------add-a-new-item-to-the-top-of-the-stack----public-void-pusht-item---------linkedlistt-node--new-linkedlistitem-null--------if-thistop--null-------------nodesetnextnodethistop------------thistopsetprevnodenode----------------thistop--node---------remove-and-return-the-top-item-from-the-stack----public-t-pop---------if-thistop--null-------------throw-new-nosuchelementexception----------------t-item--thistopgetdata--------thistop--thistopgetnext--------if-thistop--null-------------thistopsetprevnodenull----------------return-item---------return-the-top-item-from-the-stack-without-removing-it----public-t-peek---------if-thistop--null-------------throw-new-nosuchelementexception----------------return-thistopgetdata---------check-if-the-stack-is-empty----public-boolean-isempty---------return-thistop--null---------get-the-size-of-the-stack----public-int-size---------int-size--0--------linkedlistt-current--thistop--------while-current--null-------------size------------current--currentgetnext----------------return-size---------implement-the-linkedlistt-interface-method----public-void-addt-item---------thispushitem------------div-">Implementation of the LinkedList in Stack&lt;/h3&gt;
@@ -311,6 +312,334 @@ public double getDesirability() {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="CheckPoint-#1">
+<a class="anchor" href="#CheckPoint-#1" aria-hidden="true"><span class="octicon octicon-link"></span></a>CheckPoint #1<a class="anchor-link" href="#CheckPoint-#1"> </a>
+</h3>
+<blockquote>
+<p>Making a user class that uses a Generics as abstract class</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="cm">/* This is wrapper class...</span>
+<span class="cm"> Objective would be to push more functionality into this Class to enforce consistent definition</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Generics</span> <span class="p">{</span>
+	<span class="kd">public</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">masterType</span> <span class="o">=</span> <span class="s">"Generic"</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">type</span><span class="p">;</span>	<span class="c1">// extender should define their data type</span>
+
+	<span class="c1">// generic enumerated interface</span>
+	<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">KeyTypes</span> <span class="p">{</span>
+		<span class="n">String</span> <span class="nf">name</span><span class="p">();</span>
+	<span class="p">}</span>
+	<span class="kd">protected</span> <span class="kd">abstract</span> <span class="n">KeyTypes</span> <span class="nf">getKey</span><span class="p">();</span>  	<span class="c1">// this method helps force usage of KeyTypes</span>
+
+	<span class="c1">// getter</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getMasterType</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">masterType</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// getter</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getType</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">type</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// setter</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setType</span><span class="p">(</span><span class="n">String</span> <span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">type</span> <span class="o">=</span> <span class="n">type</span><span class="p">;</span>
+	<span class="p">}</span>
+	
+	<span class="c1">// this method is used to establish key order</span>
+	<span class="kd">public</span> <span class="kd">abstract</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">();</span>
+
+	<span class="c1">// static print method used by extended classes</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">Generics</span><span class="o">[]</span> <span class="n">objs</span><span class="p">)</span> <span class="p">{</span>
+		<span class="c1">// print 'Object' properties</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">objs</span><span class="p">.</span><span class="na">getClass</span><span class="p">()</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">objs</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+
+		<span class="c1">// print 'Generics' properties</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">objs</span><span class="p">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+			<span class="n">Generics</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">objs</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>	<span class="c1">// Look at properties of 1st element</span>
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+					<span class="n">obj</span><span class="p">.</span><span class="na">getMasterType</span><span class="p">()</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> 
+					<span class="n">obj</span><span class="p">.</span><span class="na">getType</span><span class="p">()</span> <span class="o">+</span>
+					<span class="s">" listed by "</span> <span class="o">+</span>
+					<span class="n">obj</span><span class="p">.</span><span class="na">getKey</span><span class="p">());</span>
+		<span class="p">}</span>
+
+		<span class="c1">// print "Generics: Objects'</span>
+		<span class="k">for</span><span class="p">(</span><span class="n">Object</span> <span class="n">o</span> <span class="p">:</span> <span class="n">objs</span><span class="p">)</span>	<span class="c1">// observe that type is Opaque</span>
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="kd">extends</span> <span class="n">Generics</span> <span class="p">{</span>
+	<span class="c1">// Class data</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="n">KeyTypes</span> <span class="n">key</span> <span class="o">=</span> <span class="n">KeyType</span><span class="p">.</span><span class="na">name</span><span class="p">;</span>  <span class="c1">// static initializer</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOrder</span><span class="p">(</span><span class="n">KeyTypes</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span> <span class="n">User</span><span class="p">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
+	<span class="kd">public</span> <span class="kd">enum</span> <span class="n">KeyType</span> <span class="kd">implements</span> <span class="n">KeyTypes</span> <span class="p">{</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">progress</span><span class="p">}</span>
+
+	<span class="c1">// Instance data</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">email</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">password</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">progress</span><span class="p">;</span>
+
+	<span class="cm">/* constructor</span>
+<span class="cm">	 *</span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="nf">User</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">String</span> <span class="n">email</span><span class="p">,</span> <span class="n">String</span> <span class="n">password</span><span class="p">,</span> <span class="kt">int</span> <span class="n">progress</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="kd">super</span><span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="s">"User"</span><span class="p">);</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">email</span> <span class="o">=</span> <span class="n">email</span><span class="p">;</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">password</span><span class="p">;</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">progress</span> <span class="o">=</span> <span class="n">progress</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="cm">/* 'Generics' requires getKey to help enforce KeyTypes usage */</span>
+	<span class="nd">@Override</span>
+	<span class="kd">protected</span> <span class="n">KeyTypes</span> <span class="nf">getKey</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">User</span><span class="p">.</span><span class="na">key</span><span class="p">;</span> <span class="p">}</span>
+	
+	<span class="cm">/* 'Generics' requires toString override</span>
+<span class="cm">	 * toString provides data based off of Static Key setting</span>
+<span class="cm">	 */</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="n">String</span> <span class="n">output</span><span class="o">=</span><span class="s">""</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">email</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="na">email</span><span class="p">;</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">password</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="s">"******"</span><span class="p">;</span> <span class="c1">// hide the password for security reasons</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">progress</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="na">progress</span> <span class="o">+</span> <span class="s">"%"</span><span class="p">;</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="kd">super</span><span class="p">.</span><span class="na">getType</span><span class="p">()</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">email</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">progress</span> <span class="o">+</span> <span class="s">"%"</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+		
+	<span class="p">}</span>
+
+	<span class="c1">// Test data initializer</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="n">User</span><span class="o">[]</span> <span class="nf">users</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="n">User</span><span class="o">[]</span><span class="p">{</span>
+				<span class="k">new</span> <span class="n">User</span><span class="p">(</span><span class="s">"John Doe"</span><span class="p">,</span> <span class="s">"johndoe@example.com"</span><span class="p">,</span> <span class="s">"password123"</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+				<span class="k">new</span> <span class="n">User</span><span class="p">(</span><span class="s">"Jane Smith"</span><span class="p">,</span> <span class="s">"janesmith@example.com"</span><span class="p">,</span> <span class="s">"password456"</span><span class="p">,</span> <span class="mi">75</span><span class="p">),</span>
+				<span class="k">new</span> <span class="n">User</span><span class="p">(</span><span class="s">"Bob Johnson"</span><span class="p">,</span> <span class="s">"bobjohnson@example.com"</span><span class="p">,</span> <span class="s">"password789"</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+				<span class="k">new</span> <span class="n">User</span><span class="p">(</span><span class="s">"Alice Lee"</span><span class="p">,</span> <span class="s">"alicelee@example.com"</span><span class="p">,</span> <span class="s">"passwordabc"</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span>
+		<span class="p">};</span>
+	<span class="p">}</span>
+	
+	<span class="cm">/* main to test User class</span>
+<span class="cm">	 * </span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="c1">// Inheritance Hierarchy</span>
+		<span class="n">User</span><span class="o">[]</span> <span class="n">objs</span> <span class="o">=</span> <span class="n">users</span><span class="p">();</span>
+
+		<span class="c1">// print with name</span>
+		<span class="n">User</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">name</span><span class="p">);</span>
+		<span class="n">User</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+
+		<span class="c1">// print email only</span>
+		<span class="n">User</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">email</span><span class="p">);</span>
+		<span class="n">User</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+		
+		<span class="c1">// print progress only</span>
+		<span class="n">User</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">progress</span><span class="p">);</span>
+		<span class="n">User</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="n">User</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>class [LREPL.$JShell$13$User; 4
+Generic: User listed by name
+User: John Doe, johndoe@example.com, 50%
+User: Jane Smith, janesmith@example.com, 75%
+User: Bob Johnson, bobjohnson@example.com, 25%
+User: Alice Lee, alicelee@example.com, 90%
+
+class [LREPL.$JShell$13$User; 4
+Generic: User listed by email
+johndoe@example.com
+janesmith@example.com
+bobjohnson@example.com
+alicelee@example.com
+
+class [LREPL.$JShell$13$User; 4
+Generic: User listed by progress
+50%
+75%
+25%
+90%
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FRQData</span> <span class="kd">extends</span> <span class="n">Generics</span> <span class="p">{</span>
+    <span class="c1">// Class data</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">KeyTypes</span> <span class="n">key</span> <span class="o">=</span> <span class="n">KeyType</span><span class="p">.</span><span class="na">description</span><span class="p">;</span>  <span class="c1">// static initializer</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOrder</span><span class="p">(</span><span class="n">KeyTypes</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span> <span class="n">FRQData</span><span class="p">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">enum</span> <span class="n">KeyType</span> <span class="kd">implements</span> <span class="n">KeyTypes</span> <span class="p">{</span><span class="n">description</span><span class="p">,</span> <span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">}</span>
+
+    <span class="c1">// Instance data</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">description</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">input</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">output</span><span class="p">;</span>
+
+    <span class="cm">/* constructor */</span>
+    <span class="kd">public</span> <span class="nf">FRQData</span><span class="p">(</span><span class="n">String</span> <span class="n">description</span><span class="p">,</span> <span class="n">String</span> <span class="n">input</span><span class="p">,</span> <span class="n">String</span> <span class="n">output</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="s">"FRQ"</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">description</span> <span class="o">=</span> <span class="n">description</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">input</span> <span class="o">=</span> <span class="n">input</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">output</span> <span class="o">=</span> <span class="n">output</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* 'Generics' requires getKey to help enforce KeyTypes usage */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">KeyTypes</span> <span class="nf">getKey</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">FRQData</span><span class="p">.</span><span class="na">key</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="cm">/* 'Generics' requires toString override</span>
+<span class="cm">     * toString provides data based off of Static Key setting</span>
+<span class="cm">     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">output</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">description</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="na">description</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">input</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s">"Sample Input: "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">input</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">output</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s">"Sample Output: "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">output</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="kd">super</span><span class="p">.</span><span class="na">getType</span><span class="p">()</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">description</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">input</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">output</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Test data initializer</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">FRQData</span><span class="o">[]</span> <span class="nf">frqs</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">FRQData</span><span class="o">[]</span><span class="p">{</span>
+                <span class="k">new</span> <span class="n">FRQData</span><span class="p">(</span><span class="s">"Write a Java program that prompts the user that takes in 3 parameters to return a concatenation"</span><span class="p">,</span> <span class="s">"1:1.5:H1"</span><span class="p">,</span> <span class="s">"11.5H1"</span><span class="p">),</span>
+                <span class="k">new</span> <span class="n">FRQData</span><span class="p">(</span><span class="s">"Write a Java program that prompts the user to enter a string and then prints that string"</span><span class="p">,</span> <span class="s">"Hello World"</span><span class="p">,</span> <span class="s">"Hello World"</span><span class="p">),</span>
+                <span class="k">new</span> <span class="n">FRQData</span><span class="p">(</span><span class="s">"Write a Java program that calculates the sum of the first 10 natural numbers and prints the result"</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="s">"55"</span><span class="p">)</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* main to test FRQData class */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Inheritance Hierarchy</span>
+        <span class="n">FRQData</span><span class="o">[]</span> <span class="n">objs</span> <span class="o">=</span> <span class="n">frqs</span><span class="p">();</span>
+
+        <span class="c1">// print with description</span>
+        <span class="n">FRQData</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">description</span><span class="p">);</span>
+        <span class="n">FRQData</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+
+        <span class="c1">// print with sample input</span>
+        <span class="n">FRQData</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">input</span><span class="p">);</span>
+        <span class="n">FRQData</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+
+        <span class="c1">// print with sample output</span>
+        <span class="n">FRQData</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">output</span><span class="p">);</span>
+        <span class="n">FRQData</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">FRQData</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>class [LREPL.$JShell$12$FRQData; 3
+Generic: FRQ listed by description
+Write a Java program that prompts the user to enter an integer and then prints that integer
+Write a Java program that prompts the user to enter a string and then prints that string
+Write a Java program that calculates the sum of the first 10 natural numbers and prints the result
+
+class [LREPL.$JShell$12$FRQData; 3
+Generic: FRQ listed by input
+Sample Input: 5
+Sample Input: Hello World
+Sample Input: 
+
+class [LREPL.$JShell$12$FRQData; 3
+Generic: FRQ listed by output
+Sample Output: 5
+Sample Output: Hello World
+Sample Output: 55
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Abstract-class">
