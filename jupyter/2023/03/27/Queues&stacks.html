@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      16 min read
+      15 min read
     
 </span></p>
 
@@ -134,7 +134,6 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h3"><a href="#Simple-Queues-examples">Simple Queues examples </a></li>
 <li class="toc-entry toc-h3"><a href="#Array-Implementation-of-Queue">Array Implementation of Queue </a></li>
-<li class="toc-entry toc-h3"><a href="#Managing-Data">Managing Data </a></li>
 <li class="toc-entry toc-h3"><a href="#Simple-Stack-Examples">Simple Stack Examples </a></li>
 <li class="toc-entry toc-h3"><a href="#Attempting-the-Challenge">Attempting the Challenge </a>
 <ul>
@@ -561,127 +560,6 @@ Queue is full
  10 =  30 =  50 =  70 = 
 Queue after two dequeue operations: 50 =  70 = 
 Front Element of the queue: 50</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Managing-Data">
-<a class="anchor" href="#Managing-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Data<a class="anchor-link" href="#Managing-Data"> </a>
-</h3>
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">LinkedListQueue</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">Node</span> <span class="n">front</span><span class="p">,</span> <span class="n">rear</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">queueSize</span><span class="p">;</span> <span class="c1">// queue size</span>
-
-    <span class="c1">// linked list node</span>
-    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">Node</span> <span class="p">{</span>
-        <span class="n">String</span> <span class="n">data</span><span class="p">;</span>
-        <span class="n">Node</span> <span class="n">next</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// default constructor - initially front &amp; rear are null; size=0; queue is empty</span>
-    <span class="kd">public</span> <span class="nf">LinkedListQueue</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">front</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-        <span class="n">rear</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-        <span class="n">queueSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// check if the queue is empty</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">queueSize</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Remove item from the front of the queue.</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">dequeue</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">String</span> <span class="n">data</span> <span class="o">=</span> <span class="n">front</span><span class="p">.</span><span class="na">data</span><span class="p">;</span>
-        <span class="n">front</span> <span class="o">=</span> <span class="n">front</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">isEmpty</span><span class="p">())</span> <span class="p">{</span>
-            <span class="n">rear</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">queueSize</span><span class="o">--</span><span class="p">;</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Element "</span> <span class="o">+</span> <span class="n">data</span> <span class="o">+</span> <span class="s">" removed from the queue"</span><span class="p">);</span>
-        <span class="k">return</span> <span class="n">data</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Add data at the rear of the queue.</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">enqueue</span><span class="p">(</span><span class="n">String</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">Node</span> <span class="n">oldRear</span> <span class="o">=</span> <span class="n">rear</span><span class="p">;</span>
-        <span class="n">rear</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">();</span>
-        <span class="n">rear</span><span class="p">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
-        <span class="n">rear</span><span class="p">.</span><span class="na">next</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">isEmpty</span><span class="p">())</span> <span class="p">{</span>
-            <span class="n">front</span> <span class="o">=</span> <span class="n">rear</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">oldRear</span><span class="p">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">rear</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">queueSize</span><span class="o">++</span><span class="p">;</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Element "</span> <span class="o">+</span> <span class="n">data</span> <span class="o">+</span> <span class="s">" added to the queue"</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">// print front and rear of the queue</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print_frontRear</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Front of the queue: "</span> <span class="o">+</span> <span class="n">front</span><span class="p">.</span><span class="na">data</span>
-                <span class="o">+</span> <span class="s">" Rear of the queue: "</span> <span class="o">+</span> <span class="n">rear</span><span class="p">.</span><span class="na">data</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">a</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="n">LinkedListQueue</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedListQueue</span><span class="p">();</span>
-
-        <span class="n">queue</span><span class="p">.</span><span class="na">enqueue</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
-        <span class="n">queue</span><span class="p">.</span><span class="na">enqueue</span><span class="p">(</span><span class="s">"World"</span><span class="p">);</span>
-        <span class="n">queue</span><span class="p">.</span><span class="na">print_frontRear</span><span class="p">();</span>
-        <span class="n">queue</span><span class="p">.</span><span class="na">enqueue</span><span class="p">(</span><span class="s">"How"</span><span class="p">);</span>
-        <span class="n">queue</span><span class="p">.</span><span class="na">enqueue</span><span class="p">(</span><span class="s">"Are"</span><span class="p">);</span>
-        <span class="n">queue</span><span class="p">.</span><span class="na">dequeue</span><span class="p">();</span>
-        <span class="n">queue</span><span class="p">.</span><span class="na">dequeue</span><span class="p">();</span>
-        <span class="n">queue</span><span class="p">.</span><span class="na">enqueue</span><span class="p">(</span><span class="s">"You"</span><span class="p">);</span>
-
-        <span class="n">queue</span><span class="p">.</span><span class="na">print_frontRear</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Element Hello added to the queue
-Element World added to the queue
-Front of the queue: Hello Rear of the queue: World
-Element How added to the queue
-Element Are added to the queue
-Element Hello removed from the queue
-Element World removed from the queue
-Element You added to the queue
-Front of the queue: How Rear of the queue: You
-</pre>
 </div>
 </div>
 
@@ -1265,23 +1143,69 @@ Words count: 0, data:
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">QueueMerger</span> <span class="p">{</span>
-    
-    
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">Sting</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">Integer</span><span class="o">[]</span> <span class="n">arrOne</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
-        <span class="n">Integer</span><span class="o">[]</span> <span class="n">arrTwo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span>
-        <span class="n">Queue</span> <span class="n">qOne</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="p">(</span><span class="s">"Integers"</span><span class="p">,</span> <span class="n">arrOne</span> <span class="p">);</span>
-        <span class="n">Queue</span> <span class="n">qTwo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="p">(</span><span class="s">"Integers"</span><span class="p">,</span> <span class="n">arrTwo</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1st queue of data"</span><span class="o">+</span><span class="n">qOne</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1st queue of data"</span><span class="o">+</span><span class="n">qTwo</span><span class="p">);</span>
-        <span class="n">Queue</span> <span class="n">mergQue</span> <span class="o">=</span> <span class="n">qOne</span><span class="p">.</span><span class="na">merge</span><span class="p">(</span><span class="n">qTwo</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Queues merged"</span><span class="o">+</span><span class="n">mergQue</span><span class="p">);</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Queue</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
+    <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+    <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+    <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+    <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">mergedQueue</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">queue1</span><span class="p">,</span> <span class="n">queue2</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Merged Queue: "</span> <span class="o">+</span> <span class="n">mergedQueue</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">merge</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue1</span><span class="p">,</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">mergedQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">queue1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">queue2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">queue1</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">queue2</span><span class="p">.</span><span class="na">peek</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">mergedQueue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">queue1</span><span class="p">.</span><span class="na">poll</span><span class="p">());</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">mergedQueue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">queue2</span><span class="p">.</span><span class="na">poll</span><span class="p">());</span>
+      <span class="p">}</span>
     <span class="p">}</span>
+    <span class="n">mergedQueue</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">queue1</span><span class="p">);</span>
+    <span class="n">mergedQueue</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">queue2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">mergedQueue</span><span class="p">;</span>
+  <span class="p">}</span>
 <span class="p">}</span>
+<span class="n">Example</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-red-intense-fg ansi-bold">a type with the same simple name is already defined by the static single-type-import of LinkedList</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    Queue&lt;Integer&gt; queue1 = new </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">LinkedList</span><span class="ansi-black-intense-fg ansi-bold">&lt;&gt;();</span>
+<span class="ansi-red-intense-fg ansi-bold">reference to LinkedList is ambiguous</span>
+<span class="ansi-red-intense-fg ansi-bold">  both class LinkedList in  and class java.util.LinkedList in java.util match</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    Queue&lt;Integer&gt; queue2 = new </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">LinkedList</span><span class="ansi-black-intense-fg ansi-bold">&lt;&gt;();</span>
+<span class="ansi-red-intense-fg ansi-bold">reference to LinkedList is ambiguous</span>
+<span class="ansi-red-intense-fg ansi-bold">  both class LinkedList in  and class java.util.LinkedList in java.util match</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    Queue&lt;Integer&gt; mergedQueue = new </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">LinkedList</span><span class="ansi-black-intense-fg ansi-bold">&lt;&gt;();</span>
+<span class="ansi-red-intense-fg ansi-bold">reference to LinkedList is ambiguous</span>
+<span class="ansi-red-intense-fg ansi-bold">  both class LinkedList in  and class java.util.LinkedList in java.util match</span>
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

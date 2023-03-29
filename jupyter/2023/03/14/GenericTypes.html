@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      10 min read
     
 </span></p>
 
@@ -135,7 +135,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#CheckPoint-#1">CheckPoint #1 </a></li>
 <li class="toc-entry toc-h3"><a href="#Abstract-class">Abstract class </a></li>
 <li class="toc-entry toc-h3"><a href="#Instance-of-the-LinkedList-Class:-Concrete-class">Instance of the LinkedList Class: Concrete class </a></li>
-<li class="toc-entry toc-h3"><a href="#implementation-of-the-linkedlist-in-stackh3in-this-implementation-stack-class-uses-the-linkedlist-interface-to-provide-basic-stack-operations-such-as-push-pop-peek-isempty-and-size-the-linkedlist-interface-methods-add-remove-get-and-indexof-are-not-implemented-as-they-are-not-needed-for-this-implementation-of-a-stackpdivdivdiv------------public-class-stackt-implements-linkedlistt-----private-linkedlistt-top-----constructor----public-stack---------thistop--null---------add-a-new-item-to-the-top-of-the-stack----public-void-pusht-item---------linkedlistt-node--new-linkedlistitem-null--------if-thistop--null-------------nodesetnextnodethistop------------thistopsetprevnodenode----------------thistop--node---------remove-and-return-the-top-item-from-the-stack----public-t-pop---------if-thistop--null-------------throw-new-nosuchelementexception----------------t-item--thistopgetdata--------thistop--thistopgetnext--------if-thistop--null-------------thistopsetprevnodenull----------------return-item---------return-the-top-item-from-the-stack-without-removing-it----public-t-peek---------if-thistop--null-------------throw-new-nosuchelementexception----------------return-thistopgetdata---------check-if-the-stack-is-empty----public-boolean-isempty---------return-thistop--null---------get-the-size-of-the-stack----public-int-size---------int-size--0--------linkedlistt-current--thistop--------while-current--null-------------size------------current--currentgetnext----------------return-size---------implement-the-linkedlistt-interface-method----public-void-addt-item---------thispushitem------------div-">Implementation of the LinkedList in Stack&lt;/h3&gt;
+<li class="toc-entry toc-h3"><a href="#implementation-of-the-linkedlist-in-stackh3in-this-implementation-stack-class-uses-the-linkedlist-interface-to-provide-basic-stack-operations-such-as-push-pop-peek-isempty-and-size-the-linkedlist-interface-methods-add-remove-get-and-indexof-are-not-implemented-as-they-are-not-needed-for-this-implementation-of-a-stackpdivdivdiv------------public-class-stackt-implements-linkedlistt-----private-linkedlistt-top-----constructor----public-stack---------thistop--null---------add-a-new-item-to-the-top-of-the-stack----public-void-pusht-item---------linkedlistt-node--new-linkedlistitem-null--------if-thistop--null-------------nodesetnextnodethistop------------thistopsetprevnodenode----------------thistop--node---------remove-and-return-the-top-item-from-the-stack----public-t-pop---------if-thistop--null-------------throw-new-nosuchelementexception----------------t-item--thistopgetdata--------thistop--thistopgetnext--------if-thistop--null-------------thistopsetprevnodenull----------------return-item---------return-the-top-item-from-the-stack-without-removing-it----public-t-peek---------if-thistop--null-------------throw-new-nosuchelementexception----------------return-thistopgetdata---------check-if-the-stack-is-empty----public-boolean-isempty---------return-thistop--null---------get-the-size-of-the-stack----public-int-size---------int-size--0--------linkedlistt-current--thistop--------while-current--null-------------size------------current--currentgetnext----------------return-size---------implement-the-linkedlistt-interface-method----public-void-addt-item---------thispushitem------------------------import-javautillinkedlistimport-javautilqueuepublic-class-example---public-static-void-mainstring-args-----queueinteger-queue1--new-linkedlist----queue1add2----queue1add5----queue1add9----queueinteger-queue2--new-linkedlist----queue2add4----queue2add7----queue2add8----queueinteger-mergedqueue--mergequeue1-queue2----systemoutprintlnmerged-queue---mergedqueue------public-static-queueinteger-mergequeueinteger-queue1-queueinteger-queue2-----queueinteger-mergedqueue--new-linkedlist----while-queue1isempty--queue2isempty-------if-queue1peek--queue2peek---------mergedqueueaddqueue1poll-------else---------mergedqueueaddqueue2poll--------------mergedqueueaddallqueue1----mergedqueueaddallqueue2----return-mergedqueue--examplemainnull----merged-queue-2-4-5-7-8-9----div-">Implementation of the LinkedList in Stack&lt;/h3&gt;
 In this implementation, Stack class uses the LinkedList interface to provide basic stack operations such as push, pop, peek, isEmpty, and size. The LinkedList interface methods add, remove, get, and indexOf are not implemented, as they are not needed for this implementation of a stack.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -213,6 +213,68 @@ public class Stack&lt;T&gt; implements LinkedList&lt;T&gt; {
 
 
     
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Example {
+  public static void main(String[] args) {
+    Queue&lt;Integer&gt; queue1 = new LinkedList&lt;&gt;();
+    queue1.add(2);
+    queue1.add(5);
+    queue1.add(9);
+    Queue&lt;Integer&gt; queue2 = new LinkedList&lt;&gt;();
+    queue2.add(4);
+    queue2.add(7);
+    queue2.add(8);
+    Queue&lt;Integer&gt; mergedQueue = merge(queue1, queue2);
+    System.out.println(&quot;Merged Queue: &quot; + mergedQueue);
+  }
+  
+  public static Queue&lt;Integer&gt; merge(Queue&lt;Integer&gt; queue1, Queue&lt;Integer&gt; queue2) {
+    Queue&lt;Integer&gt; mergedQueue = new LinkedList&lt;&gt;();
+    while (!queue1.isEmpty() &amp;&amp; !queue2.isEmpty()) {
+      if (queue1.peek() &lt; queue2.peek()) {
+        mergedQueue.add(queue1.poll());
+      } else {
+        mergedQueue.add(queue2.poll());
+      }
+    }
+    mergedQueue.addAll(queue1);
+    mergedQueue.addAll(queue2);
+    return mergedQueue;
+  }
+}
+Example.main(null)
+
+
+    
+
+
+
+
+
+
+
+
+
+Merged Queue: [2, 4, 5, 7, 8, 9]
+
+
+
+
 
 
 
@@ -855,7 +917,7 @@ Sample Output: 55
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3>
-<a class="anchor" href="#implementation-of-the-linkedlist-in-stackh3in-this-implementation-stack-class-uses-the-linkedlist-interface-to-provide-basic-stack-operations-such-as-push-pop-peek-isempty-and-size-the-linkedlist-interface-methods-add-remove-get-and-indexof-are-not-implemented-as-they-are-not-needed-for-this-implementation-of-a-stackpdivdivdiv------------public-class-stackt-implements-linkedlistt-----private-linkedlistt-top-----constructor----public-stack---------thistop--null---------add-a-new-item-to-the-top-of-the-stack----public-void-pusht-item---------linkedlistt-node--new-linkedlistitem-null--------if-thistop--null-------------nodesetnextnodethistop------------thistopsetprevnodenode----------------thistop--node---------remove-and-return-the-top-item-from-the-stack----public-t-pop---------if-thistop--null-------------throw-new-nosuchelementexception----------------t-item--thistopgetdata--------thistop--thistopgetnext--------if-thistop--null-------------thistopsetprevnodenull----------------return-item---------return-the-top-item-from-the-stack-without-removing-it----public-t-peek---------if-thistop--null-------------throw-new-nosuchelementexception----------------return-thistopgetdata---------check-if-the-stack-is-empty----public-boolean-isempty---------return-thistop--null---------get-the-size-of-the-stack----public-int-size---------int-size--0--------linkedlistt-current--thistop--------while-current--null-------------size------------current--currentgetnext----------------return-size---------implement-the-linkedlistt-interface-method----public-void-addt-item---------thispushitem------------div-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementation of the LinkedList<t> in <code>Stack</code>&lt;/h3&gt;
+<a class="anchor" href="#implementation-of-the-linkedlist-in-stackh3in-this-implementation-stack-class-uses-the-linkedlist-interface-to-provide-basic-stack-operations-such-as-push-pop-peek-isempty-and-size-the-linkedlist-interface-methods-add-remove-get-and-indexof-are-not-implemented-as-they-are-not-needed-for-this-implementation-of-a-stackpdivdivdiv------------public-class-stackt-implements-linkedlistt-----private-linkedlistt-top-----constructor----public-stack---------thistop--null---------add-a-new-item-to-the-top-of-the-stack----public-void-pusht-item---------linkedlistt-node--new-linkedlistitem-null--------if-thistop--null-------------nodesetnextnodethistop------------thistopsetprevnodenode----------------thistop--node---------remove-and-return-the-top-item-from-the-stack----public-t-pop---------if-thistop--null-------------throw-new-nosuchelementexception----------------t-item--thistopgetdata--------thistop--thistopgetnext--------if-thistop--null-------------thistopsetprevnodenull----------------return-item---------return-the-top-item-from-the-stack-without-removing-it----public-t-peek---------if-thistop--null-------------throw-new-nosuchelementexception----------------return-thistopgetdata---------check-if-the-stack-is-empty----public-boolean-isempty---------return-thistop--null---------get-the-size-of-the-stack----public-int-size---------int-size--0--------linkedlistt-current--thistop--------while-current--null-------------size------------current--currentgetnext----------------return-size---------implement-the-linkedlistt-interface-method----public-void-addt-item---------thispushitem------------------------import-javautillinkedlistimport-javautilqueuepublic-class-example---public-static-void-mainstring-args-----queueinteger-queue1--new-linkedlist----queue1add2----queue1add5----queue1add9----queueinteger-queue2--new-linkedlist----queue2add4----queue2add7----queue2add8----queueinteger-mergedqueue--mergequeue1-queue2----systemoutprintlnmerged-queue---mergedqueue------public-static-queueinteger-mergequeueinteger-queue1-queueinteger-queue2-----queueinteger-mergedqueue--new-linkedlist----while-queue1isempty--queue2isempty-------if-queue1peek--queue2peek---------mergedqueueaddqueue1poll-------else---------mergedqueueaddqueue2poll--------------mergedqueueaddallqueue1----mergedqueueaddallqueue2----return-mergedqueue--examplemainnull----merged-queue-2-4-5-7-8-9----div-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementation of the LinkedList<t> in <code>Stack</code>&lt;/h3&gt;
 <p>In this implementation, Stack<t> class uses the LinkedList<t> interface to provide basic stack operations such as push, pop, peek, isEmpty, and size. The LinkedList<t> interface methods add, remove, get, and indexOf are not implemented, as they are not needed for this implementation of a stack.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -933,6 +995,68 @@ Sample Output: 55
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Queue</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
+    <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+    <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+    <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+    <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">mergedQueue</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">queue1</span><span class="p">,</span> <span class="n">queue2</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Merged Queue: "</span> <span class="o">+</span> <span class="n">mergedQueue</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">merge</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue1</span><span class="p">,</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">mergedQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">queue1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">queue2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">queue1</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">queue2</span><span class="p">.</span><span class="na">peek</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">mergedQueue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">queue1</span><span class="p">.</span><span class="na">poll</span><span class="p">());</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">mergedQueue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">queue2</span><span class="p">.</span><span class="na">poll</span><span class="p">());</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">mergedQueue</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">queue1</span><span class="p">);</span>
+    <span class="n">mergedQueue</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">queue2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">mergedQueue</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Example</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Merged Queue: [2, 4, 5, 7, 8, 9]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
