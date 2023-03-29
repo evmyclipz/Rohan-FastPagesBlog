@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      15 min read
+      14 min read
     
 </span></p>
 
@@ -1149,15 +1149,21 @@ Words count: 0, data:
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="p">{</span>
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="c1">//sorted</span>
     <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
     <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
     <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
     <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="c1">//sorted</span>
     <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
     <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
     <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
     <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">mergedQueue</span> <span class="o">=</span> <span class="n">merge</span><span class="p">(</span><span class="n">queue1</span><span class="p">,</span> <span class="n">queue2</span><span class="p">);</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Merged Queue: "</span> <span class="o">+</span> <span class="n">mergedQueue</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">Sort</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">input</span><span class="p">)</span> <span class="p">{</span>
+    
   <span class="p">}</span>
   
   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">merge</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue1</span><span class="p">,</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue2</span><span class="p">)</span> <span class="p">{</span>
@@ -1186,22 +1192,8 @@ Words count: 0, data:
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-black-intense-fg ansi-bold">|   </span>
-<span class="ansi-red-intense-fg ansi-bold">a type with the same simple name is already defined by the static single-type-import of LinkedList</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    Queue&lt;Integer&gt; queue1 = new </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">LinkedList</span><span class="ansi-black-intense-fg ansi-bold">&lt;&gt;();</span>
-<span class="ansi-red-intense-fg ansi-bold">reference to LinkedList is ambiguous</span>
-<span class="ansi-red-intense-fg ansi-bold">  both class LinkedList in  and class java.util.LinkedList in java.util match</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    Queue&lt;Integer&gt; queue2 = new </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">LinkedList</span><span class="ansi-black-intense-fg ansi-bold">&lt;&gt;();</span>
-<span class="ansi-red-intense-fg ansi-bold">reference to LinkedList is ambiguous</span>
-<span class="ansi-red-intense-fg ansi-bold">  both class LinkedList in  and class java.util.LinkedList in java.util match</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    Queue&lt;Integer&gt; mergedQueue = new </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">LinkedList</span><span class="ansi-black-intense-fg ansi-bold">&lt;&gt;();</span>
-<span class="ansi-red-intense-fg ansi-bold">reference to LinkedList is ambiguous</span>
-<span class="ansi-red-intense-fg ansi-bold">  both class LinkedList in  and class java.util.LinkedList in java.util match</span>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Merged Queue: [2, 1, 4, 7, 8, 9]
 </pre>
 </div>
 </div>
