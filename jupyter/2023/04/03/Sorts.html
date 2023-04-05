@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      16 min read
+      11 min read
     
 </span></p>
 
@@ -712,9 +712,32 @@ Bubble sort max time: 82ms
 <div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">HashMapBinarySearch</span> <span class="p">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">getMax</span><span class="p">(</span><span class="kt">long</span><span class="o">[]</span> <span class="n">inputArray</span><span class="p">){</span> 
+		<span class="kt">long</span> <span class="n">maxValue</span> <span class="o">=</span> <span class="n">inputArray</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span> 
+		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">inputArray</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span> 
+		  <span class="k">if</span><span class="p">(</span><span class="n">inputArray</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">maxValue</span><span class="p">){</span> 
+			 <span class="n">maxValue</span> <span class="o">=</span> <span class="n">inputArray</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span> 
+		  <span class="p">}</span> 
+		<span class="p">}</span> 
+		<span class="k">return</span> <span class="n">maxValue</span><span class="p">;</span> 
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">getMin</span><span class="p">(</span><span class="kt">long</span><span class="o">[]</span> <span class="n">inputArray</span><span class="p">){</span> 
+		<span class="kt">long</span> <span class="n">minValue</span> <span class="o">=</span> <span class="n">inputArray</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span> 
+		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">inputArray</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span> 
+		  <span class="k">if</span><span class="p">(</span><span class="n">inputArray</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">minValue</span><span class="p">){</span> 
+			<span class="n">minValue</span> <span class="o">=</span> <span class="n">inputArray</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span> 
+		  <span class="p">}</span> 
+		<span class="p">}</span> 
+		<span class="k">return</span> <span class="n">minValue</span><span class="p">;</span> 
+	<span class="p">}</span>
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-		<span class="kt">long</span><span class="o">[]</span> 
-    	<span class="nf">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="kt">long</span><span class="o">[]</span> <span class="n">binTime</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[</span><span class="mi">12</span><span class="o">]</span><span class="p">;</span>
+		<span class="kt">long</span><span class="o">[]</span> <span class="n">hashTime</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[</span><span class="mi">12</span><span class="o">]</span><span class="p">;</span>
+
+    	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Iteration: "</span><span class="o">+</span><span class="n">i</span><span class="p">);</span>
 			<span class="c1">// Create a HashMap containing 5000 random integers</span>
     	<span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hashMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
     	<span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
@@ -747,6 +770,7 @@ Bubble sort max time: 82ms
         	<span class="p">}</span>
     	<span class="p">}</span>
     	<span class="kt">long</span> <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+		<span class="n">binTime</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">endTime</span><span class="p">;</span>
     	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time taken for binary search: "</span> <span class="o">+</span> <span class="p">(</span><span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">)</span> <span class="o">+</span> <span class="s">" nanoseconds"</span><span class="p">);</span>
 
     	<span class="c1">// Perform lookup using HashMap to find the same 100 random keys</span>
@@ -759,228 +783,28 @@ Bubble sort max time: 82ms
         	<span class="p">}</span>
     	<span class="p">}</span>
     	<span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+		<span class="n">hashTime</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">endTime</span><span class="p">;</span>
     	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time taken for HashMap lookup: "</span> <span class="o">+</span> <span class="p">(</span><span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">)</span> <span class="o">+</span> <span class="s">" nanoseconds"</span><span class="p">);}</span>
 	<span class="p">}</span>
+
+	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Binary Hash statistics........"</span><span class="p">);</span>
+	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Big O analysis: O(log2(n))"</span><span class="p">);</span>
+	<span class="kt">long</span> <span class="n">binMinTime</span> <span class="o">=</span> <span class="n">getMin</span><span class="p">(</span><span class="n">binTime</span><span class="p">);</span>
+	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Binary Hash min run time: "</span><span class="o">+</span><span class="n">binMinTime</span><span class="p">);</span>
+	<span class="kt">long</span> <span class="n">binMaxTime</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">binTime</span><span class="p">);</span>
+	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Binary Hash max run time: "</span><span class="o">+</span><span class="n">binMaxTime</span><span class="p">);</span>
+
+	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Hashmap search statistics......."</span><span class="p">);</span>
+	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Big O analysis: O(n)"</span><span class="p">);</span>
+	<span class="kt">long</span> <span class="n">hashMinTime</span> <span class="o">=</span> <span class="n">getMin</span><span class="p">(</span><span class="n">hashTime</span><span class="p">);</span>
+	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"HashMap search min run time: "</span><span class="o">+</span><span class="n">hashMinTime</span><span class="p">);</span>
+	<span class="kt">long</span> <span class="n">hashMaxTime</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">hashTime</span><span class="p">);</span>
+	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"HashMap search max run time: "</span><span class="o">+</span><span class="n">hashMaxTime</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="n">HashMapBinarySearch</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Key 171 found in HashMap
-Key 199 found in HashMap
-Key 235 found in HashMap
-Key 244 found in HashMap
-Key 448 found in HashMap
-Key 490 found in HashMap
-Key 589 found in HashMap
-Key 604 found in HashMap
-Key 666 found in HashMap
-Key 812 found in HashMap
-Key 1063 found in HashMap
-Key 1089 found in HashMap
-Key 1258 found in HashMap
-Key 1498 found in HashMap
-Key 1569 found in HashMap
-Key 1687 found in HashMap
-Key 1719 found in HashMap
-Key 1920 found in HashMap
-Key 2031 found in HashMap
-Key 2047 found in HashMap
-Key 2265 found in HashMap
-Key 2468 found in HashMap
-Key 2523 found in HashMap
-Key 2555 found in HashMap
-Key 2665 found in HashMap
-Key 2696 found in HashMap
-Key 2751 found in HashMap
-Key 2789 found in HashMap
-Key 3107 found in HashMap
-Key 3123 found in HashMap
-Key 3237 found in HashMap
-Key 3294 found in HashMap
-Key 3429 found in HashMap
-Key 3480 found in HashMap
-Key 3520 found in HashMap
-Key 3529 found in HashMap
-Key 3613 found in HashMap
-Key 3839 found in HashMap
-Key 4271 found in HashMap
-Key 4274 found in HashMap
-Key 4393 found in HashMap
-Key 4427 found in HashMap
-Key 4484 found in HashMap
-Key 4547 found in HashMap
-Key 4584 found in HashMap
-Key 4648 found in HashMap
-Key 4687 found in HashMap
-Key 4789 found in HashMap
-Key 4999 found in HashMap
-Key 5173 found in HashMap
-Key 5191 found in HashMap
-Key 5253 found in HashMap
-Key 5343 found in HashMap
-Key 5370 found in HashMap
-Key 5506 found in HashMap
-Key 5617 found in HashMap
-Key 5671 found in HashMap
-Key 5806 found in HashMap
-Key 5837 found in HashMap
-Key 5855 found in HashMap
-Key 5901 found in HashMap
-Key 6173 found in HashMap
-Key 6187 found in HashMap
-Key 6194 found in HashMap
-Key 6402 found in HashMap
-Key 6462 found in HashMap
-Key 6596 found in HashMap
-Key 6651 found in HashMap
-Key 6727 found in HashMap
-Key 6756 found in HashMap
-Key 6938 found in HashMap
-Key 6990 found in HashMap
-Key 7014 found in HashMap
-Key 7043 found in HashMap
-Key 7191 found in HashMap
-Key 7209 found in HashMap
-Key 7249 found in HashMap
-Key 7432 found in HashMap
-Key 7519 found in HashMap
-Key 7583 found in HashMap
-Key 7645 found in HashMap
-Key 7650 found in HashMap
-Key 7724 found in HashMap
-Key 7793 found in HashMap
-Key 7877 found in HashMap
-Key 7941 found in HashMap
-Key 8155 found in HashMap
-Key 8224 found in HashMap
-Key 8244 found in HashMap
-Key 8309 found in HashMap
-Key 8596 found in HashMap
-Key 8600 found in HashMap
-Key 8835 found in HashMap
-Key 8841 found in HashMap
-Key 8965 found in HashMap
-Key 9372 found in HashMap
-Key 9473 found in HashMap
-Key 9515 found in HashMap
-Key 9853 found in HashMap
-Key 9948 found in HashMap
-Time taken for binary search: 3576200 nanoseconds
-Key 171 found in HashMap
-Key 199 found in HashMap
-Key 235 found in HashMap
-Key 244 found in HashMap
-Key 448 found in HashMap
-Key 490 found in HashMap
-Key 589 found in HashMap
-Key 604 found in HashMap
-Key 666 found in HashMap
-Key 812 found in HashMap
-Key 1063 found in HashMap
-Key 1089 found in HashMap
-Key 1258 found in HashMap
-Key 1498 found in HashMap
-Key 1569 found in HashMap
-Key 1687 found in HashMap
-Key 1719 found in HashMap
-Key 1920 found in HashMap
-Key 2031 found in HashMap
-Key 2047 found in HashMap
-Key 2265 found in HashMap
-Key 2468 found in HashMap
-Key 2523 found in HashMap
-Key 2555 found in HashMap
-Key 2665 found in HashMap
-Key 2696 found in HashMap
-Key 2751 found in HashMap
-Key 2789 found in HashMap
-Key 3107 found in HashMap
-Key 3123 found in HashMap
-Key 3237 found in HashMap
-Key 3294 found in HashMap
-Key 3429 found in HashMap
-Key 3480 found in HashMap
-Key 3520 found in HashMap
-Key 3529 found in HashMap
-Key 3613 found in HashMap
-Key 3839 found in HashMap
-Key 4271 found in HashMap
-Key 4274 found in HashMap
-Key 4393 found in HashMap
-Key 4427 found in HashMap
-Key 4484 found in HashMap
-Key 4547 found in HashMap
-Key 4584 found in HashMap
-Key 4648 found in HashMap
-Key 4687 found in HashMap
-Key 4789 found in HashMap
-Key 4999 found in HashMap
-Key 5173 found in HashMap
-Key 5191 found in HashMap
-Key 5253 found in HashMap
-Key 5343 found in HashMap
-Key 5370 found in HashMap
-Key 5506 found in HashMap
-Key 5617 found in HashMap
-Key 5671 found in HashMap
-Key 5806 found in HashMap
-Key 5837 found in HashMap
-Key 5855 found in HashMap
-Key 5901 found in HashMap
-Key 6173 found in HashMap
-Key 6187 found in HashMap
-Key 6194 found in HashMap
-Key 6402 found in HashMap
-Key 6462 found in HashMap
-Key 6596 found in HashMap
-Key 6651 found in HashMap
-Key 6727 found in HashMap
-Key 6756 found in HashMap
-Key 6938 found in HashMap
-Key 6990 found in HashMap
-Key 7014 found in HashMap
-Key 7043 found in HashMap
-Key 7191 found in HashMap
-Key 7209 found in HashMap
-Key 7249 found in HashMap
-Key 7432 found in HashMap
-Key 7519 found in HashMap
-Key 7583 found in HashMap
-Key 7645 found in HashMap
-Key 7650 found in HashMap
-Key 7724 found in HashMap
-Key 7793 found in HashMap
-Key 7877 found in HashMap
-Key 7941 found in HashMap
-Key 8155 found in HashMap
-Key 8224 found in HashMap
-Key 8244 found in HashMap
-Key 8309 found in HashMap
-Key 8596 found in HashMap
-Key 8600 found in HashMap
-Key 8835 found in HashMap
-Key 8841 found in HashMap
-Key 8965 found in HashMap
-Key 9372 found in HashMap
-Key 9473 found in HashMap
-Key 9515 found in HashMap
-Key 9853 found in HashMap
-Key 9948 found in HashMap
-Time taken for HashMap lookup: 2807000 nanoseconds
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
