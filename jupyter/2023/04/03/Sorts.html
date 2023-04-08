@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      16 min read
+      19 min read
     
 </span></p>
 
@@ -124,7 +124,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h3"><a href="#Bubble-sort,-merge-sort,-and-selection-sort">Bubble sort, merge sort, and selection sort </a></li>
+<li class="toc-entry toc-h3"><a href="#Bubble-sort,-merge-sort,-selection-sort-and-insertion-sort">Bubble sort, merge sort, selection sort and insertion sort </a></li>
 <li class="toc-entry toc-h3"><a href="#Hash-Map-and-Binary-Search">Hash Map and Binary Search </a></li>
 <li class="toc-entry toc-h3"><a href="#Collectable-and-UserFitness-class-that-extends-it">Collectable and UserFitness class that extends it </a></li>
 <li class="toc-entry toc-h3"><a href="#Pros-and-Cons-of">Pros and Cons of </a></li>
@@ -140,8 +140,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Bubble-sort,-merge-sort,-and-selection-sort">
-<a class="anchor" href="#Bubble-sort,-merge-sort,-and-selection-sort" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bubble sort, merge sort, and selection sort<a class="anchor-link" href="#Bubble-sort,-merge-sort,-and-selection-sort"> </a>
+<h3 id="Bubble-sort,-merge-sort,-selection-sort-and-insertion-sort">
+<a class="anchor" href="#Bubble-sort,-merge-sort,-selection-sort-and-insertion-sort" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bubble sort, merge sort, selection sort and insertion sort<a class="anchor-link" href="#Bubble-sort,-merge-sort,-selection-sort-and-insertion-sort"> </a>
 </h3>
 </div>
 </div>
@@ -275,6 +275,20 @@ window.onload = wrap_img;
 		<span class="k">return</span> <span class="n">data</span><span class="p">;</span>
     <span class="p">}</span>
 
+	<span class="kd">private</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">insertionSort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+            <span class="n">j</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">arr</span><span class="o">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="p">;</span>
+<span class="p">}</span>
+
+
 	<span class="c1">//print method to get comparisons and swaps</span>
 	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">printValues</span><span class="p">()</span> <span class="p">{</span>
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"comparisons made: "</span> <span class="o">+</span> <span class="n">compare</span><span class="p">);</span>
@@ -315,17 +329,21 @@ window.onload = wrap_img;
 		<span class="kt">long</span><span class="o">[]</span> <span class="n">mergeSwaps</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[</span><span class="mi">12</span><span class="o">]</span><span class="p">;</span>
 		<span class="kt">long</span><span class="o">[]</span> <span class="n">mergeTime</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[</span><span class="mi">12</span><span class="o">]</span><span class="p">;</span>
 
+		<span class="kt">long</span><span class="o">[]</span> <span class="n">insertCompare</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[</span><span class="mi">12</span><span class="o">]</span><span class="p">;</span>
+		<span class="kt">long</span><span class="o">[]</span> <span class="n">insertSwaps</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[</span><span class="mi">12</span><span class="o">]</span><span class="p">;</span>
+		<span class="kt">long</span><span class="o">[]</span> <span class="n">insertTime</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[</span><span class="mi">12</span><span class="o">]</span><span class="p">;</span>
+
 		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Interation: "</span><span class="o">+</span><span class="n">i</span><span class="p">);</span>
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Iteration: "</span><span class="o">+</span><span class="n">i</span><span class="p">);</span>
 
 			<span class="kt">int</span><span class="o">[]</span> <span class="n">data</span> <span class="o">=</span> <span class="n">generateRandomData</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
 		
 			<span class="c1">// sort using selection sort</span>
 			<span class="n">Sorting</span> <span class="n">selectAnalysis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sorting</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
-			<span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span>
+			<span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
 			<span class="kt">int</span><span class="o">[]</span> <span class="n">selectionSortedData</span> <span class="o">=</span> <span class="n">selectAnalysis</span><span class="p">.</span><span class="na">selectionSort</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">clone</span><span class="p">());</span>
-			<span class="kt">long</span> <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span>
+			<span class="kt">long</span> <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
 			<span class="kt">long</span> <span class="n">elapsedTime</span> <span class="o">=</span> <span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">;</span>
 			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Selection sort result:"</span><span class="p">);</span>
 			<span class="c1">//printArray(selectionSortedData);</span>
@@ -333,16 +351,16 @@ window.onload = wrap_img;
 			<span class="n">selectionCompare</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">selectAnalysis</span><span class="p">.</span><span class="na">getCompare</span><span class="p">();</span>
 			<span class="n">selectionSwaps</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">selectAnalysis</span><span class="p">.</span><span class="na">getSwaps</span><span class="p">();</span>
 			<span class="n">selectionTime</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">elapsedTime</span><span class="p">;</span>
-			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time elapsed: "</span> <span class="o">+</span><span class="n">elapsedTime</span> <span class="o">+</span><span class="s">" ms"</span><span class="p">);</span>
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time elapsed: "</span> <span class="o">+</span><span class="n">elapsedTime</span> <span class="o">+</span><span class="s">" ns"</span><span class="p">);</span>
 			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Big O analysis: O(n^2) = quadratic time"</span><span class="p">);</span>
 
 			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
 		
 			<span class="c1">// sort using merge sort</span>
 			<span class="n">Sorting</span> <span class="n">mergeAnalysis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sorting</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
-			<span class="kt">long</span> <span class="n">startTime1</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span>
+			<span class="kt">long</span> <span class="n">startTime1</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
 			<span class="kt">int</span><span class="o">[]</span> <span class="n">mergeSortedData</span> <span class="o">=</span> <span class="n">mergeAnalysis</span><span class="p">.</span><span class="na">mergeSort</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">clone</span><span class="p">());</span>
-			<span class="kt">long</span> <span class="n">endTime1</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span>
+			<span class="kt">long</span> <span class="n">endTime1</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
 			<span class="kt">long</span> <span class="n">elapsedTime1</span> <span class="o">=</span> <span class="n">endTime1</span> <span class="o">-</span> <span class="n">startTime1</span><span class="p">;</span>
 			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Merge sort result:"</span><span class="p">);</span>
 			<span class="c1">//printArray(mergeSortedData);</span>
@@ -350,16 +368,16 @@ window.onload = wrap_img;
 			<span class="n">mergeCompare</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">mergeAnalysis</span><span class="p">.</span><span class="na">getCompare</span><span class="p">();</span>
 			<span class="n">mergeSwaps</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">mergeAnalysis</span><span class="p">.</span><span class="na">getSwaps</span><span class="p">();</span>
 			<span class="n">mergeTime</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">elapsedTime1</span><span class="p">;</span>
-			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time elapsed: "</span> <span class="o">+</span><span class="n">elapsedTime1</span> <span class="o">+</span><span class="s">" ms"</span><span class="p">);</span>
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time elapsed: "</span> <span class="o">+</span><span class="n">elapsedTime1</span> <span class="o">+</span><span class="s">" ns"</span><span class="p">);</span>
 			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Big O analysis: O(n*log2(n)) = quasi-linear time"</span><span class="p">);</span> 
 
 			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
 		
 			<span class="c1">// sort using bubble sort</span>
 			<span class="n">Sorting</span> <span class="n">bubbleAnalysis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sorting</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
-			<span class="kt">long</span> <span class="n">startTime2</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span>
+			<span class="kt">long</span> <span class="n">startTime2</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
 			<span class="kt">int</span><span class="o">[]</span> <span class="n">bubbleSortedData</span> <span class="o">=</span> <span class="n">bubbleAnalysis</span><span class="p">.</span><span class="na">bubbleSort</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">clone</span><span class="p">());</span>
-			<span class="kt">long</span> <span class="n">endTime2</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span>
+			<span class="kt">long</span> <span class="n">endTime2</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
 			<span class="kt">long</span> <span class="n">elapsedTime2</span> <span class="o">=</span> <span class="n">endTime2</span> <span class="o">-</span> <span class="n">startTime2</span><span class="p">;</span>
 			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bubble sort result:"</span><span class="p">);</span>
 			<span class="c1">// printArray(bubbleSortedData);</span>
@@ -367,7 +385,24 @@ window.onload = wrap_img;
 			<span class="n">bubbleCompare</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">bubbleAnalysis</span><span class="p">.</span><span class="na">getCompare</span><span class="p">();</span>
 			<span class="n">bubbleSwaps</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">bubbleAnalysis</span><span class="p">.</span><span class="na">getSwaps</span><span class="p">();</span>
 			<span class="n">bubbleTime</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">elapsedTime2</span><span class="p">;</span>
-			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time elapsed: "</span> <span class="o">+</span><span class="n">elapsedTime2</span> <span class="o">+</span><span class="s">" ms"</span><span class="p">);</span>
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time elapsed: "</span> <span class="o">+</span><span class="n">elapsedTime2</span> <span class="o">+</span><span class="s">" ns"</span><span class="p">);</span>
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Big O analysis: O(n^2) = quadratic time"</span><span class="p">);</span>
+
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+			<span class="c1">//sort using insertion sort</span>
+			<span class="n">Sorting</span> <span class="n">insertAnalysis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sorting</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+			<span class="kt">long</span> <span class="n">startTime3</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+			<span class="kt">int</span><span class="o">[]</span> <span class="n">insertSortedData</span> <span class="o">=</span> <span class="n">insertAnalysis</span><span class="p">.</span><span class="na">insertionSort</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">clone</span><span class="p">());</span>
+			<span class="kt">long</span> <span class="n">endTime3</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+			<span class="kt">long</span> <span class="n">elapsedTime3</span> <span class="o">=</span> <span class="n">endTime3</span> <span class="o">-</span> <span class="n">startTime3</span><span class="p">;</span>
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Insertion sort result:"</span><span class="p">);</span>
+			<span class="c1">// printArray(bubbleSortedData);</span>
+			<span class="n">insertAnalysis</span><span class="p">.</span><span class="na">printValues</span><span class="p">();</span>
+			<span class="n">insertCompare</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">bubbleAnalysis</span><span class="p">.</span><span class="na">getCompare</span><span class="p">();</span>
+			<span class="n">insertSwaps</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">bubbleAnalysis</span><span class="p">.</span><span class="na">getSwaps</span><span class="p">();</span>
+			<span class="n">insertTime</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">elapsedTime3</span><span class="p">;</span>
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time elapsed: "</span> <span class="o">+</span><span class="n">elapsedTime3</span> <span class="o">+</span><span class="s">" ns"</span><span class="p">);</span>
 			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Big O analysis: O(n^2) = quadratic time"</span><span class="p">);</span>
 		<span class="p">}</span>
 
@@ -378,14 +413,14 @@ window.onload = wrap_img;
 		<span class="n">Long</span> <span class="n">selectionSwapMin</span> <span class="o">=</span> <span class="n">getMin</span><span class="p">(</span><span class="n">selectionSwaps</span><span class="p">);</span>
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Selection sort min swaps: "</span><span class="o">+</span><span class="n">selectionSwapMin</span><span class="p">);</span>
 		<span class="n">Long</span> <span class="n">selectionTimeMin</span> <span class="o">=</span> <span class="n">getMin</span><span class="p">(</span><span class="n">selectionTime</span><span class="p">);</span>
-		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Selection sort min time: "</span><span class="o">+</span><span class="n">selectionTimeMin</span><span class="o">+</span><span class="s">"ms"</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Selection sort min time: "</span><span class="o">+</span><span class="n">selectionTimeMin</span><span class="o">+</span><span class="s">"ns"</span><span class="p">);</span>
 
 		<span class="n">Long</span> <span class="n">selectionCompareMax</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">selectionCompare</span><span class="p">);</span>
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Selection sort max comparisons: "</span><span class="o">+</span><span class="n">selectionCompareMax</span><span class="p">);</span>
 		<span class="n">Long</span> <span class="n">selectionSwapMax</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">selectionSwaps</span><span class="p">);</span>
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Selection sort max swaps: "</span><span class="o">+</span><span class="n">selectionSwapMax</span><span class="p">);</span>
 		<span class="n">Long</span> <span class="n">selectionTimeMax</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">selectionTime</span><span class="p">);</span>
-		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Selection sort max time: "</span><span class="o">+</span><span class="n">selectionTimeMax</span><span class="o">+</span> <span class="s">"ms"</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Selection sort max time: "</span><span class="o">+</span><span class="n">selectionTimeMax</span><span class="o">+</span> <span class="s">"ns"</span><span class="p">);</span>
 		
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"=========Merge Sort Min and Max statistics========="</span><span class="p">);</span>
@@ -394,14 +429,14 @@ window.onload = wrap_img;
 		<span class="n">Long</span> <span class="n">mergeSwapMin</span> <span class="o">=</span> <span class="n">getMin</span><span class="p">(</span><span class="n">mergeSwaps</span><span class="p">);</span>
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Merge sort min swaps: "</span><span class="o">+</span><span class="n">mergeSwapMin</span><span class="p">);</span>
 		<span class="n">Long</span> <span class="n">mergeTimeMin</span> <span class="o">=</span> <span class="n">getMin</span><span class="p">(</span><span class="n">mergeTime</span><span class="p">);</span>
-		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Merge sort min time: "</span><span class="o">+</span><span class="n">mergeTimeMin</span><span class="o">+</span><span class="s">"ms"</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Merge sort min time: "</span><span class="o">+</span><span class="n">mergeTimeMin</span><span class="o">+</span><span class="s">"ns"</span><span class="p">);</span>
 
 		<span class="n">Long</span> <span class="n">mergeCompareMax</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">mergeCompare</span><span class="p">);</span>
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Merge sort max comparisons: "</span><span class="o">+</span><span class="n">mergeCompareMax</span><span class="p">);</span>
 		<span class="n">Long</span> <span class="n">mergeSwapMax</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">mergeSwaps</span><span class="p">);</span>
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Merge sort max swaps: "</span><span class="o">+</span><span class="n">mergeSwapMax</span><span class="p">);</span>
 		<span class="n">Long</span> <span class="n">mergeTimeMax</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">mergeTime</span><span class="p">);</span>
-		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Merge sort max time: "</span><span class="o">+</span><span class="n">mergeTimeMax</span><span class="o">+</span><span class="s">"ms"</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Merge sort max time: "</span><span class="o">+</span><span class="n">mergeTimeMax</span><span class="o">+</span><span class="s">"ns"</span><span class="p">);</span>
 
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"=========Bubble Sort Min and Max statistics========="</span><span class="p">);</span>
@@ -410,15 +445,30 @@ window.onload = wrap_img;
 		<span class="n">Long</span> <span class="n">bubbleSwapMin</span> <span class="o">=</span> <span class="n">getMin</span><span class="p">(</span><span class="n">bubbleSwaps</span><span class="p">);</span>
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bubble sort min swaps: "</span><span class="o">+</span><span class="n">bubbleSwapMin</span><span class="p">);</span>
 		<span class="n">Long</span> <span class="n">bubbleTimeMin</span> <span class="o">=</span> <span class="n">getMin</span><span class="p">(</span><span class="n">bubbleTime</span><span class="p">);</span>
-		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bubble sort min time: "</span><span class="o">+</span><span class="n">bubbleTimeMin</span><span class="o">+</span><span class="s">"ms"</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bubble sort min time: "</span><span class="o">+</span><span class="n">bubbleTimeMin</span><span class="o">+</span><span class="s">"ns"</span><span class="p">);</span>
 
 		<span class="n">Long</span> <span class="n">bubbleCompareMax</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">bubbleCompare</span><span class="p">);</span>
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bubble sort max comparisons: "</span><span class="o">+</span><span class="n">bubbleCompareMax</span><span class="p">);</span>
 		<span class="n">Long</span> <span class="n">bubbleSwapMax</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">bubbleSwaps</span><span class="p">);</span>
 		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bubble sort max swaps: "</span><span class="o">+</span><span class="n">bubbleSwapMax</span><span class="p">);</span>
 		<span class="n">Long</span> <span class="n">bubbleTimeMax</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">bubbleTime</span><span class="p">);</span>
-		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bubble sort max time: "</span><span class="o">+</span><span class="n">bubbleTimeMax</span><span class="o">+</span><span class="s">"ms"</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bubble sort max time: "</span><span class="o">+</span><span class="n">bubbleTimeMax</span><span class="o">+</span><span class="s">"ns"</span><span class="p">);</span>
 
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"=========Insertion Sort Min and Max statistics========="</span><span class="p">);</span>
+		<span class="n">Long</span> <span class="n">insertCompareMin</span> <span class="o">=</span> <span class="n">getMin</span><span class="p">(</span><span class="n">insertCompare</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"insertion sort min comparisons: "</span><span class="o">+</span><span class="n">insertCompareMin</span><span class="p">);</span>
+		<span class="n">Long</span> <span class="n">insertSwapMin</span> <span class="o">=</span> <span class="n">getMin</span><span class="p">(</span><span class="n">insertSwaps</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Insertion sort min swaps: "</span><span class="o">+</span><span class="n">insertSwapMin</span><span class="p">);</span>
+		<span class="n">Long</span> <span class="n">insertTimeMin</span> <span class="o">=</span> <span class="n">getMin</span><span class="p">(</span><span class="n">insertTime</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Insertion sort min time: "</span><span class="o">+</span><span class="n">insertTimeMin</span><span class="o">+</span><span class="s">"ns"</span><span class="p">);</span>
+
+		<span class="n">Long</span> <span class="n">insertCompareMax</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">insertCompare</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"insertion sort max comparisons: "</span><span class="o">+</span><span class="n">insertCompareMax</span><span class="p">);</span>
+		<span class="n">Long</span> <span class="n">insertSwapMax</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">insertSwaps</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"insertion sort max swaps: "</span><span class="o">+</span><span class="n">insertSwapMax</span><span class="p">);</span>
+		<span class="n">Long</span> <span class="n">insertTimeMax</span> <span class="o">=</span> <span class="n">getMax</span><span class="p">(</span><span class="n">insertTime</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"insertion sort max time: "</span><span class="o">+</span><span class="n">insertTimeMax</span><span class="o">+</span><span class="s">"ns"</span><span class="p">);</span>
 	<span class="p">}</span>
 
 <span class="p">}</span>
@@ -436,257 +486,337 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Interation: 0
+Iteration: 0
 Selection sort result:
-comparisons made: 35176
+comparisons made: 34812
 Swaps made: 4999
-Time elapsed: 62 ms
+Time elapsed: 35550000 ns
 Big O analysis: O(n^2) = quadratic time
 
 Merge sort result:
-comparisons made: 55229
-Swaps made: 0
-Time elapsed: 4 ms
-Big O analysis: O(n*log(n)) = quasi-linear time
+comparisons made: 55262
+Swaps made: 55262
+Time elapsed: 3968200 ns
+Big O analysis: O(n*log2(n)) = quasi-linear time
 
 Bubble sort result:
-comparisons made: 6287470
-Swaps made: 6287470
-Time elapsed: 59 ms
+comparisons made: 6290946
+Swaps made: 6290946
+Time elapsed: 47409800 ns
 Big O analysis: O(n^2) = quadratic time
 
-Interation: 1
+Insertion sort result:
+comparisons made: 0
+Swaps made: 0
+Time elapsed: 10109000 ns
+Big O analysis: O(n^2) = quadratic time
+
+Iteration: 1
 Selection sort result:
-comparisons made: 35139
+comparisons made: 34949
 Swaps made: 4999
-Time elapsed: 17 ms
+Time elapsed: 24229500 ns
 Big O analysis: O(n^2) = quadratic time
 
 Merge sort result:
-comparisons made: 55217
-Swaps made: 0
-Time elapsed: 2 ms
-Big O analysis: O(n*log(n)) = quasi-linear time
+comparisons made: 55198
+Swaps made: 55198
+Time elapsed: 840700 ns
+Big O analysis: O(n*log2(n)) = quasi-linear time
 
 Bubble sort result:
-comparisons made: 6216442
-Swaps made: 6216442
-Time elapsed: 82 ms
+comparisons made: 6149143
+Swaps made: 6149143
+Time elapsed: 57608000 ns
 Big O analysis: O(n^2) = quadratic time
 
-Interation: 2
+Insertion sort result:
+comparisons made: 0
+Swaps made: 0
+Time elapsed: 63216200 ns
+Big O analysis: O(n^2) = quadratic time
+
+Iteration: 2
 Selection sort result:
-comparisons made: 34903
+comparisons made: 34891
 Swaps made: 4999
-Time elapsed: 19 ms
+Time elapsed: 21858200 ns
 Big O analysis: O(n^2) = quadratic time
 
 Merge sort result:
-comparisons made: 55207
-Swaps made: 0
-Time elapsed: 2 ms
-Big O analysis: O(n*log(n)) = quasi-linear time
+comparisons made: 55189
+Swaps made: 55189
+Time elapsed: 2567700 ns
+Big O analysis: O(n*log2(n)) = quasi-linear time
 
 Bubble sort result:
-comparisons made: 6392539
-Swaps made: 6392539
-Time elapsed: 42 ms
+comparisons made: 6241302
+Swaps made: 6241302
+Time elapsed: 46334900 ns
 Big O analysis: O(n^2) = quadratic time
 
-Interation: 3
-Selection sort result:
-comparisons made: 34881
-Swaps made: 4999
-Time elapsed: 20 ms
-Big O analysis: O(n^2) = quadratic time
-
-Merge sort result:
-comparisons made: 55191
+Insertion sort result:
+comparisons made: 0
 Swaps made: 0
-Time elapsed: 1 ms
-Big O analysis: O(n*log(n)) = quasi-linear time
-
-Bubble sort result:
-comparisons made: 6185029
-Swaps made: 6185029
-Time elapsed: 40 ms
+Time elapsed: 2865500 ns
 Big O analysis: O(n^2) = quadratic time
 
-Interation: 4
+Iteration: 3
 Selection sort result:
-comparisons made: 34966
+comparisons made: 34884
 Swaps made: 4999
-Time elapsed: 18 ms
-Big O analysis: O(n^2) = quadratic time
-
-Merge sort result:
-comparisons made: 55255
-Swaps made: 0
-Time elapsed: 1 ms
-Big O analysis: O(n*log(n)) = quasi-linear time
-
-Bubble sort result:
-comparisons made: 6324550
-Swaps made: 6324550
-Time elapsed: 30 ms
-Big O analysis: O(n^2) = quadratic time
-
-Interation: 5
-Selection sort result:
-comparisons made: 34953
-Swaps made: 4999
-Time elapsed: 20 ms
-Big O analysis: O(n^2) = quadratic time
-
-Merge sort result:
-comparisons made: 55186
-Swaps made: 0
-Time elapsed: 1 ms
-Big O analysis: O(n*log(n)) = quasi-linear time
-
-Bubble sort result:
-comparisons made: 6247097
-Swaps made: 6247097
-Time elapsed: 26 ms
-Big O analysis: O(n^2) = quadratic time
-
-Interation: 6
-Selection sort result:
-comparisons made: 34601
-Swaps made: 4999
-Time elapsed: 19 ms
-Big O analysis: O(n^2) = quadratic time
-
-Merge sort result:
-comparisons made: 55241
-Swaps made: 0
-Time elapsed: 1 ms
-Big O analysis: O(n*log(n)) = quasi-linear time
-
-Bubble sort result:
-comparisons made: 6152809
-Swaps made: 6152809
-Time elapsed: 26 ms
-Big O analysis: O(n^2) = quadratic time
-
-Interation: 7
-Selection sort result:
-comparisons made: 35674
-Swaps made: 4999
-Time elapsed: 23 ms
+Time elapsed: 23560600 ns
 Big O analysis: O(n^2) = quadratic time
 
 Merge sort result:
 comparisons made: 55248
-Swaps made: 0
-Time elapsed: 1 ms
-Big O analysis: O(n*log(n)) = quasi-linear time
+Swaps made: 55248
+Time elapsed: 763600 ns
+Big O analysis: O(n*log2(n)) = quasi-linear time
 
 Bubble sort result:
-comparisons made: 6174860
-Swaps made: 6174860
-Time elapsed: 24 ms
+comparisons made: 6365937
+Swaps made: 6365937
+Time elapsed: 32272300 ns
 Big O analysis: O(n^2) = quadratic time
 
-Interation: 8
+Insertion sort result:
+comparisons made: 0
+Swaps made: 0
+Time elapsed: 3703500 ns
+Big O analysis: O(n^2) = quadratic time
+
+Iteration: 4
 Selection sort result:
-comparisons made: 35349
+comparisons made: 34414
 Swaps made: 4999
-Time elapsed: 18 ms
+Time elapsed: 20947800 ns
 Big O analysis: O(n^2) = quadratic time
 
 Merge sort result:
-comparisons made: 55288
-Swaps made: 0
-Time elapsed: 1 ms
-Big O analysis: O(n*log(n)) = quasi-linear time
+comparisons made: 55205
+Swaps made: 55205
+Time elapsed: 750100 ns
+Big O analysis: O(n*log2(n)) = quasi-linear time
 
 Bubble sort result:
-comparisons made: 6221925
-Swaps made: 6221925
-Time elapsed: 35 ms
+comparisons made: 6256691
+Swaps made: 6256691
+Time elapsed: 37178100 ns
 Big O analysis: O(n^2) = quadratic time
 
-Interation: 9
+Insertion sort result:
+comparisons made: 0
+Swaps made: 0
+Time elapsed: 5680100 ns
+Big O analysis: O(n^2) = quadratic time
+
+Iteration: 5
 Selection sort result:
-comparisons made: 35528
+comparisons made: 34387
 Swaps made: 4999
-Time elapsed: 20 ms
+Time elapsed: 23791700 ns
 Big O analysis: O(n^2) = quadratic time
 
 Merge sort result:
-comparisons made: 55235
-Swaps made: 0
-Time elapsed: 1 ms
-Big O analysis: O(n*log(n)) = quasi-linear time
+comparisons made: 55237
+Swaps made: 55237
+Time elapsed: 758200 ns
+Big O analysis: O(n*log2(n)) = quasi-linear time
 
 Bubble sort result:
-comparisons made: 6369221
-Swaps made: 6369221
-Time elapsed: 28 ms
+comparisons made: 6294031
+Swaps made: 6294031
+Time elapsed: 40131100 ns
 Big O analysis: O(n^2) = quadratic time
 
-Interation: 10
+Insertion sort result:
+comparisons made: 0
+Swaps made: 0
+Time elapsed: 5582600 ns
+Big O analysis: O(n^2) = quadratic time
+
+Iteration: 6
 Selection sort result:
-comparisons made: 34352
+comparisons made: 34610
 Swaps made: 4999
-Time elapsed: 23 ms
+Time elapsed: 21732400 ns
 Big O analysis: O(n^2) = quadratic time
 
 Merge sort result:
 comparisons made: 55254
-Swaps made: 0
-Time elapsed: 1 ms
-Big O analysis: O(n*log(n)) = quasi-linear time
+Swaps made: 55254
+Time elapsed: 931800 ns
+Big O analysis: O(n*log2(n)) = quasi-linear time
 
 Bubble sort result:
-comparisons made: 6180018
-Swaps made: 6180018
-Time elapsed: 26 ms
+comparisons made: 6311047
+Swaps made: 6311047
+Time elapsed: 28585000 ns
 Big O analysis: O(n^2) = quadratic time
 
-Interation: 11
+Insertion sort result:
+comparisons made: 0
+Swaps made: 0
+Time elapsed: 2734900 ns
+Big O analysis: O(n^2) = quadratic time
+
+Iteration: 7
 Selection sort result:
-comparisons made: 35454
+comparisons made: 34360
 Swaps made: 4999
-Time elapsed: 20 ms
+Time elapsed: 18155000 ns
 Big O analysis: O(n^2) = quadratic time
 
 Merge sort result:
-comparisons made: 55268
-Swaps made: 0
-Time elapsed: 0 ms
-Big O analysis: O(n*log(n)) = quasi-linear time
+comparisons made: 55230
+Swaps made: 55230
+Time elapsed: 765400 ns
+Big O analysis: O(n*log2(n)) = quasi-linear time
 
 Bubble sort result:
-comparisons made: 6253094
-Swaps made: 6253094
-Time elapsed: 32 ms
+comparisons made: 6215773
+Swaps made: 6215773
+Time elapsed: 38506200 ns
+Big O analysis: O(n^2) = quadratic time
+
+Insertion sort result:
+comparisons made: 0
+Swaps made: 0
+Time elapsed: 2650800 ns
+Big O analysis: O(n^2) = quadratic time
+
+Iteration: 8
+Selection sort result:
+comparisons made: 35000
+Swaps made: 4999
+Time elapsed: 18984400 ns
+Big O analysis: O(n^2) = quadratic time
+
+Merge sort result:
+comparisons made: 55214
+Swaps made: 55214
+Time elapsed: 737000 ns
+Big O analysis: O(n*log2(n)) = quasi-linear time
+
+Bubble sort result:
+comparisons made: 6246021
+Swaps made: 6246021
+Time elapsed: 29508300 ns
+Big O analysis: O(n^2) = quadratic time
+
+Insertion sort result:
+comparisons made: 0
+Swaps made: 0
+Time elapsed: 4336000 ns
+Big O analysis: O(n^2) = quadratic time
+
+Iteration: 9
+Selection sort result:
+comparisons made: 34806
+Swaps made: 4999
+Time elapsed: 18949800 ns
+Big O analysis: O(n^2) = quadratic time
+
+Merge sort result:
+comparisons made: 55226
+Swaps made: 55226
+Time elapsed: 1083500 ns
+Big O analysis: O(n*log2(n)) = quasi-linear time
+
+Bubble sort result:
+comparisons made: 6187611
+Swaps made: 6187611
+Time elapsed: 37083200 ns
+Big O analysis: O(n^2) = quadratic time
+
+Insertion sort result:
+comparisons made: 0
+Swaps made: 0
+Time elapsed: 2907400 ns
+Big O analysis: O(n^2) = quadratic time
+
+Iteration: 10
+Selection sort result:
+comparisons made: 35066
+Swaps made: 4999
+Time elapsed: 28234800 ns
+Big O analysis: O(n^2) = quadratic time
+
+Merge sort result:
+comparisons made: 55258
+Swaps made: 55258
+Time elapsed: 733900 ns
+Big O analysis: O(n*log2(n)) = quasi-linear time
+
+Bubble sort result:
+comparisons made: 6224368
+Swaps made: 6224368
+Time elapsed: 35490700 ns
+Big O analysis: O(n^2) = quadratic time
+
+Insertion sort result:
+comparisons made: 0
+Swaps made: 0
+Time elapsed: 2654800 ns
+Big O analysis: O(n^2) = quadratic time
+
+Iteration: 11
+Selection sort result:
+comparisons made: 34763
+Swaps made: 4999
+Time elapsed: 18681700 ns
+Big O analysis: O(n^2) = quadratic time
+
+Merge sort result:
+comparisons made: 55222
+Swaps made: 55222
+Time elapsed: 1056200 ns
+Big O analysis: O(n*log2(n)) = quasi-linear time
+
+Bubble sort result:
+comparisons made: 6298464
+Swaps made: 6298464
+Time elapsed: 30234200 ns
+Big O analysis: O(n^2) = quadratic time
+
+Insertion sort result:
+comparisons made: 0
+Swaps made: 0
+Time elapsed: 3845700 ns
 Big O analysis: O(n^2) = quadratic time
 
 =========Selection Sort Min and Max statistics=========
-Selection sort min comparisons: 34352
+Selection sort min comparisons: 34360
 Selection sort min swaps: 4999
-Selection sort min time: 17ms
-Selection sort max comparisons: 35674
+Selection sort min time: 18155000ns
+Selection sort max comparisons: 35066
 Selection sort max swaps: 4999
-Selection sort max time: 62ms
+Selection sort max time: 35550000ns
 
 =========Merge Sort Min and Max statistics=========
-Merge sort min comparisons: 55186
-Merge sort min swaps: 0
-Merge sort min time: 0ms
-Merge sort max comparisons: 55288
-Merge sort max swaps: 0
-Merge sort max time: 4ms
+Merge sort min comparisons: 55189
+Merge sort min swaps: 55189
+Merge sort min time: 733900ns
+Merge sort max comparisons: 55262
+Merge sort max swaps: 55262
+Merge sort max time: 3968200ns
 
 =========Bubble Sort Min and Max statistics=========
-Bubble sort min comparisons: 6152809
-Bubble sort min swaps: 6152809
-Bubble sort min time: 24ms
-Bubble sort max comparisons: 6392539
-Bubble sort max swaps: 6392539
-Bubble sort max time: 82ms
+Bubble sort min comparisons: 6149143
+Bubble sort min swaps: 6149143
+Bubble sort min time: 28585000ns
+Bubble sort max comparisons: 6365937
+Bubble sort max swaps: 6365937
+Bubble sort max time: 57608000ns
+
+=========Insertion Sort Min and Max statistics=========
+insertion sort min comparisons: 6149143
+Insertion sort min swaps: 6149143
+Insertion sort min time: 2650800ns
+insertion sort max comparisons: 6365937
+insertion sort max swaps: 6365937
+insertion sort max time: 63216200ns
 </pre>
 </div>
 </div>
@@ -1017,12 +1147,12 @@ HashMap search max run time: 429300
 	<span class="c1">// Test data initializer</span>
 	<span class="kd">public</span> <span class="kd">static</span> <span class="n">UserFitness</span><span class="o">[]</span> <span class="nf">UserFitnessArray</span><span class="p">()</span> <span class="p">{</span>
     	<span class="k">return</span> <span class="k">new</span> <span class="n">UserFitness</span><span class="o">[]</span><span class="p">{</span>
-            	<span class="k">new</span> <span class="n">UserFitness</span><span class="p">(</span><span class="s">"Alice"</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span>
+            	<span class="k">new</span> <span class="n">UserFitness</span><span class="p">(</span><span class="s">"Rohan"</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span>
             	<span class="k">new</span> <span class="n">UserFitness</span><span class="p">(</span><span class="s">"Bob"</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
             	<span class="k">new</span> <span class="n">UserFitness</span><span class="p">(</span><span class="s">"Charlie"</span><span class="p">,</span> <span class="mi">7500</span><span class="p">,</span> <span class="mi">375</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span>
-            	<span class="k">new</span> <span class="n">UserFitness</span><span class="p">(</span><span class="s">"David"</span><span class="p">,</span> <span class="mi">12000</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span>
+            	<span class="k">new</span> <span class="n">UserFitness</span><span class="p">(</span><span class="s">"Kurtis"</span><span class="p">,</span> <span class="mi">12000</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span>
             	<span class="k">new</span> <span class="n">UserFitness</span><span class="p">(</span><span class="s">"Emma"</span><span class="p">,</span> <span class="mi">8000</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
-            	<span class="k">new</span> <span class="n">UserFitness</span><span class="p">(</span><span class="s">"Frank"</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">35</span><span class="p">),</span>
+            	<span class="k">new</span> <span class="n">UserFitness</span><span class="p">(</span><span class="s">"Daniel"</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">35</span><span class="p">),</span>
             	<span class="k">new</span> <span class="n">UserFitness</span><span class="p">(</span><span class="s">"Grace"</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
     	<span class="p">};</span>
 	<span class="p">}</span>
@@ -1057,24 +1187,24 @@ HashMap search max run time: 429300
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$20$UserFitness; 7
+<pre>class [LREPL.$JShell$12$UserFitness; 7
 Collectable: UserFitness listed by title
-UserFitness: Alice took 10000 steps, burned 500 calories, and exercised for 60 minutes.
+UserFitness: Rohan took 10000 steps, burned 500 calories, and exercised for 60 minutes.
 UserFitness: Bob took 5000 steps, burned 250 calories, and exercised for 30 minutes.
 UserFitness: Charlie took 7500 steps, burned 375 calories, and exercised for 45 minutes.
-UserFitness: David took 12000 steps, burned 600 calories, and exercised for 90 minutes.
+UserFitness: Kurtis took 12000 steps, burned 600 calories, and exercised for 90 minutes.
 UserFitness: Emma took 8000 steps, burned 400 calories, and exercised for 50 minutes.
-UserFitness: Frank took 6000 steps, burned 300 calories, and exercised for 35 minutes.
+UserFitness: Daniel took 6000 steps, burned 300 calories, and exercised for 35 minutes.
 UserFitness: Grace took 9000 steps, burned 450 calories, and exercised for 55 minutes.
 
 -------------------------
-UserFitness: Alice took 10000 steps, burned 500 calories, and exercised for 60 minutes.
 UserFitness: Bob took 5000 steps, burned 250 calories, and exercised for 30 minutes.
 UserFitness: Charlie took 7500 steps, burned 375 calories, and exercised for 45 minutes.
-UserFitness: David took 12000 steps, burned 600 calories, and exercised for 90 minutes.
+UserFitness: Daniel took 6000 steps, burned 300 calories, and exercised for 35 minutes.
 UserFitness: Emma took 8000 steps, burned 400 calories, and exercised for 50 minutes.
-UserFitness: Frank took 6000 steps, burned 300 calories, and exercised for 35 minutes.
 UserFitness: Grace took 9000 steps, burned 450 calories, and exercised for 55 minutes.
+UserFitness: Kurtis took 12000 steps, burned 600 calories, and exercised for 90 minutes.
+UserFitness: Rohan took 10000 steps, burned 500 calories, and exercised for 60 minutes.
 </pre>
 </div>
 </div>
