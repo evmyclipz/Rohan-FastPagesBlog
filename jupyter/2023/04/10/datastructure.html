@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Data Structures | Rohan Malipeddi Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Data Structures" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://evmyclipz.github.io/sample1_blog/jupyter/2023/04/10/datastructure.html" />
+<meta property="og:url" content="https://evmyclipz.github.io/sample1_blog/jupyter/2023/04/10/datastructure.html" />
+<meta property="og:site_name" content="Rohan Malipeddi Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-10T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Data Structures" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-10T00:00:00-05:00","datePublished":"2023-04-10T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Data Structures","mainEntityOfPage":{"@type":"WebPage","@id":"https://evmyclipz.github.io/sample1_blog/jupyter/2023/04/10/datastructure.html"},"url":"https://evmyclipz.github.io/sample1_blog/jupyter/2023/04/10/datastructure.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/sample1_blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://evmyclipz.github.io/sample1_blog/feed.xml" title="Rohan Malipeddi Blog" /><link rel="shortcut icon" type="image/x-icon" href="/sample1_blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/sample1_blog/">Rohan Malipeddi Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/sample1_blog/about/">About Me</a><a class="page-link" href="/sample1_blog/search/">Search</a><a class="page-link" href="/sample1_blog/notes/">Notes</a><a class="page-link" href="/sample1_blog/categories/">Tags</a><a class="page-link" href="/sample1_blog/type1/">Method &amp; Control</a><a class="page-link" href="/sample1_blog/type2/">Classes</a><a class="page-link" href="/sample1_blog/type3/">Array/Arraylist</a><a class="page-link" href="/sample1_blog/type4/">2D Array</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Data Structures</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-04-10T00:00:00-05:00" itemprop="datePublished">
+        Apr 10, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      16 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/sample1_blog/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/evmyclipz/sample1_blog/tree/master/_notebooks/2023-04-10-datastructure.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/sample1_blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/evmyclipz/sample1_blog/master?filepath=_notebooks%2F2023-04-10-datastructure.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/sample1_blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/evmyclipz/sample1_blog/blob/master/_notebooks/2023-04-10-datastructure.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/sample1_blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fevmyclipz%2Fsample1_blog%2Fblob%2Fmaster%2F_notebooks%2F2023-04-10-datastructure.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/sample1_blog/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#Notes">Notes </a></li>
+<li class="toc-entry toc-h3"><a href="#Queue">Queue </a></li>
+<li class="toc-entry toc-h3"><a href="#Priority-Queues">Priority Queues </a></li>
+<li class="toc-entry toc-h3"><a href="#Linked-List">Linked List </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#Advantages">Advantages </a></li>
+<li class="toc-entry toc-h5"><a href="#Disadvantages">Disadvantages </a></li>
+<li class="toc-entry toc-h5"><a href="#Uses">Uses </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Dynamic-Array">Dynamic Array </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#Advantages">Advantages </a></li>
+<li class="toc-entry toc-h5"><a href="#Disadvantages">Disadvantages </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#ArrayList-vs-LinkedList">ArrayList vs LinkedList </a></li>
+<li class="toc-entry toc-h3"><a href="#Interpolation-search">Interpolation search </a></li>
+<li class="toc-entry toc-h3"><a href="#Binary-Search:-Iterative-and-Recursive-method">Binary Search: Iterative and Recursive method </a></li>
+<li class="toc-entry toc-h3"><a href="#Quick-Sort">Quick Sort </a></li>
+<li class="toc-entry toc-h3"><a href="#Hash-Table">Hash Table </a></li>
+<li class="toc-entry toc-h3"><a href="#Graphs:-To--model-network-which-don't-have-order">Graphs: To  model network which don&#39;t have order </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#Adjacency-Matrix">Adjacency Matrix </a></li>
+<li class="toc-entry toc-h5"><a href="#Adjacency-List">Adjacency List </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Depth-First-Search">Depth First Search </a></li>
+<li class="toc-entry toc-h3"><a href="#Breadth-First-Search">Breadth First Search </a></li>
+<li class="toc-entry toc-h3"><a href="#Breadth-FS-vs-Depth-FS">Breadth FS vs Depth FS </a></li>
+<li class="toc-entry toc-h3"><a href="#Tree">Tree </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-04-10-datastructure.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h3>
+<ul>
+<li>LIFO data structure<ul>
+<li>In order to access things at the bottom, we need to .pop() everything up top</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Stack</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">StacksExample</span> <span class="p">{</span>
+
+	<span class="kd">public</span> <span class="nf">StacksExample</span><span class="p">()</span> <span class="p">{</span>
+		<span class="c1">// TODO Auto-generated constructor stub</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+		<span class="c1">// TODO Auto-generated method stub</span>
+		
+		<span class="n">Stack</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+		
+		<span class="c1">//System.out.print(stack.empty());</span>
+		
+		<span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"Minecraft"</span><span class="p">);</span>
+		<span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"CS-GO"</span><span class="p">);</span>
+		<span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"Call of Duty"</span><span class="p">);</span>
+		<span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"Fortnite"</span><span class="p">);</span>
+		<span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"PUB-G"</span><span class="p">);</span>
+		
+		<span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span>
+		<span class="c1">//stack.pop();</span>
+		<span class="c1">//stack.pop();</span>
+		<span class="c1">//stack.pop();</span>
+		<span class="c1">//stack.pop();</span>
+		<span class="c1">//stack.pop();</span>
+		
+		<span class="c1">//System.out.println(stack.empty());</span>
+		
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">stack</span><span class="p">);</span>
+		
+		
+	<span class="p">}</span>
+
+<span class="p">}</span>
+<span class="n">StacksExample</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[Minecraft, CS-GO, Call of Duty, Fortnite]</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Queue">
+<a class="anchor" href="#Queue" aria-hidden="true"><span class="octicon octicon-link"></span></a>Queue<a class="anchor-link" href="#Queue"> </a>
+</h3>
+<ul>
+<li>To enqueue, use offer() </li>
+<li>To dequeue, use poll()</li>
+<li>Don't use add, remove --&gt; this will give exceptions</li>
+<li>FIFO data structure </li>
+<li>Linear data structure</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Queue</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">QueueEx</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+
+        <span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Mom"</span><span class="p">);</span>
+        <span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Dad"</span><span class="p">);</span>
+        <span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Rohan"</span><span class="p">);</span>
+        <span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Gum"</span><span class="p">);</span>
+        <span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"mouse"</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+
+        
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">QueueEx</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[Mom, Dad, Rohan, Gum, mouse]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Priority-Queues">
+<a class="anchor" href="#Priority-Queues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Priority Queues<a class="anchor-link" href="#Priority-Queues"> </a>
+</h3>
+<ul>
+<li>Arrange the elements in order</li>
+<li>high priority to low priority or vice-versa</li>
+<li>Use to sort things as well in descending or ascending order</li>
+<li>Use Collections.reverseOrder() in the constructor to descend</li>
+<li>certain priority</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Queue</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PriorityEx</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Collections</span><span class="p">.</span><span class="na">reverseOrder</span><span class="p">());</span>
+
+        <span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Mom"</span><span class="p">);</span>
+        <span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Dad"</span><span class="p">);</span>
+        <span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Rohan"</span><span class="p">);</span>
+        <span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Gum"</span><span class="p">);</span>
+        <span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Mouse"</span><span class="p">);</span>
+
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">());</span>
+        <span class="p">}</span>
+
+        
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">PriorityEx</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Rohan
+Mouse
+Mom
+Gum
+Dad
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Linked-List">
+<a class="anchor" href="#Linked-List" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linked List<a class="anchor-link" href="#Linked-List"> </a>
+</h3>
+<ul>
+<li>Good at inserting and deleting things in data, take constant time</li>
+<li>Bad at searching for data</li>
+<li>Singly linked only has one node </li>
+<li>Doubly has two nodes, before and after</li>
+<li>Node = Pointers</li>
+<li>Stores Nodes in 2 parts (data + address)</li>
+</ul>
+<h5 id="Advantages">
+<a class="anchor" href="#Advantages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advantages<a class="anchor-link" href="#Advantages"> </a>
+</h5>
+<ul>
+<li>Dynamic Data Structure</li>
+<li>No/Low Memory waste</li>
+</ul>
+<h5 id="Disadvantages">
+<a class="anchor" href="#Disadvantages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disadvantages<a class="anchor-link" href="#Disadvantages"> </a>
+</h5>
+<ul>
+<li>Greater memory usage</li>
+<li>No random access of elements(no index [i])</li>
+<li>Accessing/searching elements is more time consuming. O(n)</li>
+</ul>
+<h5 id="Uses">
+<a class="anchor" href="#Uses" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uses<a class="anchor-link" href="#Uses"> </a>
+</h5>
+<ul>
+<li>implement Stack/Queue</li>
+<li>GPS navigations</li>
+<li>Music playlist</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LinkedListEx</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+    
+        <span class="cm">/* </span>
+<span class="cm">        list.push("Mom");</span>
+<span class="cm">        list.push("Dad");</span>
+<span class="cm">        list.push("Rohan");</span>
+<span class="cm">        list.push("Gum");</span>
+<span class="cm">        list.push("Mouse");</span>
+<span class="cm">        list.pop();</span>
+<span class="cm">        list.pop();</span>
+<span class="cm">        */</span>
+        
+        <span class="n">list</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Mom"</span><span class="p">);</span>
+        <span class="n">list</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Dad"</span><span class="p">);</span>
+        <span class="n">list</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Rohan"</span><span class="p">);</span>
+        <span class="n">list</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Gum"</span><span class="p">);</span>
+        <span class="n">list</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Mouse"</span><span class="p">);</span>
+        <span class="c1">//list.poll();</span>
+
+        <span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s">"You"</span><span class="p">);</span>
+        <span class="n">list</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">"Rohan"</span><span class="p">);</span>
+
+        <span class="n">list</span><span class="p">.</span><span class="na">addFirst</span><span class="p">(</span><span class="s">"Me"</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">getLast</span><span class="p">());</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+
+        
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">LinkedListEx</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>You
+[Me, Mom, Dad, Gum, Mouse, You]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dynamic-Array">
+<a class="anchor" href="#Dynamic-Array" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dynamic Array<a class="anchor-link" href="#Dynamic-Array"> </a>
+</h3>
+<ul>
+<li>Can be used to increase or decrease the array capacity to put more elements</li>
+<li>Java --&gt; ArrayList</li>
+</ul>
+<h5 id="Advantages">
+<a class="anchor" href="#Advantages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advantages<a class="anchor-link" href="#Advantages"> </a>
+</h5>
+<ul>
+<li>Random access of elements, constant time</li>
+<li>Good locality of reference and data cache util</li>
+<li>Easy to insert/delete at the end</li>
+</ul>
+<h5 id="Disadvantages">
+<a class="anchor" href="#Disadvantages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disadvantages<a class="anchor-link" href="#Disadvantages"> </a>
+</h5>
+<ul>
+<li>Wastes more memory than LinkedList</li>
+<li>Shifting of elements is time consuming O(n)</li>
+<li>Expanding/Shrinking the array is time consuming because we have to copy the elements of previous array onto the new one</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DynamicArray</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">capacity</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">Object</span><span class="o">[]</span> <span class="n">array</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">DynamicArray</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">array</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">[</span><span class="n">capacity</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="nf">DynamicArray</span><span class="p">(</span><span class="kt">int</span> <span class="n">capacity</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">capacity</span> <span class="o">=</span> <span class="n">capacity</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">array</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">[</span><span class="n">capacity</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="n">Object</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">&gt;=</span> <span class="n">capacity</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">grow</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="n">array</span><span class="o">[</span><span class="n">size</span><span class="o">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span> <span class="c1">//how does this add data to the array when size != 0</span>
+        <span class="n">size</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">insert</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">Object</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">&gt;=</span> <span class="n">capacity</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">grow</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">index</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">array</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+        <span class="n">size</span><span class="o">++</span><span class="p">;</span>
+        
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">delete</span><span class="p">(</span><span class="n">Object</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">array</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">array</span><span class="o">[</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                <span class="n">size</span><span class="o">--</span><span class="p">;</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">size</span> <span class="o">&lt;=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">capacity</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="n">shrink</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">search</span><span class="p">(</span><span class="n">Object</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">grow</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">newCapacity</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">capacity</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">Object</span><span class="o">[]</span> <span class="n">newArray</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">[</span><span class="n">newCapacity</span><span class="o">]</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">newArray</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">capacity</span> <span class="o">=</span> <span class="n">newCapacity</span><span class="p">;</span>
+        <span class="n">array</span> <span class="o">=</span> <span class="n">newArray</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">shrink</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">newCapacity</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">capacity</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">Object</span><span class="o">[]</span> <span class="n">newArray</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">[</span><span class="n">newCapacity</span><span class="o">]</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">newArray</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">capacity</span> <span class="o">=</span> <span class="n">newCapacity</span><span class="p">;</span>
+        <span class="n">array</span> <span class="o">=</span> <span class="n">newArray</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">string</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">capacity</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">string</span> <span class="o">+=</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">", "</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">string</span> <span class="o">!=</span> <span class="s">""</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="s">"["</span><span class="o">+</span><span class="n">string</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">string</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="s">"]"</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="s">"[]"</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">string</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ArrayListEx</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">DynamicArray</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DynamicArray</span><span class="p">();</span>
+
+        <span class="n">array</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"A"</span><span class="p">);</span>
+        <span class="n">array</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span>
+        
+        
+        <span class="c1">//array.delete("A");</span>
+        <span class="c1">//array.delete("B");</span>
+        <span class="c1">//array.delete("C");</span>
+
+        <span class="c1">//array.insert(0, "X");</span>
+        <span class="c1">//array.delete("A");</span>
+        <span class="c1">//System.out.println(array.search("C"));</span>
+
+        
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">array</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"size: "</span> <span class="o">+</span> <span class="n">array</span><span class="p">.</span><span class="na">size</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"capacity: "</span> <span class="o">+</span> <span class="n">array</span><span class="p">.</span><span class="na">capacity</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"empty: "</span> <span class="o">+</span> <span class="n">array</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">ArrayListEx</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+[A, B, null, null, null, null, null, null, null, null]
+size: 2
+capacity: 10
+empty: false
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ArrayList-vs-LinkedList">
+<a class="anchor" href="#ArrayList-vs-LinkedList" aria-hidden="true"><span class="octicon octicon-link"></span></a>ArrayList vs LinkedList<a class="anchor-link" href="#ArrayList-vs-LinkedList"> </a>
+</h3>
+<ul>
+<li>ArrayList wins when getting elements because LL has to traverse through the list</li>
+<li>Getting a element from middle for LinkedList is the worst</li>
+<li>ArrayList wins when removing elements</li>
+<li>LinkedList wins when deleting and inserting elements because arrayList has to shift element to left or right.</li>
+<li>Exception are near the middle and end</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Interpolation-search">
+<a class="anchor" href="#Interpolation-search" aria-hidden="true"><span class="octicon octicon-link"></span></a>Interpolation search<a class="anchor-link" href="#Interpolation-search"> </a>
+</h3>
+<ul>
+<li>improvement of binary search</li>
+<li>Used for uniformly distributed data(linear data, straight line)</li>
+<li>Makes a guess where a value might be based on probe results</li>
+<li>if probe is incorrect, search area is narrowed, and a new probe is calculated</li>
+<li>O(log(log(n)))</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">InterSort</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">interpolationSearch</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">high</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="k">while</span><span class="p">(</span><span class="n">value</span> <span class="o">&gt;=</span> <span class="n">array</span><span class="o">[</span><span class="n">low</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="n">array</span><span class="o">[</span><span class="n">high</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//guess formula, just memorize </span>
+            <span class="kt">int</span> <span class="n">probe</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="n">array</span><span class="o">[</span><span class="n">low</span><span class="o">]</span><span class="p">)</span> <span class="o">/</span> 
+                        <span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">high</span><span class="o">]</span> <span class="o">-</span> <span class="n">array</span><span class="o">[</span><span class="n">low</span><span class="o">]</span><span class="p">);</span> 
+                        <span class="c1">//using slope formula by modeling a array values and position</span>
+
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"probe: "</span><span class="o">+</span><span class="n">probe</span><span class="p">);</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">probe</span><span class="o">]</span> <span class="o">==</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">probe</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">probe</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">probe</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">probe</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">1024</span><span class="p">};</span>
+
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">interpolationSearch</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="mi">128</span><span class="p">);</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Element found at index: "</span><span class="o">+</span><span class="n">index</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Element not found"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">InterSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>probe: 1
+probe: 2
+probe: 3
+probe: 4
+probe: 5
+probe: 6
+probe: 7
+Element found at index: 7
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Binary-Search:-Iterative-and-Recursive-method">
+<a class="anchor" href="#Binary-Search:-Iterative-and-Recursive-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Binary Search: Iterative and Recursive method<a class="anchor-link" href="#Binary-Search:-Iterative-and-Recursive-method"> </a>
+</h3>
+<ul>
+<li>Iterative: using loops to go through the spitting of the array/data structure</li>
+<li>Recursion: using function call within function to iterative through the array</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BinarySearch</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">array</span><span class="o">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">67</span><span class="p">};</span>
+
+        <span class="kt">int</span> <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">high</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">binarySearchRecur</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">);</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Element found at index: "</span><span class="o">+</span><span class="n">index</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Element not found in array"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">binarySearchRecur</span><span class="p">(</span><span class="kt">int</span> <span class="n">array</span><span class="o">[]</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">,</span> <span class="kt">int</span> <span class="n">low</span><span class="p">,</span> <span class="kt">int</span> <span class="n">high</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kt">int</span> <span class="n">middle</span> <span class="o">=</span> <span class="p">(</span><span class="n">high</span> <span class="o">+</span> <span class="n">low</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+
+        <span class="c1">//base case</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="n">array</span><span class="o">[</span><span class="n">middle</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span> 
+            <span class="k">return</span> <span class="n">middle</span><span class="p">;</span> <span class="c1">//can return </span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">((</span><span class="n">high</span> <span class="o">&gt;</span> <span class="n">low</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">value</span> <span class="o">&lt;</span> <span class="n">array</span><span class="o">[</span><span class="n">middle</span><span class="o">]</span><span class="p">)){</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">binarySearchRecur</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">((</span><span class="n">high</span> <span class="o">&gt;</span> <span class="n">low</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">value</span> <span class="o">&gt;</span> <span class="n">array</span><span class="o">[</span><span class="n">middle</span><span class="o">]</span><span class="p">)){</span>
+            <span class="n">low</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">binarySearchRecur</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">BinarySearch</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Element found at index: 1</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Quick-Sort">
+<a class="anchor" href="#Quick-Sort" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick Sort<a class="anchor-link" href="#Quick-Sort"> </a>
+</h3>
+<ul>
+<li>moves smaller elements to left of pivot</li>
+<li>Recursively divides array in 2 partitions</li>
+<li>Big O time complexity <ul>
+<li>Best case: O(n log(n))</li>
+<li>Average case: O(n log(n))</li>
+<li>Worst case: O(n^2) if already sorted</li>
+</ul>
+</li>
+<li>Big O space complexity: O(log(n)) due to recursion</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QuickSortEx</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5000</span><span class="o">]</span><span class="p">;</span>
+    	<span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+    	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        	<span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span> <span class="c1">// generate numbers between 0 and 9999</span>
+    	<span class="p">}</span>
+
+        <span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">quickSort</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">array</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>  
+        <span class="kt">long</span> <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="kt">long</span> <span class="n">elapsedTime</span> <span class="o">=</span> <span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">;</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time taken to sort: "</span> <span class="o">+</span> <span class="n">elapsedTime</span> <span class="o">+</span> <span class="s">"ns"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">quickSort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">end</span> <span class="o">&lt;=</span> <span class="n">start</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span> <span class="c1">//base case</span>
+
+        <span class="kt">int</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+        <span class="n">quickSort</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">quickSort</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">partition</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+        
+        <span class="kt">int</span> <span class="n">pivot</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">end</span><span class="o">]</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">start</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">end</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+                <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+                <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">end</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">array</span><span class="o">[</span><span class="n">end</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+        
+    <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="n">QuickSortEx</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Time taken to sort: 388320ns
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hash-Table">
+<a class="anchor" href="#Hash-Table" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hash Table<a class="anchor-link" href="#Hash-Table"> </a>
+</h3>
+<ul>
+<li>Uses key.hashCode() % capacity to find the index to insert the elements </li>
+<li>But if two data types return the same index --&gt; collisions</li>
+<li>If collision occur, each index/bucket becomes a LinkedList </li>
+<li>Search linear within each bucket to find the key</li>
+<li>Process of converting bucket into LinkedList is called Chaining</li>
+<li>Hashtable comes with 11 elements and load factor of 0.75 right of the bat<ul>
+<li>Meaning if 75% of the elements are filled, the Hashtable will expand dynamically.</li>
+</ul>
+</li>
+<li>Great with large data sets</li>
+<li>No collision: O(1)</li>
+<li>With Collisions: O(n)</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OwnHash</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">//example of changing the capacity and load factor</span>
+        <span class="c1">//Hashtable&lt;Integer, String&gt; table = new Hashtable&lt;&gt;(10, 0.5f);</span>
+
+        <span class="n">Hashtable</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hashtable</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="mi">21</span><span class="p">);</span>
+
+        <span class="n">table</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"100"</span><span class="p">,</span> <span class="s">"Spongebob"</span><span class="p">);</span>
+        <span class="n">table</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"123"</span><span class="p">,</span> <span class="s">"Patrick"</span><span class="p">);</span>
+        <span class="n">table</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"321"</span><span class="p">,</span> <span class="s">"Sandy"</span><span class="p">);</span>
+        <span class="n">table</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"555"</span><span class="p">,</span> <span class="s">"Squidward"</span><span class="p">);</span>
+        <span class="n">table</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"777"</span><span class="p">,</span> <span class="s">"Gary"</span><span class="p">);</span>
+
+        <span class="c1">//table.remove(777);</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="n">String</span> <span class="n">key</span> <span class="p">:</span> <span class="n">table</span><span class="p">.</span><span class="na">keySet</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">key</span><span class="p">.</span><span class="na">hashCode</span><span class="p">()</span> <span class="o">%</span> <span class="mi">21</span> <span class="o">+</span> <span class="s">"\t"</span> <span class="o">+</span><span class="n">key</span> <span class="o">+</span> <span class="s">"\t"</span> <span class="o">+</span> <span class="n">table</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">key</span><span class="p">));</span>
+        <span class="p">}</span>
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">OwnHash</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>15	777	Gary
+12	123	Patrick
+10	100	Spongebob
+3	555	Squidward
+0	321	Sandy
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Graphs:-To--model-network-which-don't-have-order">
+<a class="anchor" href="#Graphs:-To--model-network-which-don't-have-order" aria-hidden="true"><span class="octicon octicon-link"></span></a>Graphs: To  model network which don't have order<a class="anchor-link" href="#Graphs:-To--model-network-which-don't-have-order"> </a>
+</h3>
+<ul>
+<li>Undirected Graph: each node is connected to another with an edge<ul>
+<li>Ex. Social Network, if one is friend with another, we could establish a friendship/edge</li>
+<li>If two nodes are connected they have adjacency.</li>
+</ul>
+</li>
+<li>Directed Graph: Link one node to another but these are only 1-way connections<ul>
+<li>Ex. Street Map, travel app where the street could be 1 way street and 2 way street</li>
+</ul>
+</li>
+<li>Ways to represent these graphs are using adjacency matrix or list</li>
+<li>Adjacency Matrix: 2D array 1 or 0 to indicate if they are connected to other or not<ul>
+<li>Time Complexity: O(1)</li>
+<li>Space Complexity: O(V^2) where v are the number of nodes/vertices</li>
+</ul>
+</li>
+<li>Adjacency List: Array List of Linked, linear search through one node to find node we are looking for<ul>
+<li>Time complexity: O(n)</li>
+<li>Space Complexity: O(V + E)</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Adjacency-Matrix">
+<a class="anchor" href="#Adjacency-Matrix" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adjacency Matrix<a class="anchor-link" href="#Adjacency-Matrix"> </a>
+</h5>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Node</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">data</span><span class="p">;</span>
+
+    <span class="n">Node</span><span class="p">(</span><span class="kt">char</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Graph</span> <span class="p">{</span>
+
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">nodes</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">[][]</span> <span class="n">matrix</span><span class="p">;</span>
+
+    <span class="n">Graph</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">size</span><span class="o">][</span><span class="n">size</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addNode</span><span class="p">(</span><span class="n">Node</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">nodes</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">src</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dst</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">matrix</span><span class="o">[</span><span class="n">src</span><span class="o">][</span><span class="n">dst</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">src</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dst</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">src</span><span class="o">][</span><span class="n">dst</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"  "</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">Node</span> <span class="n">node</span> <span class="p">:</span> <span class="n">nodes</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">nodes</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Matrix</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        
+        <span class="n">Graph</span> <span class="n">graph</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Graph</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'A'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'B'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'C'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'D'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'E'</span><span class="p">));</span>
+
+
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+        <span class="n">graph</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">graph</span><span class="p">.</span><span class="na">checkEdge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Matrix</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  A B C D E 
+A 0 1 0 0 0 
+B 0 0 1 0 0 
+C 0 0 0 1 1 
+D 0 0 0 0 0 
+E 1 0 1 0 0 
+false
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Adjacency-List">
+<a class="anchor" href="#Adjacency-List" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adjacency List<a class="anchor-link" href="#Adjacency-List"> </a>
+</h5>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Node</span> <span class="p">{</span>
+    
+    <span class="kt">char</span> <span class="n">data</span><span class="p">;</span>
+
+    <span class="n">Node</span><span class="p">(</span><span class="kt">char</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Graph</span> <span class="p">{</span>
+
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;&gt;</span> <span class="n">aList</span><span class="p">;</span>
+
+    <span class="n">Graph</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">aList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addNode</span><span class="p">(</span><span class="n">Node</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">currentList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">currentList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+        <span class="n">aList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">currentList</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">src</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dst</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">currentList</span> <span class="o">=</span> <span class="n">aList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">src</span><span class="p">);</span>
+        <span class="n">Node</span> <span class="n">dstNode</span> <span class="o">=</span> <span class="n">aList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">dst</span><span class="p">).</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="n">currentList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">dstNode</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">src</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dst</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">currentList</span> <span class="o">=</span> <span class="n">aList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">src</span><span class="p">);</span>
+        <span class="n">Node</span> <span class="n">dstNode</span> <span class="o">=</span> <span class="n">aList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">dst</span><span class="p">).</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="n">Node</span> <span class="n">node</span> <span class="p">:</span> <span class="n">currentList</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">node</span> <span class="o">==</span> <span class="n">dstNode</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">currentList</span> <span class="p">:</span> <span class="n">aList</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span><span class="p">(</span><span class="n">Node</span> <span class="n">node</span> <span class="p">:</span> <span class="n">currentList</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" -&gt; "</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">List</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">Graph</span> <span class="n">graph</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Graph</span><span class="p">();</span>
+
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'A'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'B'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'C'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'D'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'E'</span><span class="p">));</span>
+
+
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+
+        <span class="n">graph</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">graph</span><span class="p">.</span><span class="na">checkEdge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">List</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>A -&gt; B -&gt; D -&gt; 
+B -&gt; C -&gt; E -&gt; 
+C -&gt; D -&gt; E -&gt; 
+D -&gt; C -&gt; B -&gt; A -&gt; E -&gt; 
+E -&gt; A -&gt; C -&gt; 
+true
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Depth-First-Search">
+<a class="anchor" href="#Depth-First-Search" aria-hidden="true"><span class="octicon octicon-link"></span></a>Depth First Search<a class="anchor-link" href="#Depth-First-Search"> </a>
+</h3>
+<ul>
+<li>For traversing through a Graph data structure to find the node we want</li>
+<li>Process:<ul>
+<li>We pick a route and go through the entire route until we find the node or reach dead end</li>
+<li>After reaching dead end, we go back to unvisited adjacent neighbors</li>
+<li>Now we pick the route we haven't explored yet and do the same thing again</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Node</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">data</span><span class="p">;</span>
+
+    <span class="n">Node</span><span class="p">(</span><span class="kt">char</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Graph</span> <span class="p">{</span>
+
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">nodes</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">[][]</span> <span class="n">matrix</span><span class="p">;</span>
+
+    <span class="n">Graph</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">size</span><span class="o">][</span><span class="n">size</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addNode</span><span class="p">(</span><span class="n">Node</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">nodes</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">src</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dst</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">matrix</span><span class="o">[</span><span class="n">src</span><span class="o">][</span><span class="n">dst</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">src</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dst</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">src</span><span class="o">][</span><span class="n">dst</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"  "</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">Node</span> <span class="n">node</span> <span class="p">:</span> <span class="n">nodes</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">nodes</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">depthFirstSearch</span><span class="p">(</span><span class="kt">int</span> <span class="n">src</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">boolean</span><span class="o">[]</span> <span class="n">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">matrix</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">dFSHelper</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">visited</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">dFSHelper</span><span class="p">(</span><span class="kt">int</span> <span class="n">src</span><span class="p">,</span> <span class="kt">boolean</span><span class="o">[]</span> <span class="n">visited</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">visited</span><span class="o">[</span><span class="n">src</span><span class="o">]</span> <span class="o">==</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">visited</span><span class="o">[</span><span class="n">src</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nodes</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">src</span><span class="p">).</span><span class="na">data</span> <span class="o">+</span> <span class="s">" = visited"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="o">[</span><span class="n">src</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">src</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">dFSHelper</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">visited</span><span class="p">);</span>
+            <span class="p">}</span>  
+        <span class="p">}</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Matrix</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        
+        <span class="n">Graph</span> <span class="n">graph</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Graph</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'A'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'B'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'C'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'D'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'E'</span><span class="p">));</span>
+
+
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+        <span class="n">graph</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">depthFirstSearch</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="kt">long</span> <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="kt">long</span> <span class="n">elapsedTime</span> <span class="o">=</span> <span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">;</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time taken to search: "</span> <span class="o">+</span> <span class="n">elapsedTime</span> <span class="o">+</span> <span class="s">"ns"</span><span class="p">);</span>
+        <span class="c1">//System.out.println(graph.checkEdge(3, 2));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Matrix</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  A B C D E 
+A 0 1 0 0 0 
+B 0 0 1 0 0 
+C 0 0 0 1 1 
+D 0 0 0 0 0 
+E 1 0 1 0 0 
+
+A = visited
+B = visited
+C = visited
+D = visited
+E = visited
+
+Time taken to search: 158350ns
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Breadth-First-Search">
+<a class="anchor" href="#Breadth-First-Search" aria-hidden="true"><span class="octicon octicon-link"></span></a>Breadth First Search<a class="anchor-link" href="#Breadth-First-Search"> </a>
+</h3>
+<ul>
+<li>Same thing as Depth First Search, but this is done 1 "level" at a time where DFS does 1 "branch" at a time.</li>
+<li>1 level means that the iterator will check all the nodes connected to the starting source and add them to queue and then does this for the connected nodes as well. </li>
+<li>1 branch is where we pick a route and we go with that</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Node</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">data</span><span class="p">;</span>
+
+    <span class="n">Node</span><span class="p">(</span><span class="kt">char</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Graph</span> <span class="p">{</span>
+
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">nodes</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">[][]</span> <span class="n">matrix</span><span class="p">;</span>
+
+    <span class="n">Graph</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">size</span><span class="o">][</span><span class="n">size</span><span class="o">]</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addNode</span><span class="p">(</span><span class="n">Node</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">nodes</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">src</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dst</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">matrix</span><span class="o">[</span><span class="n">src</span><span class="o">][</span><span class="n">dst</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">src</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dst</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">src</span><span class="o">][</span><span class="n">dst</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"  "</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">Node</span> <span class="n">node</span> <span class="p">:</span> <span class="n">nodes</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">nodes</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">data</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">breadthFirstSearch</span><span class="p">(</span><span class="kt">int</span> <span class="n">src</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="kt">boolean</span><span class="o">[]</span> <span class="n">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">matrix</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+
+        <span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="n">src</span><span class="p">);</span>
+        <span class="n">visited</span><span class="o">[</span><span class="n">src</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+        <span class="k">while</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">src</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nodes</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">src</span><span class="p">).</span><span class="na">data</span> <span class="o">+</span> <span class="s">" = visited"</span><span class="p">);</span>
+
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="o">[</span><span class="n">src</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">src</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">visited</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                    <span class="n">visited</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Matrix</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        
+        <span class="n">Graph</span> <span class="n">graph</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Graph</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'A'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'B'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'C'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'D'</span><span class="p">));</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addNode</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">'E'</span><span class="p">));</span>
+
+
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+        <span class="n">graph</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">graph</span><span class="p">.</span><span class="na">breadthFirstSearch</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span> 
+        <span class="kt">long</span> <span class="n">endTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="kt">long</span> <span class="n">elapsedTime</span> <span class="o">=</span> <span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">;</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time taken to search: "</span> <span class="o">+</span> <span class="n">elapsedTime</span> <span class="o">+</span> <span class="s">"ns"</span><span class="p">);</span>
+        <span class="c1">//System.out.println(graph.checkEdge(3, 2));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Matrix</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  A B C D E 
+A 0 1 0 0 0 
+B 0 0 1 0 1 
+C 0 0 0 1 1 
+D 0 0 0 0 0 
+E 1 0 1 0 0 
+
+E = visited
+A = visited
+C = visited
+B = visited
+D = visited
+
+Time taken to search: 235160ns
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Breadth-FS-vs-Depth-FS">
+<a class="anchor" href="#Breadth-FS-vs-Depth-FS" aria-hidden="true"><span class="octicon octicon-link"></span></a>Breadth FS vs Depth FS<a class="anchor-link" href="#Breadth-FS-vs-Depth-FS"> </a>
+</h3>
+<ul>
+<li>Breadth FS: traverse a graph level by level<ul>
+<li>Utilizes a Queue</li>
+<li>Better if destination is on average close to start</li>
+<li>Siblings are visited before children</li>
+</ul>
+</li>
+<li>Depth FS: traverse a graph branch by branch<ul>
+<li>Utilizes a stack</li>
+<li>Better if destination if on average far from the start</li>
+<li>Children are visited before siblings</li>
+<li>More popular for games/puzzles</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tree">
+<a class="anchor" href="#Tree" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tree<a class="anchor-link" href="#Tree"> </a>
+</h3>
+<ul>
+<li>Non-linear data structure where nodes are organized in a hierarchy</li>
+<li>Ex. File explorer, databases, DNS, HTML DOM</li>
+<li>root node is the origin or the tree, no incoming nodes, only outgoing called the parent</li>
+<li>branch node are the children of origin and have children of their own, are parent/child, have incoming and outgoing nodes</li>
+<li>leaf node are only the children, so only incoming node, a.k.a child node</li>
+<li>If two nodes share the same parent, they are siblings nodes</li>
+<li>size = # of nodes</li>
+<li>depth = # of edges below the root node, just number of levels</li>
+<li>height: # of edges above furthest leaf node, counting from the lowest level to highest</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="evmyclipz/sample1_blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/sample1_blog/jupyter/2023/04/10/datastructure.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/sample1_blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://evmyclipz.github.io/sample1_blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/sample1_blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/evmyclipz" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/sample1_blog/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/sample1_blog/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
