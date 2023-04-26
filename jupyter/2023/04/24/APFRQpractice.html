@@ -565,6 +565,82 @@ Member: Jason Grad year: 2023 Good Standing: true
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdditonPattern</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">currentNumber</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">original</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">add</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">AdditonPattern</span><span class="p">(</span><span class="kt">int</span> <span class="n">current</span><span class="p">,</span> <span class="kt">int</span> <span class="n">add</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">currentNumber</span> <span class="o">=</span> <span class="n">current</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">add</span> <span class="o">=</span> <span class="n">add</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">original</span> <span class="o">=</span> <span class="n">current</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">currentNumber</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">currentNumber</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">next</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">currentNumber</span> <span class="o">=</span> <span class="n">currentNumber</span> <span class="o">+</span> <span class="n">add</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">prev</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">currentNumber</span> <span class="o">==</span> <span class="n">original</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"There is no previous number in the pattern prior to "</span><span class="o">+</span><span class="n">original</span><span class="o">+</span><span class="s">", so no action is taken."</span><span class="p">);</span>
+
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">currentNumber</span> <span class="o">=</span> <span class="n">currentNumber</span> <span class="o">-</span> <span class="n">add</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">AdditonPattern</span> <span class="n">plus3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AdditonPattern</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">plus3</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span>
+        <span class="n">plus3</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+        <span class="n">plus3</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">plus3</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span>
+        <span class="n">plus3</span><span class="p">.</span><span class="na">prev</span><span class="p">();</span>
+        <span class="n">plus3</span><span class="p">.</span><span class="na">prev</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">plus3</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span>
+        <span class="n">plus3</span><span class="p">.</span><span class="na">prev</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">AdditonPattern</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+8
+2
+There is no previous number in the pattern prior to 2, so no action is taken.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
