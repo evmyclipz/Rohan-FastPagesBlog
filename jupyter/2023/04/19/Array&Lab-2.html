@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -125,7 +125,8 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h3"><a href="#In-class-Hacks">In class Hacks </a></li>
-<li class="toc-entry toc-h3"><a href="#FRQ-2016-Q4">FRQ 2016 Q4 </a></li>
+<li class="toc-entry toc-h3"><a href="#FRQ-2016-Q4(Wrong-FRQ,-don't-mind)">FRQ 2016 Q4(Wrong FRQ, don&#39;t mind) </a></li>
+<li class="toc-entry toc-h3"><a href="#FRQ-2016-Q4(Correct-one)">FRQ 2016 Q4(Correct one) </a></li>
 <li class="toc-entry toc-h3"><a href="#FRQ-2017-Q4">FRQ 2017 Q4 </a></li>
 <li class="toc-entry toc-h3"><a href="#2018-FRQ-Q4">2018 FRQ Q4 </a></li>
 </ul><!--
@@ -304,8 +305,8 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="FRQ-2016-Q4">
-<a class="anchor" href="#FRQ-2016-Q4" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ 2016 Q4<a class="anchor-link" href="#FRQ-2016-Q4"> </a>
+<h3 id="FRQ-2016-Q4(Wrong-FRQ,-don't-mind)">
+<a class="anchor" href="#FRQ-2016-Q4(Wrong-FRQ,-don't-mind)" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ 2016 Q4(Wrong FRQ, don't mind)<a class="anchor-link" href="#FRQ-2016-Q4(Wrong-FRQ,-don't-mind)"> </a>
 </h3>
 <ul>
 <li>1st part is returning the number of letters in the List<string> wordList.&lt;/li&gt;
@@ -386,6 +387,63 @@ window.onload = wrap_img;
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="FRQ-2016-Q4(Correct-one)">
+<a class="anchor" href="#FRQ-2016-Q4(Correct-one)" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ 2016 Q4(Correct one)<a class="anchor-link" href="#FRQ-2016-Q4(Correct-one)"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">toBeLabeled</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">boolean</span><span class="o">[][]</span> <span class="n">blackSquares</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">blackSquares</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">blackSquares</span><span class="o">[</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">c</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">blackSquares</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="nf">Crossword</span><span class="p">(</span><span class="kt">boolean</span><span class="o">[][]</span> <span class="n">blackSquares</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">blackSquares</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">blackSquares</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+    <span class="n">puzzle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Square</span><span class="o">[</span><span class="n">rows</span><span class="o">][</span><span class="n">cols</span><span class="o">]</span><span class="p">;</span>
+    <span class="c1">// Label squares according to crossword labeling rule</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">rows</span><span class="p">;</span> <span class="n">r</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">cols</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">blackSquares</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">toBeLabeled</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">blackSquares</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">puzzle</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Square</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span> <span class="n">count</span><span class="p">);</span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">puzzle</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Square</span><span class="p">(</span><span class="n">blackSquares</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
